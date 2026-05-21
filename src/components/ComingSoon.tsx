@@ -2,6 +2,7 @@
 
 import { useState, useEffect, FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 const LAUNCH = new Date('2026-10-01T00:00:00')
@@ -20,13 +21,14 @@ function getTime(): TimeLeft {
 }
 
 export default function ComingSoon() {
+  const t = useTranslations('ComingSoon')
   const [time, setTime] = useState<TimeLeft>(getTime())
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
 
   useEffect(() => {
-    const t = setInterval(() => setTime(getTime()), 1000)
-    return () => clearInterval(t)
+    const tick = setInterval(() => setTime(getTime()), 1000)
+    return () => clearInterval(tick)
   }, [])
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -35,10 +37,10 @@ export default function ComingSoon() {
   }
 
   const units: Array<{ v: number; l: string }> = [
-    { v: time.d, l: 'dní' },
-    { v: time.h, l: 'hodin' },
-    { v: time.m, l: 'minut' },
-    { v: time.s, l: 'sekund' },
+    { v: time.d, l: t('days') },
+    { v: time.h, l: t('hours') },
+    { v: time.m, l: t('minutes') },
+    { v: time.s, l: t('seconds') },
   ]
 
   return (
@@ -64,13 +66,13 @@ export default function ComingSoon() {
         />
 
         <h1 className="font-syne font-extrabold text-white leading-[1.05] tracking-tighter whitespace-nowrap text-[clamp(2rem,7vw,6rem)]">
-          Brzy spouštíme
+          {t('heading')}
         </h1>
 
         <p className="font-syne text-white/55 leading-[1.65] text-[clamp(1rem,2.4vw,1.2rem)]">
-          Česko-švédská solární firma.
+          {t('subHeading1')}
           <br />
-          Nový web se připravuje.
+          {t('subHeading2')}
         </p>
 
         <div className="flex items-start gap-[clamp(12px,3.5vw,36px)]">
@@ -110,7 +112,7 @@ export default function ComingSoon() {
             >
               <input
                 type="email"
-                placeholder="Váš e-mail"
+                placeholder={t('emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -120,7 +122,7 @@ export default function ComingSoon() {
                 type="submit"
                 className="px-6 py-[15px] bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-r-md max-[500px]:rounded-r-md max-[500px]:rounded-bl-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
               >
-                Informujte mě
+                {t('submitButton')}
               </button>
             </motion.form>
           ) : (
@@ -131,14 +133,14 @@ export default function ComingSoon() {
               transition={{ duration: 0.4 }}
               className="font-syne font-semibold text-[1.1rem] text-yellow"
             >
-              Děkujeme. Dáme vám vědět jako prvním.
+              {t('thanksMessage')}
             </motion.p>
           )}
         </AnimatePresence>
       </motion.div>
 
       <footer className="fixed bottom-6 left-0 right-0 z-10 flex justify-center gap-10 font-syne text-[0.78rem] text-white/20 tracking-wider">
-        <span>© 2026 NorthSun</span>
+        <span>{t('copyright')}</span>
         <span>northsun.eu</span>
       </footer>
     </div>
