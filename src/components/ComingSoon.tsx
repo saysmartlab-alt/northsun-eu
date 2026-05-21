@@ -111,7 +111,7 @@ export default function ComingSoon() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="mt-10 sm:mt-14 w-full flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6"
+          className="mt-10 sm:mt-14 w-full flex flex-col-reverse sm:flex-row sm:items-end sm:justify-between gap-6"
         >
           <div className="w-full max-w-md">
             <AnimatePresence mode="wait">
@@ -158,7 +158,7 @@ export default function ComingSoon() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
-            className="flex-shrink-0 self-start sm:self-auto sm:-translate-y-24"
+            className="flex-shrink-0 self-start sm:self-auto"
           >
             <Image
               src="/logo.svg"
