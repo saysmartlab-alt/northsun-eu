@@ -99,6 +99,9 @@ export default function ComingSoon() {
             {t('subHeading1')}
             <span className="ml-4 sm:ml-6">{t('subHeading2')}</span>
           </p>
+          <p className="mt-2.5 sm:mt-3 font-syne text-white/55 leading-relaxed max-w-3xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
+            {t('services')}
+          </p>
         </motion.div>
 
         {/* Bottom: Countdown */}
