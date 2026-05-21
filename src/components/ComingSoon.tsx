@@ -78,7 +78,7 @@ export default function ComingSoon() {
               <span className="text-yellow">.</span>
             </span>
           </h1>
-          <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-5xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
+          <p className="mt-10 sm:mt-14 font-syne text-white/55 leading-relaxed max-w-5xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
             {t.rich('subHeading1', richAccent)} {t.rich('subHeading2', richAccent)}
           </p>
           <p className="mt-2.5 sm:mt-3 font-syne text-white/55 leading-relaxed max-w-3xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
