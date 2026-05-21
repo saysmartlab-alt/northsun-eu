@@ -56,9 +56,8 @@
 
 .cs-countdown {
   display: flex;
-  gap: clamp(16px, 4vw, 40px);
+  gap: clamp(12px, 3.5vw, 36px);
   align-items: flex-start;
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
 }
 
 .cs-block {
@@ -66,18 +65,18 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 2.4em;
+  width: clamp(76px, 13vw, 130px);
 }
 
 .cs-num {
   font-family: 'Syne', sans-serif;
-  font-size: 1em;
   font-weight: 800;
   color: var(--yellow);
   line-height: 1;
   width: 100%;
   text-align: center;
   font-variant-numeric: tabular-nums;
+  display: block;
 }
 
 .cs-lbl {

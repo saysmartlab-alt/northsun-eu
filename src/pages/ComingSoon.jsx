@@ -54,12 +54,20 @@ export default function ComingSoon() {
             { v: time.h, l: 'hodin' },
             { v: time.m, l: 'minut' },
             { v: time.s, l: 'sekund' },
-          ].map(({ v, l }, i) => (
-            <div key={i} className="cs-block">
-              <span className="cs-num">{String(v).padStart(2, '0')}</span>
-              <span className="cs-lbl">{l}</span>
-            </div>
-          ))}
+          ].map(({ v, l }, i) => {
+            const digits = String(v).length
+            const fs = digits >= 3
+              ? 'clamp(1.9rem, 5.3vw, 3.65rem)'
+              : 'clamp(2.8rem, 8vw, 5.5rem)'
+            return (
+              <div key={i} className="cs-block">
+                <span className="cs-num" style={{ fontSize: fs }}>
+                  {String(v).padStart(2, '0')}
+                </span>
+                <span className="cs-lbl">{l}</span>
+              </div>
+            )
+          })}
         </div>
 
         <AnimatePresence mode="wait">
