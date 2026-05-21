@@ -158,7 +158,7 @@ export default function ComingSoon() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
-            className="flex-shrink-0 self-start sm:self-auto sm:translate-y-[800px]"
+            className="flex-shrink-0 self-start sm:self-end sm:translate-y-5"
           >
             <Image
               src="/logo.svg"
@@ -166,7 +166,7 @@ export default function ComingSoon() {
               width={120}
               height={120}
               priority
-              className="w-16 sm:w-24 lg:w-32 h-auto"
+              className="w-16 sm:w-24 lg:w-32 h-auto block"
             />
           </motion.div>
         </motion.div>
