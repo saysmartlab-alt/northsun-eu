@@ -1,9 +1,13 @@
 'use client'
 
-import { useState, useEffect, FormEvent } from 'react'
+import { useState, useEffect, FormEvent, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+
+const richAccent = {
+  accent: (chunks: ReactNode) => <span className="text-yellow">{chunks}</span>,
+}
 
 const LAUNCH = new Date('2026-10-01T00:00:00')
 
@@ -96,8 +100,7 @@ export default function ComingSoon() {
             <span className="text-yellow">.</span>
           </h1>
           <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-2xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
-            {t('subHeading1')}
-            <span className="ml-4 sm:ml-6">{t('subHeading2')}</span>
+            {t.rich('subHeading1', richAccent)} {t.rich('subHeading2', richAccent)}
           </p>
           <p className="mt-2.5 sm:mt-3 font-syne text-white/55 leading-relaxed max-w-3xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
             {t('services')}
