@@ -105,27 +105,19 @@ export default function ComingSoon() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-          className="flex flex-wrap items-start gap-x-3 gap-y-5 sm:gap-x-5"
+          className="flex items-start gap-x-2 sm:gap-x-4 lg:gap-x-6"
+          style={{ fontSize: 'clamp(2.2rem, 7.5vw, 6rem)' }}
         >
-          {units.map(({ v, l }, i) => {
-            const digits = String(v).length
-            const numberSize =
-              digits >= 3 ? 'clamp(3rem, 9vw, 7rem)' : 'clamp(4rem, 13vw, 10rem)'
-
-            return (
-              <div key={i} className="flex items-start gap-2 sm:gap-3">
-                <span
-                  className="font-syne font-extrabold leading-none tabular-nums text-yellow/85"
-                  style={{ fontSize: numberSize }}
-                >
-                  {String(v).padStart(2, '0')}
-                </span>
-                <span className="font-syne font-bold text-white text-[10px] sm:text-xs uppercase tracking-[0.18em] mt-2 sm:mt-3 lg:mt-4">
-                  {l}
-                </span>
-              </div>
-            )
-          })}
+          {units.map(({ v, l }, i) => (
+            <div key={i} className="flex items-start gap-1.5 sm:gap-2">
+              <span className="font-syne font-extrabold leading-none tabular-nums text-yellow/85 text-[1em]">
+                {String(v).padStart(2, '0')}
+              </span>
+              <span className="font-syne font-bold text-white text-[9px] sm:text-[11px] lg:text-xs uppercase tracking-[0.18em] mt-1.5 sm:mt-2 lg:mt-3 whitespace-nowrap">
+                {l}
+              </span>
+            </div>
+          ))}
         </motion.div>
 
         {/* Email form */}
