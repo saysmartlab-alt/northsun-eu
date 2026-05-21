@@ -110,8 +110,16 @@ export default function ComingSoon() {
         >
           {units.map(({ v, l }, i) => (
             <div key={i} className="flex items-start gap-1.5 sm:gap-2">
-              <span className="font-syne font-extrabold leading-none tabular-nums text-yellow/85 text-[1em]">
-                {String(v).padStart(2, '0')}
+              <span className="font-syne font-extrabold leading-none text-yellow/85 text-[1em] flex">
+                {String(v).padStart(2, '0').split('').map((d, j) => (
+                  <span
+                    key={j}
+                    className="inline-block text-center"
+                    style={{ width: '0.62em' }}
+                  >
+                    {d}
+                  </span>
+                ))}
               </span>
               <span className="font-syne font-bold text-white text-[9px] sm:text-[11px] lg:text-xs uppercase tracking-[0.18em] mt-1.5 sm:mt-2 lg:mt-3 whitespace-nowrap">
                 {l}
