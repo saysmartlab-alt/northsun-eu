@@ -74,7 +74,7 @@ export default function ComingSoon() {
             {t('heading')}
             <span className="text-yellow">.</span>
           </h1>
-          <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-2xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
+          <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-5xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
             {t.rich('subHeading1', richAccent)} {t.rich('subHeading2', richAccent)}
           </p>
           <p className="mt-2.5 sm:mt-3 font-syne text-white/55 leading-relaxed max-w-3xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
@@ -102,68 +102,69 @@ export default function ComingSoon() {
           ))}
         </motion.div>
 
-        {/* Email form */}
+        {/* Email form + logo row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="mt-10 sm:mt-14 w-full max-w-md"
+          className="mt-10 sm:mt-14 w-full flex items-center justify-between gap-6"
         >
-          <AnimatePresence mode="wait">
-            {!sent ? (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-                className="flex max-[500px]:flex-col"
-              >
-                <input
-                  type="email"
-                  placeholder={t('emailPlaceholder')}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 px-5 py-3.5 bg-white/[0.06] border border-white/[0.14] border-r-0 rounded-l-md max-[500px]:rounded-l-md max-[500px]:rounded-tr-md max-[500px]:border-r max-[500px]:border-b-0 text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09]"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-r-md max-[500px]:rounded-r-md max-[500px]:rounded-bl-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
+          <div className="w-full max-w-md">
+            <AnimatePresence mode="wait">
+              {!sent ? (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
+                  className="flex max-[500px]:flex-col"
                 >
-                  {t('submitButton')}
-                </button>
-              </motion.form>
-            ) : (
-              <motion.p
-                key="thanks"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="font-syne font-semibold text-[1rem] text-yellow"
-              >
-                {t('thanksMessage')}
-              </motion.p>
-            )}
-          </AnimatePresence>
+                  <input
+                    type="email"
+                    placeholder={t('emailPlaceholder')}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 px-5 py-3.5 bg-white/[0.06] border border-white/[0.14] border-r-0 rounded-l-md max-[500px]:rounded-l-md max-[500px]:rounded-tr-md max-[500px]:border-r max-[500px]:border-b-0 text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09]"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-r-md max-[500px]:rounded-r-md max-[500px]:rounded-bl-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
+                  >
+                    {t('submitButton')}
+                  </button>
+                </motion.form>
+              ) : (
+                <motion.p
+                  key="thanks"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="font-syne font-semibold text-[1rem] text-yellow"
+                >
+                  {t('thanksMessage')}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
+            className="flex-shrink-0"
+          >
+            <Image
+              src="/logo.svg"
+              alt="NorthSun"
+              width={120}
+              height={120}
+              priority
+              className="w-12 sm:w-14 h-auto"
+            />
+          </motion.div>
         </motion.div>
       </div>
-
-      {/* Logo — bottom right */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
-        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 lg:bottom-14 lg:right-14 z-20"
-      >
-        <Image
-          src="/logo.svg"
-          alt="NorthSun"
-          width={220}
-          height={220}
-          priority
-          className="w-24 sm:w-36 lg:w-52 h-auto"
-        />
-      </motion.div>
     </div>
   )
 }
