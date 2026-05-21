@@ -10,7 +10,7 @@ const richAccent = {
   accent: (chunks: ReactNode) => <span className="text-yellow">{chunks}</span>,
 }
 
-const LAUNCH = new Date('2026-10-01T00:00:00')
+const LAUNCH = new Date('2026-07-02T00:00:00')
 
 type TimeLeft = { d: number; h: number; m: number; s: number }
 
@@ -78,7 +78,7 @@ export default function ComingSoon() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="mb-10 sm:mb-14 max-w-5xl"
         >
-          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter text-[clamp(2.25rem,11vw,9rem)] break-words">
+          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.75rem,8vw,7rem)]">
             {t('heading')}
             <span className="text-yellow">.</span>
           </h1>
