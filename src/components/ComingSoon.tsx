@@ -62,15 +62,7 @@ export default function ComingSoon() {
       />
 
       {/* Content layout — vertically centered */}
-      <div
-        className="relative z-10 min-h-screen flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
-        style={{
-          paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
-          paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
-          paddingTop: 'max(2.5rem, env(safe-area-inset-top))',
-          paddingBottom: 'max(2.5rem, env(safe-area-inset-bottom))',
-        }}
-      >
+      <div className="relative z-10 min-h-screen flex flex-col justify-center px-8 py-10 sm:px-20 sm:py-16 lg:px-32 lg:py-20">
         {/* Heading + subheading + services */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,9 +70,13 @@ export default function ComingSoon() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="mb-10 sm:mb-14 max-w-5xl"
         >
-          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.75rem,8vw,7rem)]">
-            {t('heading')}
-            <span className="text-yellow">.</span>
+          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.75rem,8vw,9rem)]">
+            <span className="inline sm:block">{t('headingLine1')}</span>
+            <span className="inline sm:block">
+              {' '}
+              {t('headingLine2')}
+              <span className="text-yellow">.</span>
+            </span>
           </h1>
           <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-5xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
             {t.rich('subHeading1', richAccent)} {t.rich('subHeading2', richAccent)}

@@ -6,10 +6,11 @@
     "ogDescription": "Neděláme nejlevněji, děláme nejlépe."
   },
   "ComingSoon": {
-    "heading": "Brzy spouštíme",
+    "headingLine1": "Brzy",
+    "headingLine2": "spouštíme",
     "subHeading1": "<accent>Premium</accent> solární EPC z Česka, Švédska a Norska.",
     "subHeading2": "<accent>Neděláme</accent> nejlevněji, děláme nejlépe.",
-    "services": "Rezidence · solární parky · solární fasády · carporty · plovoucí FPV · opravy",
+    "services": "rezidence · solární parky · solární fasády · carporty · plovoucí FPV · opravy",
     "days": "dní",
     "hours": "hodin",
     "minutes": "minut",

@@ -6,10 +6,11 @@
     "ogDescription": "We don't do it cheapest, we do it best."
   },
   "ComingSoon": {
-    "heading": "Launching soon",
+    "headingLine1": "Launching",
+    "headingLine2": "soon",
     "subHeading1": "<accent>Premium</accent> solar EPC from Czechia, Sweden and Norway.",
     "subHeading2": "<accent>Built</accent> best, not cheapest.",
-    "services": "Residential · solar parks · solar facades · carports · floating PV · repairs",
+    "services": "residential · solar parks · solar facades · carports · floating PV · repairs",
     "days": "days",
     "hours": "hours",
     "minutes": "minutes",
