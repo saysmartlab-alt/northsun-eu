@@ -1,0 +1,176 @@
+.cs {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(252, 192, 19, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cs-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 36px;
+  z-index: 1;
+  width: 100%;
+  max-width: 780px;
+}
+
+.cs-logo {
+  width: 180px;
+  height: auto;
+}
+
+.cs-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.cs-sub {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+}
+
+.cs-countdown {
+  display: flex;
+  gap: clamp(20px, 5vw, 56px);
+  align-items: flex-start;
+}
+
+.cs-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-num {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 800;
+  color: var(--yellow);
+  line-height: 1;
+  min-width: 2ch;
+  text-align: center;
+}
+
+.cs-lbl {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.cs-form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.cs-form input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cs-form input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cs-form input:focus {
+  border-color: rgba(252, 192, 19, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.cs-form button {
+  padding: 15px 26px;
+  background: var(--yellow);
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cs-form button:hover {
+  background: #ffd24d;
+}
+
+.cs-form button:active {
+  transform: scale(0.98);
+}
+
+.cs-thanks {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--yellow);
+  letter-spacing: 0.01em;
+}
+
+.cs-footer {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.06em;
+  z-index: 1;
+}
+
+@media (max-width: 500px) {
+  .cs-form {
+    flex-direction: column;
+  }
+
+  .cs-form input {
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .cs-form button {
+    border-radius: 0 0 6px 6px;
+  }
+}
