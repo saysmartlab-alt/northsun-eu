@@ -97,9 +97,7 @@ export default function ComingSoon() {
           </h1>
           <p className="mt-5 sm:mt-7 font-syne text-white/55 leading-relaxed max-w-2xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
             {t('subHeading1')}
-          </p>
-          <p className="mt-4 sm:mt-6 font-syne text-white/55 leading-relaxed max-w-2xl text-[clamp(0.95rem,1.6vw,1.15rem)]">
-            {t('subHeading2')}
+            <span className="ml-4 sm:ml-6">{t('subHeading2')}</span>
           </p>
         </motion.div>
 
