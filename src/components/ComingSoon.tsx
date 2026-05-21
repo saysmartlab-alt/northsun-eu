@@ -70,7 +70,7 @@ export default function ComingSoon() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="mb-10 sm:mb-14 max-w-5xl"
         >
-          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.75rem,8vw,9rem)]">
+          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.4rem,6.4vw,7.2rem)]">
             <span className="inline sm:block">{t('headingLine1')}</span>
             <span className="inline sm:block">
               {' '}
