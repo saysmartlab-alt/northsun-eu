@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Syne } from 'next/font/google'
 import { routing } from '@/i18n/routing'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 import '../globals.css'
 
 const syne = Syne({
@@ -62,7 +63,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={syne.variable}>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <LanguageSwitcher />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )
