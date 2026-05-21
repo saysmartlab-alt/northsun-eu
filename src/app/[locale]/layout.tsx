@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { Syne } from 'next/font/google'
+import { Syne, JetBrains_Mono } from 'next/font/google'
 import { routing } from '@/i18n/routing'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import '../globals.css'
@@ -11,6 +11,13 @@ const syne = Syne({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-syne',
+  display: 'swap',
+})
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -61,7 +68,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
 
   return (
-    <html lang={locale} className={syne.variable}>
+    <html lang={locale} className={`${syne.variable} ${jetbrains.variable}`}>
       <body>
         <NextIntlClientProvider>
           <LanguageSwitcher />

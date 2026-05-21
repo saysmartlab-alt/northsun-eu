@@ -23,6 +23,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-syne)', 'system-ui', 'sans-serif'],
         syne: ['var(--font-syne)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
         tightest: '-0.04em',
