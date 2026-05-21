@@ -158,7 +158,7 @@ export default function ComingSoon() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
-            className="flex-shrink-0 self-start sm:self-auto sm:translate-y-[100px]"
+            className="flex-shrink-0 self-start sm:self-auto sm:translate-y-[200px]"
           >
             <Image
               src="/logo.svg"
