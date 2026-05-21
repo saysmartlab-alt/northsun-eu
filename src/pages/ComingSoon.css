@@ -39,11 +39,12 @@
 
 .cs-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2.8rem, 9vw, 6rem);
+  font-size: clamp(2rem, 7vw, 6rem);
   font-weight: 800;
   color: var(--white);
   line-height: 1.05;
   letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 
 .cs-sub {
@@ -64,6 +65,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: clamp(68px, 14vw, 120px);
 }
 
 .cs-num {
@@ -72,7 +74,7 @@
   font-weight: 800;
   color: var(--yellow);
   line-height: 1;
-  min-width: 2ch;
+  width: 100%;
   text-align: center;
 }
 
