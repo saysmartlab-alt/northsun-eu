@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #030057;
+  --yellow: #FCC013;
+  --white: #ffffff;
+  --gray-light: #F3F3F3;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-syne), system-ui, sans-serif;
+  line-height: 1.6;
+}
