@@ -70,30 +70,14 @@ export default function ComingSoon() {
         }}
       />
 
-      {/* Content layout */}
-      <div className="relative z-10 min-h-screen flex flex-col px-6 py-10 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
-        {/* Top: Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Image
-            src="/logo.svg"
-            alt="NorthSun"
-            width={80}
-            height={80}
-            priority
-            className="w-12 sm:w-16 h-auto"
-          />
-        </motion.div>
-
-        {/* Middle: Heading (pushed down with mt-auto) */}
+      {/* Content layout — vertically centered */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+        {/* Heading + subheading + services */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
-          className="mt-auto mb-10 sm:mb-14 max-w-5xl"
+          className="mb-10 sm:mb-14 max-w-5xl"
         >
           <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter text-[clamp(2.8rem,11vw,9rem)]">
             {t('heading')}
@@ -172,6 +156,23 @@ export default function ComingSoon() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Logo — bottom right */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
+        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 lg:bottom-14 lg:right-14 z-20"
+      >
+        <Image
+          src="/logo.svg"
+          alt="NorthSun"
+          width={220}
+          height={220}
+          priority
+          className="w-24 sm:w-36 lg:w-52 h-auto"
+        />
+      </motion.div>
     </div>
   )
 }
