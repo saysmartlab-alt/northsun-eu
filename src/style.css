@@ -1,0 +1,17 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #9b5de5;
+  --purple-light: #b97ff8;
+  --dark: #141414;
+  --white: #ffffff;
+  --gray: rgba(255,255,255,0.5);
+  --section-gap: 80px;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
