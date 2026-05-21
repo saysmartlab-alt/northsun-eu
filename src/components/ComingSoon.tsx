@@ -4,6 +4,7 @@ import { useState, useEffect, FormEvent, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import BackgroundSlideshow from './BackgroundSlideshow'
 
 const richAccent = {
   accent: (chunks: ReactNode) => <span className="text-yellow">{chunks}</span>,
@@ -49,22 +50,12 @@ export default function ComingSoon() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#050018]">
-      {/* Atmospheric background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            radial-gradient(ellipse at 85% 15%, rgba(252, 192, 19, 0.18) 0%, transparent 45%),
-            radial-gradient(ellipse at 15% 85%, rgba(0, 74, 173, 0.35) 0%, transparent 55%),
-            radial-gradient(ellipse at 50% 50%, rgba(3, 0, 87, 0.6) 0%, transparent 70%),
-            linear-gradient(135deg, #030057 0%, #0a0824 50%, #050018 100%)
-          `,
-        }}
-      />
+      {/* Animated background slideshow */}
+      <BackgroundSlideshow />
 
       {/* Subtle grain overlay */}
       <div
-        className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none z-[1]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E")`,
         }}
