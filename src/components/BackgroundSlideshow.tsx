@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 
 const IMAGES = ['/hero/1.jpg', '/hero/2.jpg', '/hero/3.jpg']
@@ -17,14 +17,16 @@ const KEN_BURNS = [
 
 export default function BackgroundSlideshow() {
   const [index, setIndex] = useState(0)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (prefersReducedMotion) return
     const tick = setInterval(
       () => setIndex((i) => (i + 1) % IMAGES.length),
       INTERVAL_MS
     )
     return () => clearInterval(tick)
-  }, [])
+  }, [prefersReducedMotion])
 
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -38,10 +40,10 @@ export default function BackgroundSlideshow() {
           className="absolute inset-0"
         >
           <motion.div
-            initial={KEN_BURNS[index % KEN_BURNS.length].from}
-            animate={KEN_BURNS[index % KEN_BURNS.length].to}
+            initial={prefersReducedMotion ? false : KEN_BURNS[index % KEN_BURNS.length].from}
+            animate={prefersReducedMotion ? { scale: 1, x: 0, y: 0 } : KEN_BURNS[index % KEN_BURNS.length].to}
             transition={{
-              duration: (INTERVAL_MS + FADE_MS * 2) / 1000,
+              duration: prefersReducedMotion ? 0 : (INTERVAL_MS + FADE_MS * 2) / 1000,
               ease: 'linear',
             }}
             className="absolute inset-0"
@@ -52,8 +54,8 @@ export default function BackgroundSlideshow() {
               fill
               priority={index === 0}
               className="object-cover"
-              sizes="100vw"
-              quality={85}
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 100vw"
+              quality={75}
             />
           </motion.div>
         </motion.div>

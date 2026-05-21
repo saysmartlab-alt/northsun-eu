@@ -62,7 +62,15 @@ export default function ComingSoon() {
       />
 
       {/* Content layout — vertically centered */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+      <div
+        className="relative z-10 min-h-screen flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
+        style={{
+          paddingLeft: 'max(1.5rem, env(safe-area-inset-left))',
+          paddingRight: 'max(1.5rem, env(safe-area-inset-right))',
+          paddingTop: 'max(2.5rem, env(safe-area-inset-top))',
+          paddingBottom: 'max(2.5rem, env(safe-area-inset-bottom))',
+        }}
+      >
         {/* Heading + subheading + services */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +78,7 @@ export default function ComingSoon() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="mb-10 sm:mb-14 max-w-5xl"
         >
-          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter text-[clamp(2.8rem,11vw,9rem)]">
+          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter text-[clamp(2.25rem,11vw,9rem)] break-words">
             {t('heading')}
             <span className="text-yellow">.</span>
           </h1>
@@ -87,8 +95,8 @@ export default function ComingSoon() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-          className="flex items-start gap-x-2 sm:gap-x-4 lg:gap-x-6"
-          style={{ fontSize: 'clamp(2.2rem, 7.5vw, 6rem)' }}
+          className="flex items-start gap-x-2 sm:gap-x-4 lg:gap-x-6 flex-wrap gap-y-3"
+          style={{ fontSize: 'clamp(1.75rem, 7.5vw, 6rem)' }}
         >
           {units.map(({ v, l }, i) => (
             <div key={i} className="flex items-start gap-1.5 sm:gap-2">
@@ -107,7 +115,7 @@ export default function ComingSoon() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="mt-10 sm:mt-14 w-full flex items-center justify-between gap-6"
+          className="mt-10 sm:mt-14 w-full flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-6"
         >
           <div className="w-full max-w-md">
             <AnimatePresence mode="wait">
@@ -117,7 +125,7 @@ export default function ComingSoon() {
                   onSubmit={handleSubmit}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.25 }}
-                  className="flex max-[500px]:flex-col"
+                  className="flex flex-col sm:flex-row"
                 >
                   <input
                     type="email"
@@ -125,11 +133,13 @@ export default function ComingSoon() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 px-5 py-3.5 bg-white/[0.06] border border-white/[0.14] border-r-0 rounded-l-md max-[500px]:rounded-l-md max-[500px]:rounded-tr-md max-[500px]:border-r max-[500px]:border-b-0 text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09]"
+                    inputMode="email"
+                    autoComplete="email"
+                    className="flex-1 min-w-0 px-5 py-4 sm:py-3.5 bg-white/[0.06] border border-white/[0.14] sm:border-r-0 rounded-md sm:rounded-l-md sm:rounded-r-none text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09]"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-r-md max-[500px]:rounded-r-md max-[500px]:rounded-bl-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
+                    className="mt-2 sm:mt-0 min-h-[48px] px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-md sm:rounded-l-none sm:rounded-r-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
                   >
                     {t('submitButton')}
                   </button>
@@ -140,7 +150,7 @@ export default function ComingSoon() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="font-syne font-semibold text-[1rem] text-yellow"
+                  className="font-syne font-semibold text-[1rem] text-yellow py-2"
                 >
                   {t('thanksMessage')}
                 </motion.p>
@@ -152,7 +162,7 @@ export default function ComingSoon() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
-            className="flex-shrink-0 -translate-y-6 sm:-translate-y-10"
+            className="flex-shrink-0 self-start sm:self-auto sm:-translate-y-10"
           >
             <Image
               src="/logo.svg"
@@ -160,7 +170,7 @@ export default function ComingSoon() {
               width={120}
               height={120}
               priority
-              className="w-20 sm:w-24 lg:w-32 h-auto"
+              className="w-16 sm:w-24 lg:w-32 h-auto"
             />
           </motion.div>
         </motion.div>
