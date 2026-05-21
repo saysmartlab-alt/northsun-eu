@@ -160,7 +160,7 @@ export default function ComingSoon() {
               width={120}
               height={120}
               priority
-              className="w-12 sm:w-14 h-auto"
+              className="w-20 sm:w-24 lg:w-32 h-auto"
             />
           </motion.div>
         </motion.div>
