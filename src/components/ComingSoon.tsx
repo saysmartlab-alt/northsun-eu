@@ -70,7 +70,7 @@ export default function ComingSoon() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="mb-10 sm:mb-14 max-w-5xl"
         >
-          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.8rem,9vw,3.2rem)] sm:text-[clamp(2.5rem,7vw,7.9rem)]">
+          <h1 className="font-syne font-extrabold text-white uppercase leading-[0.92] tracking-tighter whitespace-nowrap text-[clamp(1.5rem,7vw,2.7rem)] sm:text-[clamp(2.5rem,7vw,7.9rem)]">
             <span className="block">{t('headingLine1')}</span>
             <span className="block">
               {t('headingLine2')}
