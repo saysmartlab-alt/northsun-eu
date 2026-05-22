@@ -155,8 +155,8 @@ export default function ComingSoon() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: -7 }}
-            animate={{ opacity: 1, scale: 1, y: -7 }}
+            initial={{ opacity: 0, scale: 0.92, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 20 }}
             transition={{ duration: 0.9, delay: 0.8, ease: 'easeOut' }}
             className="flex-shrink-0 self-start sm:self-end"
           >
