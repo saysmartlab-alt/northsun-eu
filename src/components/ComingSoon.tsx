@@ -2,7 +2,7 @@
 
 import { useState, useEffect, FormEvent, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import BackgroundSlideshow from './BackgroundSlideshow'
 
@@ -27,18 +27,37 @@ function getTime(): TimeLeft {
 
 export default function ComingSoon() {
   const t = useTranslations('ComingSoon')
+  const locale = useLocale()
   const [time, setTime] = useState<TimeLeft>(getTime())
   const [email, setEmail] = useState('')
+  const [hp, setHp] = useState('')
   const [sent, setSent] = useState(false)
+  const [error, setError] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     const tick = setInterval(() => setTime(getTime()), 1000)
     return () => clearInterval(tick)
   }, [])
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (email) setSent(true)
+    if (!email || submitting) return
+    setSubmitting(true)
+    setError(false)
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, locale, hp }),
+      })
+      if (!res.ok) throw new Error('submit_failed')
+      setSent(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const units: Array<{ v: number; l: string }> = [
@@ -120,24 +139,44 @@ export default function ComingSoon() {
                   onSubmit={handleSubmit}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.25 }}
-                  className="flex flex-col sm:flex-row"
+                  className="flex flex-col"
                 >
-                  <input
-                    type="email"
-                    placeholder={t('emailPlaceholder')}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    inputMode="email"
-                    autoComplete="email"
-                    className="flex-1 min-w-0 px-5 py-4 sm:py-3.5 bg-white/[0.06] border border-white/[0.14] sm:border-r-0 rounded-md sm:rounded-l-md sm:rounded-r-none text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09]"
-                  />
-                  <button
-                    type="submit"
-                    className="mt-2 sm:mt-0 min-h-[48px] px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-md sm:rounded-l-none sm:rounded-r-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98]"
-                  >
-                    {t('submitButton')}
-                  </button>
+                  <div className="flex flex-col sm:flex-row">
+                    <input
+                      type="email"
+                      placeholder={t('emailPlaceholder')}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      inputMode="email"
+                      autoComplete="email"
+                      disabled={submitting}
+                      className="flex-1 min-w-0 px-5 py-4 sm:py-3.5 bg-white/[0.06] border border-white/[0.14] sm:border-r-0 rounded-md sm:rounded-l-md sm:rounded-r-none text-white font-syne text-base outline-none transition-colors placeholder:text-white/30 focus:border-yellow/45 focus:bg-white/[0.09] disabled:opacity-60"
+                    />
+                    {/* Honeypot — hidden from real users, bots fill it */}
+                    <input
+                      type="text"
+                      name="website"
+                      value={hp}
+                      onChange={(e) => setHp(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute left-[-9999px] w-px h-px opacity-0"
+                    />
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="mt-2 sm:mt-0 min-h-[48px] px-6 py-3.5 bg-yellow text-navy font-syne font-bold text-[0.95rem] border-none rounded-md sm:rounded-l-none sm:rounded-r-md cursor-pointer whitespace-nowrap transition-all hover:bg-yellow-50 active:scale-[0.98] disabled:opacity-60 disabled:cursor-wait"
+                    >
+                      {t('submitButton')}
+                    </button>
+                  </div>
+                  {error && (
+                    <p className="mt-2 font-syne text-sm text-red-300">
+                      {t('errorMessage')}
+                    </p>
+                  )}
                 </motion.form>
               ) : (
                 <motion.p

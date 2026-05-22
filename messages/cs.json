@@ -18,6 +18,7 @@
     "emailPlaceholder": "Váš e-mail",
     "submitButton": "Informujte mě",
     "thanksMessage": "Děkujeme. Dáme vám vědět jako prvním.",
+    "errorMessage": "Něco se pokazilo, zkuste to prosím znovu.",
     "copyright": "© 2026 NorthSun"
   }
 }

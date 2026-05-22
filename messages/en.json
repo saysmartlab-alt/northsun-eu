@@ -18,6 +18,7 @@
     "emailPlaceholder": "Your email",
     "submitButton": "Notify me",
     "thanksMessage": "Thank you. We'll let you know first.",
+    "errorMessage": "Something went wrong, please try again.",
     "copyright": "© 2026 NorthSun"
   }
 }
