@@ -17,7 +17,15 @@ const KEN_BURNS = [
 
 export default function BackgroundSlideshow() {
   const [index, setIndex] = useState(0)
-  const prefersReducedMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+  const userPrefersReducedMotion = useReducedMotion()
+  // During SSR + first client paint, treat as motion-enabled so markup matches.
+  // After mount, switch to the real user preference.
+  const prefersReducedMotion = mounted && userPrefersReducedMotion
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (prefersReducedMotion) return
