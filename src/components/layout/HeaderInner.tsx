@@ -53,7 +53,10 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const prefersReducedMotion = useReducedMotion()
+
+  useEffect(() => setMounted(true), [])
 
   const navItems: NavItem[] = [
     { key: 'about', href: '#o-nas', label: texts.nav.about },
@@ -116,8 +119,10 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
       <motion.header
         role="banner"
         aria-label={texts.aria.banner}
-        initial={prefersReducedMotion ? false : { y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={false}
+        animate={
+          mounted && !prefersReducedMotion ? { y: 0, opacity: 1 } : false
+        }
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           'fixed inset-x-0 top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-200 ease-out',
@@ -139,6 +144,7 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
               height={64}
               priority
               className="h-14 lg:h-16 w-auto"
+              style={{ width: 'auto' }}
             />
           </a>
 

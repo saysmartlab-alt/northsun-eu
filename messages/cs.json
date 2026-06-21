@@ -141,7 +141,7 @@
   },
   "Services": {
     "label": "Co děláme",
-    "title": "6 řešení, jeden\nengineering tým",
+    "title": "<num>6</num> řešení, jeden\nengineering tým",
     "lead": "Od rodinných domů po utility-scale parky.\nVždy s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
@@ -202,71 +202,86 @@
   "References": {
     "label": "Naše práce",
     "title": "Premium projekty napříč Evropou",
-    "lead": "Vlastní realizace napříč Evropou.\nA partnerské projekty s předními výrobci v oboru.",
+    "lead": "Vlastní realizace napříč Evropou a partnerské projekty s předními výrobci v oboru.\nKaždý projekt s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
+        "slug": "walraven-nl",
         "flag": "NL",
         "location": "Nizozemsko",
         "title": "Walraven",
-        "description": "Solární fasáda a střecha pro průmyslový areál Walraven, kombinovaná instalace BIPV a klasické rooftop FV.",
+        "year": "2023",
+        "type": "Komerční střecha",
+        "description": "Komerční solární střecha pro průmyslový areál Walraven v Nizozemsku.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&h=600&fit=crop&q=80",
-        "alt": "Solární fasáda a střecha na průmyslovém objektu"
+        "image": "/images/projects/walraven/cover.png",
+        "alt": "Solární střecha na průmyslovém objektu Walraven"
       },
       {
-        "flag": "HR",
-        "location": "Jižní Evropa",
-        "title": "Utility-scale solární park",
-        "description": "Velkokapacitní park s montovanou konstrukcí, navržený pro maximální výnos v jižních podmínkách.",
-        "tag": "own",
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop&q=80",
-        "alt": "Solární park v jižní krajině za západu slunce"
-      },
-      {
+        "slug": "solar-roof-norway",
         "flag": "NO",
-        "location": "Norsko",
-        "title": "Solární park",
-        "description": "Park ve skandinávských podmínkách s důrazem na statiku konstrukce a celoroční výnos.",
+        "location": "Norsko (Oslo, Hammar)",
+        "title": "Komerční solární střecha",
+        "year": "2024",
+        "power": "1–2 MW",
+        "type": "Komerční střecha",
+        "description": "Komerční solární instalace v norských klimatických podmínkách. K projektu je dokumentární video.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&q=80",
-        "alt": "Skandinávská krajina s fjordem a horami"
-      },
-      {
-        "flag": "NO",
-        "location": "Norsko",
-        "title": "Střešní instalace",
-        "description": "Rooftop fotovoltaika přizpůsobená severským klimatickým podmínkám a sněhovému zatížení.",
-        "tag": "own",
+        "videoUrl": "https://www.youtube.com/watch?v=YvpCblroTYY",
         "image": "/hero/2.jpg",
-        "alt": "Severská střecha se solárními panely v zimě"
+        "alt": "Komerční solární střecha v Norsku"
       },
       {
-        "flag": "EU",
-        "location": "Evropa",
-        "title": "Plovoucí elektrárna FPV",
-        "description": "Realizace plovoucí fotovoltaiky na vodní ploše bez nutnosti záboru zemědělské půdy.",
-        "tag": "own",
-        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&q=80",
-        "alt": "Solární panely na vodní ploše"
-      },
-      {
+        "slug": "floating-solar-sweden",
         "flag": "SE",
         "location": "Švédsko",
-        "title": "Sunsurf, plovoucí FPV",
-        "description": "Společný projekt plovoucí fotovoltaiky a piling-free instalace na bývalé skládce.",
-        "tag": "partner-sunsurf",
-        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&h=600&fit=crop&q=80",
-        "alt": "Plovoucí solární elektrárna na vodní nádrži"
+        "title": "Plovoucí solární elektrárna",
+        "type": "FPV (plovoucí)",
+        "description": "Plovoucí solární elektrárna s ocelovou lávkovou konstrukcí na vodní ploše ve Švédsku.",
+        "tag": "own-with-sunsurf",
+        "image": "/images/projects/floating-solar/cover.jpg",
+        "alt": "Plovoucí solární elektrárna ve Švédsku"
       }
     ],
     "ctaViewAll": "Všechny reference",
     "tagOwn": "Vlastní realizace",
+    "tagOwnWithSunsurf": "Vlastní realizace ve spolupráci se Sunsurf",
     "tagPartnerSunsurf": "Ve spolupráci se Sunsurf"
   },
   "Partners": {
     "label": "Partneři a certifikace",
-    "title": "Spolupracujeme s předními výrobci v oboru",
-    "lead": "Certifikát PanelClaw, partnerství se Sunsurf a Solar SK. Naši dodavatelé vědí, koho do projektů pouštějí."
+    "title": "Spolupracujeme s výrobci v oboru",
+    "lead": "Certifikát PanelClaw, partnerství se Sunsurf a Solar SK.\nNaši dodavatelé vědí, koho do projektů pouštějí.",
+    "items": [
+      {
+        "slug": "panelclaw",
+        "name": "PanelClaw",
+        "country": "USA",
+        "role": "Mounting systémy",
+        "description": "Mounting systémy pro komerční fotovoltaiku. Jsme certifikovaní za úspěšnou instalaci.",
+        "logo": "/images/partners/panelclaw/logo.jpeg",
+        "logoAlt": "PanelClaw logo",
+        "certUrl": "/images/certifications/panelclaw-cert.png",
+        "certLabel": "Zobrazit certifikát"
+      },
+      {
+        "slug": "sunsurf",
+        "name": "Sunsurf",
+        "country": "Švédsko",
+        "role": "Floating PV a piling-free",
+        "description": "Plovoucí fotovoltaika a piling-free instalace na bývalých skládkách. Spolupráce na realizacích v severní Evropě.",
+        "logo": "/images/partners/sunsurf/logo.svg",
+        "logoAlt": "Sunsurf logo"
+      },
+      {
+        "slug": "solarsk",
+        "name": "Solar SK",
+        "country": "Ukrajina",
+        "role": "Carport mounting",
+        "description": "Carport mounting systems pro komerční a rezidenční projekty. Reference v Ukrajině a EU.",
+        "logo": "/images/partners/solarsk/logo.png",
+        "logoAlt": "Solar SK logo"
+      }
+    ]
   },
   "Contact": {
     "label": "Kontakt",

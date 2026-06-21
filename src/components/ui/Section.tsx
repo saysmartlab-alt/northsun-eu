@@ -17,7 +17,7 @@ export function Section({
 }: SectionProps) {
   return (
     <Tag
-      className={cn(!bare && 'py-24 md:py-32 lg:py-40', className)}
+      className={cn(!bare && 'py-24 md:py-32 lg:py-40 2xl:py-48', className)}
       {...rest}
     >
       {children}

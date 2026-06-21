@@ -141,7 +141,7 @@
   },
   "Services": {
     "label": "What we do",
-    "title": "6 solutions, one\nengineering team",
+    "title": "<num>6</num> solutions, one\nengineering team",
     "lead": "From family homes to utility-scale parks.\nAlways with in-house documentation and structural design.",
     "items": [
       {
@@ -202,71 +202,86 @@
   "References": {
     "label": "Our work",
     "title": "Premium projects across Europe",
-    "lead": "Own deliveries across Europe.\nAnd partner projects with leading manufacturers in the industry.",
+    "lead": "Own deliveries across Europe and partner projects with leading manufacturers in the industry.\nEvery project carries our own engineering documentation and structural design.",
     "items": [
       {
+        "slug": "walraven-nl",
         "flag": "NL",
         "location": "Netherlands",
         "title": "Walraven",
-        "description": "Solar facade and rooftop for the Walraven industrial site, combining BIPV with a conventional rooftop PV system.",
+        "year": "2023",
+        "type": "Commercial rooftop",
+        "description": "Commercial solar rooftop for the Walraven industrial site in the Netherlands.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&h=600&fit=crop&q=80",
-        "alt": "Solar facade and rooftop on an industrial building"
+        "image": "/images/projects/walraven/cover.png",
+        "alt": "Solar rooftop on the Walraven industrial building"
       },
       {
-        "flag": "HR",
-        "location": "Southern Europe",
-        "title": "Utility-scale solar park",
-        "description": "Large-scale park with mounted structures, engineered for maximum yield in southern climate conditions.",
-        "tag": "own",
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop&q=80",
-        "alt": "Utility-scale solar park at sunset in southern landscape"
-      },
-      {
+        "slug": "solar-roof-norway",
         "flag": "NO",
-        "location": "Norway",
-        "title": "Solar park",
-        "description": "A park built for Scandinavian conditions with structural design tuned to local loads and year-round yield.",
+        "location": "Norway (Oslo, Hammar)",
+        "title": "Commercial solar rooftop",
+        "year": "2024",
+        "power": "1–2 MW",
+        "type": "Commercial rooftop",
+        "description": "Commercial solar installation in Norwegian climate conditions. Documentary video available.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&q=80",
-        "alt": "Scandinavian fjord landscape with mountains"
-      },
-      {
-        "flag": "NO",
-        "location": "Norway",
-        "title": "Rooftop installation",
-        "description": "Rooftop photovoltaics adapted to Nordic climate and snow loading.",
-        "tag": "own",
+        "videoUrl": "https://www.youtube.com/watch?v=YvpCblroTYY",
         "image": "/hero/2.jpg",
-        "alt": "Nordic rooftop with solar panels in winter"
+        "alt": "Commercial solar rooftop in Norway"
       },
       {
-        "flag": "EU",
-        "location": "Europe",
-        "title": "Floating PV plant",
-        "description": "A floating photovoltaic installation on a water surface, with no need to occupy farmland.",
-        "tag": "own",
-        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&q=80",
-        "alt": "Solar panels on a water surface"
-      },
-      {
+        "slug": "floating-solar-sweden",
         "flag": "SE",
         "location": "Sweden",
-        "title": "Sunsurf, floating PV",
-        "description": "A joint project covering floating PV and piling-free installation on a former landfill site.",
-        "tag": "partner-sunsurf",
-        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&h=600&fit=crop&q=80",
-        "alt": "Floating solar power plant on a reservoir"
+        "title": "Floating solar power plant",
+        "type": "FPV (floating)",
+        "description": "Floating solar power plant with a steel walkway construction on a water surface in Sweden.",
+        "tag": "own-with-sunsurf",
+        "image": "/images/projects/floating-solar/cover.jpg",
+        "alt": "Floating solar power plant in Sweden"
       }
     ],
     "ctaViewAll": "All references",
     "tagOwn": "Own project",
+    "tagOwnWithSunsurf": "Own project in partnership with Sunsurf",
     "tagPartnerSunsurf": "In partnership with Sunsurf"
   },
   "Partners": {
     "label": "Partners and certifications",
-    "title": "We work with leading manufacturers in the industry",
-    "lead": "A PanelClaw certification, a partnership with Sunsurf and Solar SK. Our suppliers know who they're letting into their projects."
+    "title": "We work with manufacturers in the industry",
+    "lead": "A PanelClaw certification, a partnership with Sunsurf and Solar SK.\nOur suppliers know who they're letting into their projects.",
+    "items": [
+      {
+        "slug": "panelclaw",
+        "name": "PanelClaw",
+        "country": "USA",
+        "role": "Mounting systems",
+        "description": "Mounting systems for commercial photovoltaics. We are certified for successful installation.",
+        "logo": "/images/partners/panelclaw/logo.jpeg",
+        "logoAlt": "PanelClaw logo",
+        "certUrl": "/images/certifications/panelclaw-cert.png",
+        "certLabel": "View certificate"
+      },
+      {
+        "slug": "sunsurf",
+        "name": "Sunsurf",
+        "country": "Sweden",
+        "role": "Floating PV and piling-free",
+        "description": "Floating photovoltaics and piling-free installations on former landfill sites. Joint deliveries in northern Europe.",
+        "logo": "/images/partners/sunsurf/logo.svg",
+        "logoAlt": "Sunsurf logo"
+      },
+      {
+        "slug": "solarsk",
+        "name": "Solar SK",
+        "country": "Ukraine",
+        "role": "Carport mounting",
+        "description": "Carport mounting systems for commercial and residential projects. References in Ukraine and the EU.",
+        "logo": "/images/partners/solarsk/logo.png",
+        "logoAlt": "Solar SK logo"
+      }
+    ]
   },
   "Contact": {
     "label": "Contact",

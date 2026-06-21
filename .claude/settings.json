@@ -10,7 +10,8 @@
       "Bash(curl -s \"http://localhost:3000/_next/static/css/app/%5Blocale%5D/layout.css?v=1782050824008\")",
       "Skill(update-config)",
       "Skill(update-config:*)",
-      "Read(//c/Users/spiso/OneDrive/Dokumenty/northsun-eu/src/components/sections/**)"
+      "Read(//c/Users/spiso/OneDrive/Dokumenty/northsun-eu/src/components/sections/**)",
+      "Read(//c/Users/spiso/Downloads/northsun-images-structure/public/images/**)"
     ]
   }
 }

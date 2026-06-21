@@ -4,6 +4,7 @@ import { About } from '@/components/sections/About'
 import { Services } from '@/components/sections/Services'
 import { Why } from '@/components/sections/Why'
 import { References } from '@/components/sections/References'
+import { Partners } from '@/components/sections/Partners'
 import { Contact } from '@/components/sections/Contact'
 
 export default async function Home({
@@ -21,6 +22,7 @@ export default async function Home({
       <Services locale={locale} />
       <References locale={locale} />
       <Why locale={locale} />
+      <Partners locale={locale} />
       <Contact locale={locale} />
     </main>
   )

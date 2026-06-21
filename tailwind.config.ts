@@ -40,15 +40,15 @@ const config: Config = {
         // Semantic typography scale (from ui-designer.md)
         // tuples: [size, { lineHeight, letterSpacing, fontWeight }]
         display: [
-          'clamp(2.5rem, 7.5vw, 6rem)',
+          'clamp(2.25rem, 5.5vw, 5.25rem)',
           { lineHeight: '1.02', letterSpacing: '-0.025em', fontWeight: '800' },
         ],
         h1: [
-          'clamp(2.25rem, 5vw, 4.5rem)',
+          'clamp(2.25rem, 4.5vw, 5rem)',
           { lineHeight: '1.05', letterSpacing: '-0.025em', fontWeight: '800' },
         ],
         h2: [
-          'clamp(1.75rem, 3.5vw, 3rem)',
+          'clamp(1.75rem, 3.5vw, 3.5rem)',
           { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '800' },
         ],
         h3: [

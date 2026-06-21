@@ -1,37 +1,30 @@
-import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Badge } from '@/components/ui/Badge'
-import { Flag } from '@/components/ui/Flag'
+import { ReferenceCardMedia } from './ReferenceCardMedia'
 
 interface ReferencesProps {
   locale: string
 }
 
 type FlagCode = 'CZ' | 'SE' | 'NO' | 'NL' | 'HR' | 'DE' | 'BE' | 'EU'
-type RefTag = 'own' | 'partner-sunsurf'
+type RefTag = 'own' | 'own-with-sunsurf' | 'partner-sunsurf'
 
 interface ReferenceItem {
+  slug: string
   flag: FlagCode
   location: string
   title: string
+  year?: string
+  power?: string
+  type?: string
   description: string
   tag: RefTag
+  videoUrl?: string
   image: string
   alt: string
-}
-
-function slugify(title: string, idx: number): string {
-  // Strip diacritics, lowercase, ascii-only. Fallback to index for empty result.
-  const base = title
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-  return base ? `${base}-${idx}` : `ref-${idx}`
 }
 
 export async function References({ locale }: ReferencesProps) {
@@ -41,17 +34,26 @@ export async function References({ locale }: ReferencesProps) {
   const title = t('title')
   const lead = t('lead')
   const tagOwn = t('tagOwn')
+  const tagOwnWithSunsurf = t('tagOwnWithSunsurf')
   const tagPartnerSunsurf = t('tagPartnerSunsurf')
+  const videoLabel = locale === 'cs' ? 'Video' : 'Video'
   const items = t.raw('items') as ReferenceItem[]
 
-  const tagLabel = (tag: RefTag): string =>
-    tag === 'own' ? tagOwn : tagPartnerSunsurf
+  const tagLabel = (tag: RefTag): string => {
+    if (tag === 'own') return tagOwn
+    if (tag === 'own-with-sunsurf') return tagOwnWithSunsurf
+    return tagPartnerSunsurf
+  }
+
+  // Badge variants: own-with-sunsurf same yellow (still "vlastní"), partner-only = muted
+  const badgeVariant = (tag: RefTag): 'success' | 'muted' =>
+    tag === 'partner-sunsurf' ? 'muted' : 'success'
 
   return (
     <Section
       id="reference"
       aria-labelledby="references-heading"
-      className="bg-gray-light"
+      className="bg-white"
     >
       <Container>
         <AnimatedSection>
@@ -71,19 +73,18 @@ export async function References({ locale }: ReferencesProps) {
             </p>
           </div>
 
-          {/* Grid 6 karet: 1 / 2 / 3 sloupce, editorial wide format */}
+          {/* Grid 3 karet: 1 / 2 / 3 sloupce, editorial wide format */}
           <ul
             role="list"
             className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {items.map((item, idx) => {
-              const slug = slugify(item.title, idx)
-              const headingId = `ref-${slug}`
-              const badgeVariant = item.tag === 'own' ? 'success' : 'muted'
+              const headingId = `ref-${item.slug}`
+              const metadata = [item.year, item.type, item.power].filter(Boolean)
 
               return (
                 <AnimatedSection
-                  key={headingId}
+                  key={item.slug}
                   as="li"
                   delay={idx * 0.06}
                   y={20}
@@ -93,32 +94,17 @@ export async function References({ locale }: ReferencesProps) {
                     aria-labelledby={headingId}
                     className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 ease-out hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg"
                   >
-                    {/* Image (full bleed top, editorial 16/10 wide format) */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy/5">
-                      <Image
-                        src={item.image}
-                        alt={item.alt}
-                        fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      />
-                      {/* Bottom gradient pro readability location badge */}
-                      <div
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"
-                      />
-                      {/* Location badge na image overlay */}
-                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-md bg-black/50 px-2.5 py-1 backdrop-blur-sm">
-                        <Flag
-                          code={item.flag}
-                          title={item.location}
-                          className="h-3.5"
-                        />
-                        <span className="text-caption font-semibold uppercase tracking-wider text-white">
-                          {item.location}
-                        </span>
-                      </div>
-                    </div>
+                    {/* Image area with click-to-zoom lightbox (Client component) */}
+                    <ReferenceCardMedia
+                      image={item.image}
+                      alt={item.alt}
+                      flag={item.flag}
+                      location={item.location}
+                      title={item.title}
+                      locale={locale}
+                      videoUrl={item.videoUrl}
+                      videoLabel={item.videoUrl ? videoLabel : undefined}
+                    />
 
                     {/* Card body */}
                     <div className="flex flex-1 flex-col p-6 md:p-7">
@@ -128,11 +114,18 @@ export async function References({ locale }: ReferencesProps) {
                       >
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-body text-gray-dark/75 leading-relaxed [text-wrap:pretty]">
+                      {metadata.length > 0 && (
+                        <p className="mt-1.5 text-caption text-gray-medium uppercase tracking-wider">
+                          {metadata.join(' · ')}
+                        </p>
+                      )}
+                      <p className="mt-3 text-body text-gray-dark/75 leading-relaxed [text-wrap:pretty]">
                         {item.description}
                       </p>
                       <div className="mt-4 flex">
-                        <Badge variant={badgeVariant}>{tagLabel(item.tag)}</Badge>
+                        <Badge variant={badgeVariant(item.tag)}>
+                          {tagLabel(item.tag)}
+                        </Badge>
                       </div>
                     </div>
                   </article>

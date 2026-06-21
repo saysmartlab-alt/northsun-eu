@@ -24,9 +24,26 @@ export async function Why({ locale }: WhyProps) {
     <Section
       id="proc-northsun"
       aria-labelledby="why-heading"
-      className="bg-white"
+      className="relative overflow-hidden bg-navy"
     >
-      <Container>
+      {/* Subtle navy gradient + grain for depth (continuity s ostatními dark sekcemi) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at 80% 20%, rgba(0,74,173,0.45) 0%, transparent 55%), radial-gradient(ellipse at 15% 90%, rgba(252,192,19,0.10) 0%, transparent 50%), linear-gradient(135deg, #030057 0%, #02003d 100%)',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E")`,
+        }}
+      />
+
+      <Container className="relative">
         <AnimatedSection>
           {/* Section header (left-aligned, no max-w constraint on wrapper) */}
           <div>
@@ -35,11 +52,11 @@ export async function Why({ locale }: WhyProps) {
             </span>
             <h2
               id="why-heading"
-              className="mt-5 text-h1 text-navy [text-wrap:balance]"
+              className="mt-5 text-h1 text-white [text-wrap:balance]"
             >
               {title}
             </h2>
-            <p className="mt-5 text-body-lg text-gray-dark/85 max-w-3xl [text-wrap:pretty]">
+            <p className="mt-5 text-body-lg text-white/80 max-w-3xl [text-wrap:pretty]">
               {lead}
             </p>
           </div>
@@ -68,7 +85,7 @@ export async function Why({ locale }: WhyProps) {
                     {/* Big number, decorative — dominates the left side */}
                     <span
                       aria-hidden="true"
-                      className="font-syne font-extrabold leading-none text-yellow transition-colors duration-200 ease-out group-hover:text-navy"
+                      className="font-syne font-extrabold leading-none text-yellow transition-colors duration-200 ease-out group-hover:text-white"
                       style={{ fontSize: 'clamp(3.5rem, 7vw, 6rem)' }}
                     >
                       {number}
@@ -77,18 +94,18 @@ export async function Why({ locale }: WhyProps) {
                     {/* Vertical divider between number and content */}
                     <span
                       aria-hidden="true"
-                      className="h-16 w-px shrink-0 self-start bg-border"
+                      className="h-16 w-px shrink-0 self-start bg-white/15"
                     />
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <h3
                         id={headingId}
-                        className="text-h3 font-semibold text-navy [text-wrap:balance]"
+                        className="text-h3 font-semibold text-white [text-wrap:balance]"
                       >
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-body text-gray-dark/80 leading-relaxed [text-wrap:pretty]">
+                      <p className="mt-3 text-body text-white/75 leading-relaxed [text-wrap:pretty]">
                         {item.description}
                       </p>
                     </div>

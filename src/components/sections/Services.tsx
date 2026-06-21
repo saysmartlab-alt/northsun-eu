@@ -43,7 +43,6 @@ export async function Services({ locale }: ServicesProps) {
   const t = await getTranslations({ locale, namespace: 'Services' })
 
   const label = t('label')
-  const title = t('title')
   const lead = t('lead')
   const items = t.raw('items') as ServiceItem[]
 
@@ -82,7 +81,9 @@ export async function Services({ locale }: ServicesProps) {
               id="services-heading"
               className="mt-5 text-h1 text-white whitespace-pre-line"
             >
-              {title}
+              {t.rich('title', {
+                num: (chunks) => <span className="text-yellow">{chunks}</span>,
+              })}
             </h2>
             <p className="mt-5 text-body-lg text-white/75 whitespace-pre-line max-w-3xl">
               {lead}
@@ -132,7 +133,7 @@ export async function Services({ locale }: ServicesProps) {
                     {/* Icon container — solid on hover */}
                     <div
                       aria-hidden="true"
-                      className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-yellow/20 transition-all duration-300 group-hover:bg-yellow group-hover:scale-105 group-hover:rotate-3"
+                      className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-yellow-600 transition-all duration-300 group-hover:bg-yellow group-hover:scale-105 group-hover:rotate-3"
                     >
                       {Icon && (
                         <Icon

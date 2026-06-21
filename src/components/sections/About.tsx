@@ -22,31 +22,24 @@ export async function About({ locale }: AboutProps) {
     <Section id="o-nas" aria-labelledby="about-heading" className="bg-white">
       <Container>
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            {/* Left column: vertical media placeholder (5/12) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            {/* Left column: portrait video — Norsko Solar Roof reference (5/12) */}
             <div className="lg:col-span-5">
-              <div
-                className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-navy"
-                aria-hidden="true"
-              >
-                {/* Subtle gradient + grain for premium feel until real media arrives */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 30% 20%, rgba(0,74,173,0.55) 0%, transparent 55%), radial-gradient(circle at 80% 80%, rgba(252,192,19,0.18) 0%, transparent 50%), linear-gradient(135deg, #030057 0%, #02003d 100%)',
-                  }}
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-navy shadow-xl ring-1 ring-navy/10">
+                <video
+                  src="/video/norway-rooftop.mp4#t=6.75"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={
+                    locale === 'cs'
+                      ? 'NorthSun: Komerční solární střecha v Norsku'
+                      : 'NorthSun: Commercial solar rooftop in Norway'
+                  }
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div
-                  className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E")`,
-                  }}
-                />
-                {/* Placeholder copy (replace with <Image> or <video> once available) */}
-                <div className="absolute bottom-6 left-6 right-6 text-white/40 text-caption uppercase tracking-[0.2em] font-semibold">
-                  Media placeholder
-                </div>
               </div>
             </div>
 
