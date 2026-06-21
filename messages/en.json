@@ -92,9 +92,9 @@
   },
   "About": {
     "label": "About NorthSun",
-    "title": "Engineering-led EPC with a Nordic accent",
+    "title": "EPC with a Nordic accent",
     "lead": "A Czech-Swedish-Norwegian firm focused on solar.",
-    "body": "Unlike typical installation contractors, we produce our own technical documentation, structural calculations and 3D models in-house. We work in PV syst and PV sol, and we run every project from the first feasibility study through to handover. Our team speaks eight languages and trains every year at Intersolar in Munich."
+    "ctaReferences": "Our work", "body": "Unlike typical installation contractors, we produce our own technical documentation and structural calculations in-house. We work in PV syst and PV sol, and we run every project from the first feasibility study through to handover. Our team speaks eight languages and trains every year at Intersolar in Munich."
   },
   "Services": {
     "label": "What we do",
@@ -140,7 +140,7 @@
     "items": [
       {
         "title": "Engineering-led EPC",
-        "description": "In-house technical documentation, structural calculations, 3D modelling and PV syst simulations. We don't outsource the decisions that matter."
+        "description": "In-house technical documentation, structural calculations and PV syst simulations. We don't outsource the decisions that matter."
       },
       {
         "title": "International experience",

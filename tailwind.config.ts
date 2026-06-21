@@ -64,8 +64,8 @@ const config: Config = {
           { lineHeight: '1.6', fontWeight: '400' },
         ],
         body: [
-          '1.0625rem',
-          { lineHeight: '1.65', fontWeight: '400' },
+          '1.125rem',
+          { lineHeight: '1.7', fontWeight: '400' },
         ],
         small: [
           '0.875rem',

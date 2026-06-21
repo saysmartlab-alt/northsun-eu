@@ -61,7 +61,7 @@ export function HeroContent({ texts }: HeroContentProps) {
         }
 
   return (
-    <div className="relative z-10 w-full max-w-7xl">
+    <div className="relative z-10 w-full">
       <motion.span
         initial="hidden"
         animate="visible"

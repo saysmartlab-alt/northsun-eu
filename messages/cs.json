@@ -92,9 +92,9 @@
   },
   "About": {
     "label": "O NorthSun",
-    "title": "Engineering-led EPC se severským přízvukem",
+    "title": "EPC se severským přízvukem",
     "lead": "Česko-švédsko-norská firma specializovaná na solární energetiku.",
-    "body": "Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci, provádíme statické výpočty a 3D modelování. Pracujeme v PV syst i PV sol a každý projekt vedeme od první studie až po předání. Náš tým komunikuje v osmi jazycích a pravidelně se vzdělává na veletrhu Intersolar v Mnichově."
+    "ctaReferences": "Naše reference", "body": "Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci a provádíme statické výpočty. Pracujeme v PV syst i PV sol a každý projekt vedeme od první studie až po předání. Náš tým komunikuje v osmi jazycích a pravidelně se vzdělává na veletrhu Intersolar v Mnichově."
   },
   "Services": {
     "label": "Co děláme",
@@ -140,7 +140,7 @@
     "items": [
       {
         "title": "Engineering-led EPC",
-        "description": "Vlastní projektová dokumentace, statické výpočty, 3D modelování a simulace v PV syst. Žádný outsourcing klíčových rozhodnutí."
+        "description": "Vlastní projektová dokumentace, statické výpočty a simulace v PV syst i PV sol. Žádný outsourcing klíčových rozhodnutí."
       },
       {
         "title": "Mezinárodní zkušenosti",

@@ -116,7 +116,7 @@ V `/public/images/` jsou připravené fotky a loga (po konverzi z HEIC):
 - **CTA secondary:** Naše projekty
 
 ### O firmě (krátká sekce)
-NorthSun je česko-švédsko-norská EPC firma specializovaná na solární energetiku. Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci, provádíme statické výpočty a 3D modelování. Náš tým komunikuje v 8 jazycích a pravidelně se vzdělává na Intersolar v Mnichově.
+NorthSun je česko-švédsko-norská EPC firma specializovaná na solární energetiku. Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci a provádíme statické výpočty. Náš tým komunikuje v 8 jazycích a pravidelně se vzdělává na Intersolar v Mnichově.
 
 Pobočky:
 - 🇨🇿 Vejprnice (HQ): Sokolská 137, 330 27
@@ -124,7 +124,7 @@ Pobočky:
 - 🇳🇴 Molde
 
 ### Diferenciátory (4 bloky pro "Proč NorthSun")
-1. **Engineering-led EPC** — vlastní projektová dokumentace, PV syst, statika, 3D modelování
+1. **Engineering-led EPC** — vlastní projektová dokumentace, PV syst, statika, simulace výnosů
 2. **Mezinárodní zkušenosti** — reference v Německu, Nizozemsku, Švédsku, Norsku, Belgii a Chorvatsku
 3. **Certifikovaná kvalita** — certifikováni od PanelClaw za úspěšnou instalaci jejich mounting systémů
 4. **Multijazyčný tým** — komunikujeme v 8 jazycích, vzděláváme se na Intersolar v Mnichově

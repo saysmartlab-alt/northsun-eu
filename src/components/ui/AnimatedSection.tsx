@@ -1,7 +1,7 @@
 'use client'
 
+import { useEffect, useState, type ReactNode } from 'react'
 import { useReducedMotion, motion, type Variants } from 'framer-motion'
-import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface AnimatedSectionProps {
@@ -22,7 +22,15 @@ export function AnimatedSection({
   className,
   as = 'div',
 }: AnimatedSectionProps) {
-  const prefersReducedMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+  const userPrefersReducedMotion = useReducedMotion()
+  // During SSR + first client paint, render the same markup on both sides.
+  // After mount, switch to the user's actual preference.
+  const prefersReducedMotion = mounted && userPrefersReducedMotion
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const variants: Variants = prefersReducedMotion
     ? {

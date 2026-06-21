@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
+import { Container } from '@/components/ui/Container'
 import { HeroContent } from './HeroContent'
 import { TrustStrip } from './TrustStrip'
 
@@ -28,7 +29,7 @@ export async function Hero({ locale }: HeroProps) {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[88vh] md:min-h-screen items-center overflow-hidden bg-navy pt-32 md:pt-36 pb-32 md:pb-40 px-6 md:px-12"
+      className="relative isolate flex min-h-[88vh] md:min-h-screen items-center overflow-hidden bg-navy pt-32 md:pt-36 pb-32 md:pb-40"
     >
       {/* Background photo: floating PV plant.
           Mobile shifts focus right (60%) so panels stay visible behind text on the left. */}
@@ -52,10 +53,10 @@ export async function Hero({ locale }: HeroProps) {
         className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/70 via-transparent to-transparent"
       />
 
-      {/* Inner container, content left-aligned */}
-      <div className="mx-auto w-full max-w-7xl">
+      {/* Inner container — sjednocený s About a dalšími sekcemi pro alignment */}
+      <Container className="relative z-10">
         <HeroContent texts={content} />
-      </div>
+      </Container>
 
       <TrustStrip texts={trust} />
     </section>
