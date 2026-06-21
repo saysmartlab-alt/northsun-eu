@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -11,6 +12,7 @@ const config: Config = {
           100: '#b4b3d6',
           500: '#030057',
           900: '#02003d',
+          mid: '#004AAD',
         },
         yellow: {
           DEFAULT: '#FCC013',
@@ -18,7 +20,12 @@ const config: Config = {
           500: '#FCC013',
           600: '#e0a700',
         },
-        'logo-blue': '#004AAD',
+        gray: {
+          light: '#F3F3F3',
+          medium: '#6B7280',
+          dark: '#111827',
+        },
+        border: '#E5E7EB',
       },
       fontFamily: {
         sans: ['var(--font-syne)', 'system-ui', 'sans-serif'],
@@ -29,9 +36,49 @@ const config: Config = {
         tightest: '-0.04em',
         tighter: '-0.025em',
       },
+      fontSize: {
+        // Semantic typography scale (from ui-designer.md)
+        // tuples: [size, { lineHeight, letterSpacing, fontWeight }]
+        display: [
+          'clamp(2.5rem, 6vw, 4.5rem)',
+          { lineHeight: '1.05', letterSpacing: '-0.025em', fontWeight: '800' },
+        ],
+        h1: [
+          'clamp(2.25rem, 5vw, 4.5rem)',
+          { lineHeight: '1.05', letterSpacing: '-0.025em', fontWeight: '800' },
+        ],
+        h2: [
+          'clamp(1.75rem, 3.5vw, 3rem)',
+          { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '800' },
+        ],
+        h3: [
+          'clamp(1.25rem, 2vw, 1.75rem)',
+          { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '700' },
+        ],
+        h4: [
+          '1.125rem',
+          { lineHeight: '1.4', letterSpacing: '-0.005em', fontWeight: '600' },
+        ],
+        'body-lg': [
+          '1.25rem',
+          { lineHeight: '1.6', fontWeight: '400' },
+        ],
+        body: [
+          '1.0625rem',
+          { lineHeight: '1.65', fontWeight: '400' },
+        ],
+        small: [
+          '0.875rem',
+          { lineHeight: '1.5', fontWeight: '500' },
+        ],
+        caption: [
+          '0.8125rem',
+          { lineHeight: '1.5', fontWeight: '400' },
+        ],
+      },
     },
   },
-  plugins: [],
+  plugins: [tailwindcssAnimate],
 }
 
 export default config

@@ -20,5 +20,90 @@
     "thanksMessage": "Děkujeme. Dáme vám vědět jako prvním.",
     "errorMessage": "Něco se pokazilo, zkuste to prosím znovu.",
     "copyright": "© 2026 NorthSun"
+  },
+  "Common": {
+    "cta": {
+      "contact": "",
+      "learnMore": "",
+      "back": "",
+      "viewAll": "",
+      "readMore": ""
+    }
+  },
+  "Header": {
+    "nav": {
+      "about": "",
+      "services": "",
+      "references": "",
+      "contact": ""
+    },
+    "cta": {
+      "consultation": ""
+    }
+  },
+  "Footer": {
+    "tagline": "",
+    "columns": [],
+    "legal": {
+      "copyright": ""
+    }
+  },
+  "Hero": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "ctaPrimary": "",
+    "ctaSecondary": ""
+  },
+  "About": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "body": ""
+  },
+  "Services": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "items": []
+  },
+  "Why": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "items": []
+  },
+  "References": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "items": [],
+    "ctaViewAll": ""
+  },
+  "Partners": {
+    "label": "",
+    "title": "",
+    "lead": ""
+  },
+  "Contact": {
+    "label": "",
+    "title": "",
+    "lead": "",
+    "form": {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "projectType": "",
+      "message": "",
+      "gdpr": "",
+      "submit": "",
+      "success": "",
+      "error": ""
+    },
+    "info": {
+      "phone": "",
+      "email": "",
+      "addresses": []
+    }
   }
 }

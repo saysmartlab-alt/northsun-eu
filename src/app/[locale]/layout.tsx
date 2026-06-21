@@ -70,6 +70,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${syne.variable} ${jetbrains.variable}`}>
       <body>
+        <a href="#main-content" className="skip-to-content">
+          {locale === 'cs' ? 'Přeskočit na obsah' : 'Skip to content'}
+        </a>
         <NextIntlClientProvider>
           <LanguageSwitcher />
           {children}
