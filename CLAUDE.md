@@ -2,7 +2,7 @@
 
 ## Aktuální deadline (PRIORITA)
 
-**Úterý 9.6.2026 — veletrh s QR kódem.**
+**Úterý 23.6.2026, veletrh s QR kódem.**
 
 Návštěvníci naskenují QR kód na telefonu, musí během 10 sekund:
 1. Pochopit, kdo NorthSun je
@@ -24,7 +24,7 @@ Doména: northsun-eu.com (Vercel)
 - **Animace:** Framer Motion
 - **Formuláře:** react-hook-form + zod
 - **Mail:** Resend
-- **Analytika:** Plausible
+- **Analytika:** Vercel Analytics
 - **Hosting:** Vercel
 
 ## Materiály k dispozici
@@ -130,7 +130,7 @@ Pobočky:
 4. **Multijazyčný tým** — komunikujeme v 8 jazycích, vzděláváme se na Intersolar v Mnichově
 
 ### Kontakt
-- **Email:** northsunsro@gmail.com (po launchi přejdeme na info@northsun-eu.com)
+- **Email:** info@northsun-eu.com
 - **Telefon:** +420 734 383 340 (Lukáš Bílek, Head of EPC Projects)
 
 ### Footer / legal
@@ -153,7 +153,7 @@ V `.claude/agents/` najdeš 4 specializované agenty:
 
 Claude Code je vyvolá automaticky podle typu úkolu, nebo můžeš explicitně říct: "Use the ui-designer agent to..."
 
-## Strategie pro úterý 9.6.
+## Strategie pro úterý 23.6.
 
 Pokud nestíháš plný MVP, prioritizuj v tomto pořadí:
 

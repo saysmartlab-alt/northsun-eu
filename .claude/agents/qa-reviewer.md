@@ -58,7 +58,7 @@ Run through this list every time:
 - [ ] Slogan correct: "Neděláme nejlevněji, děláme nejlépe."
 - [ ] All references properly labeled (vlastní vs partnership)
 - [ ] PanelClaw mentioned where relevant
-- [ ] Contact info correct: northsunsro@gmail.com, +420 734 383 340
+- [ ] Contact info correct: info@northsun-eu.com, +420 734 383 340
 - [ ] Address correct: Sokolská 137, 330 27 Vejprnice
 - [ ] IČO correct: 17279976
 
@@ -113,7 +113,7 @@ Run through this list every time:
 - [ ] Error message shown if API fails
 - [ ] No data sent if validation fails
 
-### Tradeshow-critical (THIS IS A MUST FOR TUESDAY 9.6.)
+### Tradeshow-critical (THIS IS A MUST FOR TUESDAY 23.6.)
 - [ ] Site loads in < 3 seconds on 4G
 - [ ] QR code points to correct URL
 - [ ] Site readable on 375px viewport (typical mobile QR scan)
