@@ -47,30 +47,72 @@
       {
         "title": "Společnost",
         "links": [
-          { "label": "O nás", "href": "/o-nas" },
-          { "label": "Reference", "href": "/reference" },
-          { "label": "Kontakt", "href": "/kontakt" }
+          {
+            "label": "O nás",
+            "href": "/o-nas"
+          },
+          {
+            "label": "Reference",
+            "href": "/reference"
+          },
+          {
+            "label": "Kontakt",
+            "href": "/kontakt"
+          }
         ]
       },
       {
         "title": "Služby",
         "links": [
-          { "label": "Rezidence", "href": "/sluzby/rezidence" },
-          { "label": "Solární parky", "href": "/sluzby/solarni-parky" },
-          { "label": "Carporty", "href": "/sluzby/carporty" },
-          { "label": "Solární fasády", "href": "/sluzby/fasady" },
-          { "label": "Plovoucí FPV", "href": "/sluzby/fpv" },
-          { "label": "Opravy a re-engineering", "href": "/sluzby/opravy" }
+          {
+            "label": "Rezidence",
+            "href": "/sluzby/rezidence"
+          },
+          {
+            "label": "Solární parky",
+            "href": "/sluzby/solarni-parky"
+          },
+          {
+            "label": "Carporty",
+            "href": "/sluzby/carporty"
+          },
+          {
+            "label": "Solární fasády",
+            "href": "/sluzby/fasady"
+          },
+          {
+            "label": "Plovoucí FPV",
+            "href": "/sluzby/fpv"
+          },
+          {
+            "label": "Opravy a re-engineering",
+            "href": "/sluzby/opravy"
+          }
         ]
       },
       {
         "title": "Kontakt",
         "links": [
-          { "label": "info@northsun-eu.com", "href": "mailto:info@northsun-eu.com" },
-          { "label": "+420 734 383 340", "href": "tel:+420734383340" },
-          { "label": "Vejprnice (HQ)", "href": "/kontakt#vejprnice" },
-          { "label": "Malmö", "href": "/kontakt#malmo" },
-          { "label": "Molde", "href": "/kontakt#molde" }
+          {
+            "label": "info@northsun-eu.com",
+            "href": "mailto:info@northsun-eu.com"
+          },
+          {
+            "label": "+420 734 383 340",
+            "href": "tel:+420734383340"
+          },
+          {
+            "label": "Vejprnice (HQ)",
+            "href": "/kontakt#vejprnice"
+          },
+          {
+            "label": "Malmö",
+            "href": "/kontakt#malmo"
+          },
+          {
+            "label": "Molde",
+            "href": "/kontakt#molde"
+          }
         ]
       }
     ],
@@ -94,7 +136,8 @@
     "label": "O NorthSun",
     "title": "EPC se severským přízvukem",
     "lead": "Česko-švédsko-norská firma specializovaná na solární energetiku.",
-    "ctaReferences": "Naše reference", "body": "Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci a provádíme statické výpočty. Pracujeme v PV syst i PV sol a každý projekt vedeme od první studie až po předání. Náš tým komunikuje v osmi jazycích a pravidelně se vzdělává na veletrhu Intersolar v Mnichově."
+    "ctaReferences": "Naše reference",
+    "body": "Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci a provádíme statické výpočty. Pracujeme v PV syst i PV sol a každý projekt vedeme od první studie až po předání. Náš tým komunikuje v osmi jazycích a pravidelně se vzdělává na veletrhu Intersolar v Mnichově."
   },
   "Services": {
     "label": "Co děláme",
@@ -216,15 +259,39 @@
     "title": "Pojďme si o projektu promluvit",
     "lead": "Napište nám, co plánujete. Ozveme se vám zpravidla do jednoho pracovního dne.",
     "form": {
-      "name": "Jméno a příjmení",
+      "name": "Jméno a příjmení",
       "email": "E-mail",
       "phone": "Telefon",
+      "phoneOptional": "nepovinné",
       "projectType": "Typ projektu",
+      "projectTypePlaceholder": "Vyberte typ projektu",
+      "projectTypes": {
+        "residential": "Rezidence",
+        "solar-parks": "Solární parky",
+        "carports": "Carporty",
+        "facades": "Fasády a BIPV",
+        "floating-pv": "Plovoucí FPV",
+        "repairs": "Opravy a re-engineering",
+        "other": "Jiné"
+      },
       "message": "Vaše zpráva",
+      "messagePlaceholder": "Stručně popište, co plánujete, lokalitu a předpokládaný rozsah.",
       "gdpr": "Souhlasím se zpracováním osobních údajů pro účely vyřízení poptávky.",
       "submit": "Odeslat poptávku",
+      "submitting": "Odesílám…",
       "success": "Děkujeme. Ozveme se vám do jednoho pracovního dne.",
-      "error": "Něco se pokazilo, zkuste to prosím znovu nebo nám napište přímo na info@northsun-eu.com."
+      "error": "Něco se pokazilo, zkuste to prosím znovu nebo nám napište přímo na info@northsun-eu.com.",
+      "errors": {
+        "name_min": "Zadejte prosím jméno (alespoň 2 znaky).",
+        "name_max": "Jméno je příliš dlouhé.",
+        "email_invalid": "Zadejte platný e-mail.",
+        "email_max": "E-mail je příliš dlouhý.",
+        "phone_max": "Telefon je příliš dlouhý.",
+        "projectType_required": "Vyberte typ projektu.",
+        "message_min": "Zpráva musí mít alespoň 10 znaků.",
+        "message_max": "Zpráva je příliš dlouhá.",
+        "gdpr_required": "Bez souhlasu nemůžeme poptávku zpracovat."
+      }
     },
     "info": {
       "phone": "+420 734 383 340",
@@ -233,19 +300,32 @@
         {
           "country": "🇨🇿 Česko",
           "office": "Sídlo (HQ)",
-          "lines": ["North Sun s.r.o.", "Sokolská 137", "330 27 Vejprnice"]
+          "lines": [
+            "North Sun s.r.o.",
+            "Sokolská 137",
+            "330 27 Vejprnice"
+          ]
         },
         {
           "country": "🇸🇪 Švédsko",
           "office": "Pobočka",
-          "lines": ["Malmö"]
+          "lines": [
+            "Malmö"
+          ]
         },
         {
           "country": "🇳🇴 Norsko",
           "office": "Pobočka",
-          "lines": ["Molde"]
+          "lines": [
+            "Molde"
+          ]
         }
       ]
-    }
+    },
+    "infoTitle": "Spojte se s námi přímo",
+    "phoneLabel": "Telefon",
+    "phoneSubtitle": "Lukáš Bílek, Head of EPC Projects",
+    "emailLabel": "E-mail",
+    "addressesLabel": "Pobočky"
   }
 }

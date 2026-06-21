@@ -47,30 +47,72 @@
       {
         "title": "Company",
         "links": [
-          { "label": "About", "href": "/about" },
-          { "label": "References", "href": "/references" },
-          { "label": "Contact", "href": "/contact" }
+          {
+            "label": "About",
+            "href": "/about"
+          },
+          {
+            "label": "References",
+            "href": "/references"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          }
         ]
       },
       {
         "title": "Services",
         "links": [
-          { "label": "Residential", "href": "/services/residential" },
-          { "label": "Solar parks", "href": "/services/solar-parks" },
-          { "label": "Carports", "href": "/services/carports" },
-          { "label": "Solar facades", "href": "/services/facades" },
-          { "label": "Floating PV", "href": "/services/floating-pv" },
-          { "label": "Repairs and re-engineering", "href": "/services/repairs" }
+          {
+            "label": "Residential",
+            "href": "/services/residential"
+          },
+          {
+            "label": "Solar parks",
+            "href": "/services/solar-parks"
+          },
+          {
+            "label": "Carports",
+            "href": "/services/carports"
+          },
+          {
+            "label": "Solar facades",
+            "href": "/services/facades"
+          },
+          {
+            "label": "Floating PV",
+            "href": "/services/floating-pv"
+          },
+          {
+            "label": "Repairs and re-engineering",
+            "href": "/services/repairs"
+          }
         ]
       },
       {
         "title": "Contact",
         "links": [
-          { "label": "info@northsun-eu.com", "href": "mailto:info@northsun-eu.com" },
-          { "label": "+420 734 383 340", "href": "tel:+420734383340" },
-          { "label": "Vejprnice (HQ)", "href": "/contact#vejprnice" },
-          { "label": "Malmö", "href": "/contact#malmo" },
-          { "label": "Molde", "href": "/contact#molde" }
+          {
+            "label": "info@northsun-eu.com",
+            "href": "mailto:info@northsun-eu.com"
+          },
+          {
+            "label": "+420 734 383 340",
+            "href": "tel:+420734383340"
+          },
+          {
+            "label": "Vejprnice (HQ)",
+            "href": "/contact#vejprnice"
+          },
+          {
+            "label": "Malmö",
+            "href": "/contact#malmo"
+          },
+          {
+            "label": "Molde",
+            "href": "/contact#molde"
+          }
         ]
       }
     ],
@@ -94,7 +136,8 @@
     "label": "About NorthSun",
     "title": "EPC with a Nordic accent",
     "lead": "A Czech-Swedish-Norwegian firm focused on solar.",
-    "ctaReferences": "Our work", "body": "Unlike typical installation contractors, we produce our own technical documentation and structural calculations in-house. We work in PV syst and PV sol, and we run every project from the first feasibility study through to handover. Our team speaks eight languages and trains every year at Intersolar in Munich."
+    "ctaReferences": "Our work",
+    "body": "Unlike typical installation contractors, we produce our own technical documentation and structural calculations in-house. We work in PV syst and PV sol, and we run every project from the first feasibility study through to handover. Our team speaks eight languages and trains every year at Intersolar in Munich."
   },
   "Services": {
     "label": "What we do",
@@ -219,12 +262,36 @@
       "name": "Full name",
       "email": "Email",
       "phone": "Phone",
+      "phoneOptional": "optional",
       "projectType": "Project type",
+      "projectTypePlaceholder": "Select project type",
+      "projectTypes": {
+        "residential": "Residential",
+        "solar-parks": "Solar parks",
+        "carports": "Carports",
+        "facades": "Facades and BIPV",
+        "floating-pv": "Floating PV",
+        "repairs": "Repairs and re-engineering",
+        "other": "Other"
+      },
       "message": "Your message",
+      "messagePlaceholder": "Briefly describe what you are planning, the location and expected scope.",
       "gdpr": "I agree to the processing of my personal data for the purpose of handling this enquiry.",
       "submit": "Send enquiry",
+      "submitting": "Sending…",
       "success": "Thank you. We'll get back to you within one business day.",
-      "error": "Something went wrong, please try again or email us directly at info@northsun-eu.com."
+      "error": "Something went wrong, please try again or email us directly at info@northsun-eu.com.",
+      "errors": {
+        "name_min": "Please enter your name (at least 2 characters).",
+        "name_max": "Name is too long.",
+        "email_invalid": "Please enter a valid email.",
+        "email_max": "Email is too long.",
+        "phone_max": "Phone number is too long.",
+        "projectType_required": "Please select a project type.",
+        "message_min": "Message must be at least 10 characters.",
+        "message_max": "Message is too long.",
+        "gdpr_required": "We cannot process your enquiry without consent."
+      }
     },
     "info": {
       "phone": "+420 734 383 340",
@@ -233,19 +300,32 @@
         {
           "country": "🇨🇿 Czechia",
           "office": "Headquarters",
-          "lines": ["North Sun s.r.o.", "Sokolská 137", "330 27 Vejprnice"]
+          "lines": [
+            "North Sun s.r.o.",
+            "Sokolská 137",
+            "330 27 Vejprnice"
+          ]
         },
         {
           "country": "🇸🇪 Sweden",
           "office": "Office",
-          "lines": ["Malmö"]
+          "lines": [
+            "Malmö"
+          ]
         },
         {
           "country": "🇳🇴 Norway",
           "office": "Office",
-          "lines": ["Molde"]
+          "lines": [
+            "Molde"
+          ]
         }
       ]
-    }
+    },
+    "infoTitle": "Get in touch directly",
+    "phoneLabel": "Phone",
+    "phoneSubtitle": "Lukáš Bílek, Head of EPC Projects",
+    "emailLabel": "Email",
+    "addressesLabel": "Offices"
   }
 }
