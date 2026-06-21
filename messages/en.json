@@ -98,8 +98,8 @@
   },
   "Services": {
     "label": "What we do",
-    "title": "Six product lines, one engineering team",
-    "lead": "From family homes to utility-scale parks. Always with in-house documentation and structural design.",
+    "title": "6 solutions, one\nengineering team",
+    "lead": "From family homes to utility-scale parks.\nAlways with in-house documentation and structural design.",
     "items": [
       {
         "slug": "residential",
