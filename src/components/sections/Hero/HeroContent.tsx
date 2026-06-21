@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
@@ -31,7 +32,15 @@ const ctaSecondaryClasses =
   'border-2 border-white/70 text-white hover:bg-white hover:text-navy hover:border-white'
 
 export function HeroContent({ texts }: HeroContentProps) {
-  const prefersReducedMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+  const userPrefersReducedMotion = useReducedMotion()
+  // During SSR + first client paint, render full motion so server/client markup matches.
+  // After mount, switch to the real user preference.
+  const prefersReducedMotion = mounted && userPrefersReducedMotion
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const buildVariants = (delay: number): Variants =>
     prefersReducedMotion

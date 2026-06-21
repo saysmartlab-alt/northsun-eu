@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
 
 interface TrustStripTexts {
@@ -15,7 +16,14 @@ interface TrustStripProps {
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 export function TrustStrip({ texts }: TrustStripProps) {
-  const prefersReducedMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+  const userPrefersReducedMotion = useReducedMotion()
+  // Match BackgroundSlideshow / HeroContent: avoid SSR→client motion mismatch.
+  const prefersReducedMotion = mounted && userPrefersReducedMotion
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const variants: Variants = prefersReducedMotion
     ? {
