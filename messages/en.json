@@ -42,7 +42,7 @@
     }
   },
   "Footer": {
-    "tagline": "Premium solar EPC across Northern Europe.",
+    "tagline": "Premium solar EPC for Northern Europe.",
     "columns": [
       {
         "title": "Company",
@@ -80,7 +80,7 @@
   },
   "Hero": {
     "label": "ENGINEERING-LED SOLAR EPC",
-    "title": "Premium solar EPC across Northern Europe",
+    "title": "Premium solar EPC for Northern Europe",
     "lead": "We deliver where others can't. Solar parks, floating plants, facades and more across Europe.",
     "ctaPrimary": "Free consultation",
     "ctaSecondary": "Our projects",

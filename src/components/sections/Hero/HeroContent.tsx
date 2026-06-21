@@ -61,7 +61,7 @@ export function HeroContent({ texts }: HeroContentProps) {
         }
 
   return (
-    <div className="relative z-10 w-full max-w-4xl">
+    <div className="relative z-10 w-full max-w-7xl">
       <motion.span
         initial="hidden"
         animate="visible"
@@ -77,7 +77,7 @@ export function HeroContent({ texts }: HeroContentProps) {
         animate="visible"
         variants={buildVariants(0.3)}
         className={cn(
-          'mt-5 text-display text-white max-w-[20ch]',
+          'mt-5 text-display text-white max-w-[22ch]',
           '[text-wrap:balance]'
         )}
       >
