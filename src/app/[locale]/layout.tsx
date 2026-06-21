@@ -4,7 +4,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Syne, JetBrains_Mono } from 'next/font/google'
 import { routing } from '@/i18n/routing'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import '../globals.css'
 
@@ -75,7 +75,7 @@ export default async function LocaleLayout({
           {locale === 'cs' ? 'Přeskočit na obsah' : 'Skip to content'}
         </a>
         <NextIntlClientProvider>
-          <LanguageSwitcher />
+          <Header locale={locale} />
           {children}
           <Footer locale={locale} />
         </NextIntlClientProvider>
