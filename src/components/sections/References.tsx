@@ -66,7 +66,7 @@ export async function References({ locale }: ReferencesProps) {
             >
               {title}
             </h2>
-            <p className="mt-5 text-body-lg text-gray-dark/85 max-w-3xl [text-wrap:pretty]">
+            <p className="mt-5 text-body-lg text-gray-dark/85 max-w-3xl whitespace-pre-line">
               {lead}
             </p>
           </div>

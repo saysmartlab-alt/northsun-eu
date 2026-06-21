@@ -201,8 +201,8 @@
   },
   "References": {
     "label": "Our work",
-    "title": "Projects across Europe",
-    "lead": "A selection of our own deliveries and partner projects.",
+    "title": "Premium projects across Europe",
+    "lead": "Own deliveries across Europe.\nAnd partner projects with leading manufacturers in the industry.",
     "items": [
       {
         "flag": "NL",
@@ -237,7 +237,7 @@
         "title": "Rooftop installation",
         "description": "Rooftop photovoltaics adapted to Nordic climate and snow loading.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1611365892117-bce8aaeb5a36?w=800&h=600&fit=crop&q=80",
+        "image": "/hero/2.jpg",
         "alt": "Nordic rooftop with solar panels in winter"
       },
       {

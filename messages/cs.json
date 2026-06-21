@@ -201,8 +201,8 @@
   },
   "References": {
     "label": "Naše práce",
-    "title": "Projekty napříč Evropou",
-    "lead": "Výběr z vlastních realizací a partnerských projektů.",
+    "title": "Premium projekty napříč Evropou",
+    "lead": "Vlastní realizace napříč Evropou.\nA partnerské projekty s předními výrobci v oboru.",
     "items": [
       {
         "flag": "NL",
@@ -237,7 +237,7 @@
         "title": "Střešní instalace",
         "description": "Rooftop fotovoltaika přizpůsobená severským klimatickým podmínkám a sněhovému zatížení.",
         "tag": "own",
-        "image": "https://images.unsplash.com/photo-1611365892117-bce8aaeb5a36?w=800&h=600&fit=crop&q=80",
+        "image": "/hero/2.jpg",
         "alt": "Severská střecha se solárními panely v zimě"
       },
       {
