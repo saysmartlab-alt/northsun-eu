@@ -205,49 +205,63 @@
     "lead": "A selection of our own deliveries and partner projects.",
     "items": [
       {
-        "location": "🇳🇱 Netherlands",
+        "flag": "NL",
+        "location": "Netherlands",
         "title": "Walraven",
         "description": "Solar facade and rooftop for the Walraven industrial site, combining BIPV with a conventional rooftop PV system.",
         "tag": "own",
-        "image": "/images/walraven.png"
+        "image": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&h=600&fit=crop&q=80",
+        "alt": "Solar facade and rooftop on an industrial building"
       },
       {
-        "location": "🇭🇷 Southern Europe",
+        "flag": "HR",
+        "location": "Southern Europe",
         "title": "Utility-scale solar park",
         "description": "Large-scale park with mounted structures, engineered for maximum yield in southern climate conditions.",
         "tag": "own",
-        "image": "/images/solar-park-1.jpg"
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop&q=80",
+        "alt": "Utility-scale solar park at sunset in southern landscape"
       },
       {
-        "location": "🇳🇴 Norway",
+        "flag": "NO",
+        "location": "Norway",
         "title": "Solar park",
         "description": "A park built for Scandinavian conditions with structural design tuned to local loads and year-round yield.",
         "tag": "own",
-        "image": "/images/solar-park-2.jpg"
+        "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&q=80",
+        "alt": "Scandinavian fjord landscape with mountains"
       },
       {
-        "location": "🇳🇴 Norway",
+        "flag": "NO",
+        "location": "Norway",
         "title": "Rooftop installation",
         "description": "Rooftop photovoltaics adapted to Nordic climate and snow loading.",
         "tag": "own",
-        "image": "/images/solar-park-3.jpg"
+        "image": "https://images.unsplash.com/photo-1611365892117-bce8aaeb5a36?w=800&h=600&fit=crop&q=80",
+        "alt": "Nordic rooftop with solar panels in winter"
       },
       {
-        "location": "🇪🇺 Europe",
+        "flag": "EU",
+        "location": "Europe",
         "title": "Floating PV plant",
         "description": "A floating photovoltaic installation on a water surface, with no need to occupy farmland.",
         "tag": "own",
-        "image": "/images/floating-solar.jpg"
+        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&q=80",
+        "alt": "Solar panels on a water surface"
       },
       {
-        "location": "🇸🇪 Sweden",
+        "flag": "SE",
+        "location": "Sweden",
         "title": "Sunsurf, floating PV",
         "description": "A joint project covering floating PV and piling-free installation on a former landfill site.",
         "tag": "partner-sunsurf",
-        "image": ""
+        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&h=600&fit=crop&q=80",
+        "alt": "Floating solar power plant on a reservoir"
       }
     ],
-    "ctaViewAll": "All references"
+    "ctaViewAll": "All references",
+    "tagOwn": "Own project",
+    "tagPartnerSunsurf": "In partnership with Sunsurf"
   },
   "Partners": {
     "label": "Partners and certifications",
@@ -298,7 +312,8 @@
       "email": "info@northsun-eu.com",
       "addresses": [
         {
-          "flag": "CZ", "country": "Czechia",
+          "flag": "CZ",
+          "country": "Czechia",
           "office": "Headquarters",
           "lines": [
             "North Sun s.r.o.",
@@ -307,14 +322,16 @@
           ]
         },
         {
-          "flag": "SE", "country": "Sweden",
+          "flag": "SE",
+          "country": "Sweden",
           "office": "Office",
           "lines": [
             "Malmö"
           ]
         },
         {
-          "flag": "NO", "country": "Norway",
+          "flag": "NO",
+          "country": "Norway",
           "office": "Office",
           "lines": [
             "Molde"

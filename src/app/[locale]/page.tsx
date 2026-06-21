@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { Services } from '@/components/sections/Services'
 import { Why } from '@/components/sections/Why'
+import { References } from '@/components/sections/References'
 import { Contact } from '@/components/sections/Contact'
 
 export default async function Home({
@@ -19,6 +20,7 @@ export default async function Home({
       <About locale={locale} />
       <Services locale={locale} />
       <Why locale={locale} />
+      <References locale={locale} />
       <Contact locale={locale} />
     </main>
   )

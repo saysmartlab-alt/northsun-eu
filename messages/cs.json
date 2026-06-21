@@ -205,49 +205,63 @@
     "lead": "Výběr z vlastních realizací a partnerských projektů.",
     "items": [
       {
-        "location": "🇳🇱 Nizozemsko",
+        "flag": "NL",
+        "location": "Nizozemsko",
         "title": "Walraven",
-        "description": "Solární fasáda a střecha pro průmyslový areál Walraven, kombinovaná instalace BIPV a klasické rooftop FV.",
-        "tag": "vlastní",
-        "image": "/images/walraven.png"
+        "description": "Solární fasáda a střecha pro průmyslový areál Walraven, kombinovaná instalace BIPV a klasické rooftop FV.",
+        "tag": "own",
+        "image": "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&h=600&fit=crop&q=80",
+        "alt": "Solární fasáda a střecha na průmyslovém objektu"
       },
       {
-        "location": "🇭🇷 Jižní Evropa",
+        "flag": "HR",
+        "location": "Jižní Evropa",
         "title": "Utility-scale solární park",
-        "description": "Velkokapacitní park s montovanou konstrukcí, navržený pro maximální výnos v jižních podmínkách.",
-        "tag": "vlastní",
-        "image": "/images/solar-park-1.jpg"
+        "description": "Velkokapacitní park s montovanou konstrukcí, navržený pro maximální výnos v jižních podmínkách.",
+        "tag": "own",
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop&q=80",
+        "alt": "Solární park v jižní krajině za západu slunce"
       },
       {
-        "location": "🇳🇴 Norsko",
+        "flag": "NO",
+        "location": "Norsko",
         "title": "Solární park",
-        "description": "Park ve skandinávských podmínkách s důrazem na statiku konstrukce a celoroční výnos.",
-        "tag": "vlastní",
-        "image": "/images/solar-park-2.jpg"
+        "description": "Park ve skandinávských podmínkách s důrazem na statiku konstrukce a celoroční výnos.",
+        "tag": "own",
+        "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop&q=80",
+        "alt": "Skandinávská krajina s fjordem a horami"
       },
       {
-        "location": "🇳🇴 Norsko",
+        "flag": "NO",
+        "location": "Norsko",
         "title": "Střešní instalace",
-        "description": "Rooftop fotovoltaika přizpůsobená severským klimatickým podmínkám a sněhovému zatížení.",
-        "tag": "vlastní",
-        "image": "/images/solar-park-3.jpg"
+        "description": "Rooftop fotovoltaika přizpůsobená severským klimatickým podmínkám a sněhovému zatížení.",
+        "tag": "own",
+        "image": "https://images.unsplash.com/photo-1611365892117-bce8aaeb5a36?w=800&h=600&fit=crop&q=80",
+        "alt": "Severská střecha se solárními panely v zimě"
       },
       {
-        "location": "🇪🇺 Evropa",
+        "flag": "EU",
+        "location": "Evropa",
         "title": "Plovoucí elektrárna FPV",
         "description": "Realizace plovoucí fotovoltaiky na vodní ploše bez nutnosti záboru zemědělské půdy.",
-        "tag": "vlastní",
-        "image": "/images/floating-solar.jpg"
+        "tag": "own",
+        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&h=600&fit=crop&q=80",
+        "alt": "Solární panely na vodní ploše"
       },
       {
-        "location": "🇸🇪 Švédsko",
+        "flag": "SE",
+        "location": "Švédsko",
         "title": "Sunsurf, plovoucí FPV",
-        "description": "Společný projekt plovoucí fotovoltaiky a piling-free instalace na bývalé skládce.",
+        "description": "Společný projekt plovoucí fotovoltaiky a piling-free instalace na bývalé skládce.",
         "tag": "partner-sunsurf",
-        "image": ""
+        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&h=600&fit=crop&q=80",
+        "alt": "Plovoucí solární elektrárna na vodní nádrži"
       }
     ],
-    "ctaViewAll": "Všechny reference"
+    "ctaViewAll": "Všechny reference",
+    "tagOwn": "Vlastní realizace",
+    "tagPartnerSunsurf": "Ve spolupráci se Sunsurf"
   },
   "Partners": {
     "label": "Partneři a certifikace",
@@ -298,7 +312,8 @@
       "email": "info@northsun-eu.com",
       "addresses": [
         {
-          "flag": "CZ", "country": "Česko",
+          "flag": "CZ",
+          "country": "Česko",
           "office": "Sídlo (HQ)",
           "lines": [
             "North Sun s.r.o.",
@@ -307,14 +322,16 @@
           ]
         },
         {
-          "flag": "SE", "country": "Švédsko",
+          "flag": "SE",
+          "country": "Švédsko",
           "office": "Pobočka",
           "lines": [
             "Malmö"
           ]
         },
         {
-          "flag": "NO", "country": "Norsko",
+          "flag": "NO",
+          "country": "Norsko",
           "office": "Pobočka",
           "lines": [
             "Molde"
