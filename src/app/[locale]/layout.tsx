@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Syne, JetBrains_Mono } from 'next/font/google'
 import { routing } from '@/i18n/routing'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { Footer } from '@/components/layout/Footer'
 import '../globals.css'
 
 const syne = Syne({
@@ -76,6 +77,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <LanguageSwitcher />
           {children}
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
