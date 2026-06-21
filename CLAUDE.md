@@ -1,5 +1,16 @@
 # NorthSun — instrukce pro Claude
 
+## Aktuální deadline (PRIORITA)
+
+**Úterý 9.6.2026 — veletrh s QR kódem.**
+
+Návštěvníci naskenují QR kód na telefonu, musí během 10 sekund:
+1. Pochopit, kdo NorthSun je
+2. Vidět, co děláme (přehled služeb)
+3. Najít kontakt (telefon, email, formulář)
+
+Funkční MVP před úterým > perfektní web po úterý.
+
 ## Projekt
 Premium web pro NorthSun (česko-švédsko-norská solární EPC firma).
 Kořen projektu: `c:\Users\spiso\OneDrive\Dokumenty\claude_projects\northsun-eu\`
@@ -15,6 +26,25 @@ Doména: northsun-eu.com (Vercel)
 - **Mail:** Resend
 - **Analytika:** Plausible
 - **Hosting:** Vercel
+
+## Materiály k dispozici
+
+V `/public/images/` jsou připravené fotky a loga (po konverzi z HEIC):
+
+**Reference fotky:**
+- `floating-solar.jpg` — plovoucí solární elektrárna (KANDIDÁT NA HERO!)
+- `walraven.png` — Nizozemsko, bytový dům + industriální objekt, koláž
+- `solar-park-1.jpg`, `solar-park-2.jpg`, `solar-park-3.jpg` — jižní Evropa, montovaná konstrukce, sunset
+
+**Partneři:**
+- `panelclaw-logo.jpeg` — logo
+- `panelclaw-cert.png` — oficiální certifikát kvality pro North Sun s.r.o. (důležitý social proof!)
+- `solarsk-logo.png` — Solar SK partner
+
+**PDF s kontextem (ne pro web, jen pro orientaci):**
+- `presentation_file_northsun_eng_update.pdf` — investorská prezentace v EN
+- `North_Sun_x_Sunsurf.pdf` — partnerství se Sunsurf (floating + landfill)
+- `DATA_SHEET_SCP-A-612.pdf` — technický datasheet Solar SK
 
 ## Pravidla pro práci
 
@@ -57,9 +87,54 @@ Doména: northsun-eu.com (Vercel)
 - Homepage, O nás, Pro domácnosti (B2C), Solární parky (B2B), Reference, Kontakt
 - Jazyky: CZ + EN
 
+## Reference (pro web)
+
+**Vlastní (před prezentací OVĚŘENO na callu s Lukášem):**
+- Walraven (NL) — solar fasáda + střecha
+- Solar park (jižní Evropa) — utility-scale, sunset fotky
+- Solar park (Norsko) — z prezentace
+- Solar roof/façade (Norsko) — YouTube video k dispozici
+- Floating solar — výjimečná fotka, ideální pro hero
+
+**Partnerské (transparentně označit jako spolupráci):**
+- Sunsurf (SE) — floating solar a piling-free landfill
+- Solar SK (UA) — carport mounting systems
+
+**Pravidlo:** Vlastní = badge "Vlastní realizace". Partnerské = badge "Ve spolupráci s [partner]". Nikdy nezamlčet.
+
 ## Co NENÍ v MVP
 - Carports, BIPV/fasády, FPV/plovoucí, opravy a re-engineering
 - B2B landing DE, Sanity blog systém, search, SE/NO/DE jazyky
+
+## Klíčový obsah pro homepage
+
+### Hero
+- **H1 (CZ):** Premium solární EPC napříč severní Evropou
+- **H1 (EN):** Premium solar EPC across Northern Europe
+- **Sub (CZ):** Realizujeme i tam, kam ostatní nedosáhnou. Solární parky, plovoucí elektrárny, fasády a další po celé Evropě.
+- **CTA primary:** Nezávazná konzultace
+- **CTA secondary:** Naše projekty
+
+### O firmě (krátká sekce)
+NorthSun je česko-švédsko-norská EPC firma specializovaná na solární energetiku. Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci, provádíme statické výpočty a 3D modelování. Náš tým komunikuje v 8 jazycích a pravidelně se vzdělává na Intersolar v Mnichově.
+
+Pobočky:
+- 🇨🇿 Vejprnice (HQ): Sokolská 137, 330 27
+- 🇸🇪 Malmö
+- 🇳🇴 Molde
+
+### Diferenciátory (4 bloky pro "Proč NorthSun")
+1. **Engineering-led EPC** — vlastní projektová dokumentace, PV syst, statika, 3D modelování
+2. **Mezinárodní zkušenosti** — reference v Německu, Nizozemsku, Švédsku, Norsku, Belgii a Chorvatsku
+3. **Certifikovaná kvalita** — certifikováni od PanelClaw za úspěšnou instalaci jejich mounting systémů
+4. **Multijazyčný tým** — komunikujeme v 8 jazycích, vzděláváme se na Intersolar v Mnichově
+
+### Kontakt
+- **Email:** northsunsro@gmail.com (po launchi přejdeme na info@northsun-eu.com)
+- **Telefon:** +420 734 383 340 (Lukáš Bílek, Head of EPC Projects)
+
+### Footer / legal
+© 2026 North Sun s.r.o. · IČO 17279976 · DIČ CZ17279976 · Sokolská 137, 330 27 Vejprnice
 
 ## Postup vývoje
 1. Inkrementálně, sekci po sekci
@@ -67,3 +142,25 @@ Doména: northsun-eu.com (Vercel)
 3. Pak homepage, pak ostatní stránky
 4. Sanity schema až bude struktura webu jasná
 5. Po každé větší sekci ověřit na desktop i mobil
+
+## Sub-agenti
+
+V `.claude/agents/` najdeš 4 specializované agenty:
+- **content-writer** — psaní a úpravy textů CZ + EN (drží přirozenou češtinu, žádné anglicismy ani em-dashy)
+- **ui-designer** — design systému, layouty, typografie (premium estetika)
+- **frontend-builder** — React/Next.js implementace (TypeScript strict, Server Components)
+- **qa-reviewer** — kontrola před deploy (build, accessibility, mobile, content)
+
+Claude Code je vyvolá automaticky podle typu úkolu, nebo můžeš explicitně říct: "Use the ui-designer agent to..."
+
+## Strategie pro úterý 9.6.
+
+Pokud nestíháš plný MVP, prioritizuj v tomto pořadí:
+
+1. ✅ **MUST:** Hero, About short, Services, Contact, Footer
+2. ✅ **MUST:** Mobilní responzivita, funkční formulář
+3. 🔶 **SHOULD:** Reference (alespoň 4 karty), Why NorthSun (4 bloky)
+4. 🔶 **SHOULD:** Subtle animace (Framer Motion fade-in-up)
+5. 🔵 **NICE:** Partners section, YouTube video embed, FAQ
+
+Pokud bys měl škrtat, škrtej od bodu 5 nahoru.
