@@ -13,7 +13,8 @@ body {
   background: #ffffff;
   color: #111827;
   font-family: var(--font-syne), system-ui, sans-serif;
-  line-height: 1.6;
+  font-size: 1.0625rem; /* 17px editorial default */
+  line-height: 1.65;
   overscroll-behavior: none;
 }
 

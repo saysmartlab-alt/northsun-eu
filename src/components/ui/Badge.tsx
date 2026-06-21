@@ -9,11 +9,11 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const variants: Record<BadgeVariant, string> = {
-  // success = "Vlastní realizace" — engineering credibility, not loud
-  success: 'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200',
+  // success = "Vlastní realizace" — brand yellow per ui-designer.md (yellow reserved for key highlights)
+  success: 'bg-yellow text-navy ring-1 ring-yellow',
   // muted = "Ve spolupráci s X" — neutral partner attribution
   muted: 'bg-gray-light text-gray-medium ring-1 ring-border',
-  // accent = generic brand highlight
+  // accent = subtle yellow tint, generic brand highlight (lower hierarchy than success)
   accent: 'bg-yellow/15 text-navy ring-1 ring-yellow/40',
 }
 
