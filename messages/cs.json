@@ -23,87 +23,224 @@
   },
   "Common": {
     "cta": {
-      "contact": "",
-      "learnMore": "",
-      "back": "",
-      "viewAll": "",
-      "readMore": ""
+      "contact": "Kontaktujte nás",
+      "learnMore": "Více informací",
+      "back": "Zpět",
+      "viewAll": "Zobrazit vše",
+      "readMore": "Číst dále"
     }
   },
   "Header": {
     "nav": {
-      "about": "",
-      "services": "",
-      "references": "",
-      "contact": ""
+      "about": "O nás",
+      "services": "Služby",
+      "references": "Reference",
+      "contact": "Kontakt"
     },
     "cta": {
-      "consultation": ""
+      "consultation": "Nezávazná konzultace"
     }
   },
   "Footer": {
-    "tagline": "",
-    "columns": [],
+    "tagline": "Premium solární EPC napříč severní Evropou.",
+    "columns": [
+      {
+        "title": "Společnost",
+        "links": [
+          { "label": "O nás", "href": "/o-nas" },
+          { "label": "Reference", "href": "/reference" },
+          { "label": "Kontakt", "href": "/kontakt" }
+        ]
+      },
+      {
+        "title": "Služby",
+        "links": [
+          { "label": "Rezidence", "href": "/sluzby/rezidence" },
+          { "label": "Solární parky", "href": "/sluzby/solarni-parky" },
+          { "label": "Carporty", "href": "/sluzby/carporty" },
+          { "label": "Solární fasády", "href": "/sluzby/fasady" },
+          { "label": "Plovoucí FPV", "href": "/sluzby/fpv" },
+          { "label": "Opravy a re-engineering", "href": "/sluzby/opravy" }
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "links": [
+          { "label": "info@northsun-eu.com", "href": "mailto:info@northsun-eu.com" },
+          { "label": "+420 734 383 340", "href": "tel:+420734383340" },
+          { "label": "Vejprnice (HQ)", "href": "/kontakt#vejprnice" },
+          { "label": "Malmö", "href": "/kontakt#malmo" },
+          { "label": "Molde", "href": "/kontakt#molde" }
+        ]
+      }
+    ],
     "legal": {
-      "copyright": ""
+      "copyright": "© 2026 North Sun s.r.o. · IČO 17279976 · <privacy>Ochrana osobních údajů</privacy>"
     }
   },
   "Hero": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "ctaPrimary": "",
-    "ctaSecondary": ""
+    "label": "ENGINEERING-LED SOLAR EPC",
+    "title": "Premium solární EPC napříč severní Evropou",
+    "lead": "Realizujeme i tam, kam ostatní nedosáhnou. Solární parky, plovoucí elektrárny, fasády a další po celé Evropě.",
+    "ctaPrimary": "Nezávazná konzultace",
+    "ctaSecondary": "Naše projekty"
   },
   "About": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "body": ""
+    "label": "O NorthSun",
+    "title": "Engineering-led EPC se severským přízvukem",
+    "lead": "Česko-švédsko-norská firma specializovaná na solární energetiku.",
+    "body": "Na rozdíl od běžných instalačních firem navrhujeme vlastní projektovou dokumentaci, provádíme statické výpočty a 3D modelování. Pracujeme v PV syst i PV sol a každý projekt vedeme od první studie až po předání. Náš tým komunikuje v osmi jazycích a pravidelně se vzdělává na veletrhu Intersolar v Mnichově."
   },
   "Services": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": []
+    "label": "Co děláme",
+    "title": "Šest produktových linií, jeden engineering tým",
+    "lead": "Od rodinných domů po utility-scale parky. Vždy s vlastní projektovou dokumentací a statikou.",
+    "items": [
+      {
+        "slug": "residential",
+        "title": "Rezidence",
+        "description": "Fotovoltaika pro rodinné domy, navržená pro reálnou spotřebu a dlouhou životnost."
+      },
+      {
+        "slug": "solar-parks",
+        "title": "Solární parky",
+        "description": "Utility-scale instalace, agri-PV, brownfields a komerční střechy pro investory a developery."
+      },
+      {
+        "slug": "carports",
+        "title": "Solární parkoviště a carporty",
+        "description": "Zastřešená parkovací stání, která vyrábějí elektřinu a zhodnocují plochu."
+      },
+      {
+        "slug": "facades",
+        "title": "Solární fasády a BIPV",
+        "description": "Fotovoltaika integrovaná do pláště budovy. Architektonický prvek i zdroj energie."
+      },
+      {
+        "slug": "floating-pv",
+        "title": "Plovoucí elektrárny FPV",
+        "description": "Instalace na vodních plochách, lagunách a nádržích bez záboru orné půdy."
+      },
+      {
+        "slug": "repairs",
+        "title": "Opravy a re-engineering",
+        "description": "Diagnostika, sanace a přeprojektování stávajících elektráren s nedostatky."
+      }
+    ]
   },
   "Why": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": []
+    "label": "Proč NorthSun",
+    "title": "Inženýrská firma, ne montážní četa",
+    "lead": "Čtyři důvody, proč nás zákazníci volí na projekty, které jiní odmítnou.",
+    "items": [
+      {
+        "title": "Engineering-led EPC",
+        "description": "Vlastní projektová dokumentace, statické výpočty, 3D modelování a simulace v PV syst. Žádný outsourcing klíčových rozhodnutí."
+      },
+      {
+        "title": "Mezinárodní zkušenosti",
+        "description": "Reference v Německu, Nizozemsku, Švédsku, Norsku, Belgii a Chorvatsku. Pracujeme tam, kde dává smysl realizovat."
+      },
+      {
+        "title": "Certifikovaná kvalita",
+        "description": "Držíme certifikát od PanelClaw za úspěšnou instalaci jejich mounting systémů. Kvalitu máme doloženou, ne pouze deklarovanou."
+      },
+      {
+        "title": "Multijazyčný tým",
+        "description": "Komunikujeme v osmi jazycích a každý rok se vzděláváme na Intersolar v Mnichově. Technologii sledujeme tam, kde se rodí."
+      }
+    ]
   },
   "References": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": [],
-    "ctaViewAll": ""
+    "label": "Naše práce",
+    "title": "Projekty napříč Evropou",
+    "lead": "Výběr z vlastních realizací a partnerských projektů.",
+    "items": [
+      {
+        "location": "🇳🇱 Nizozemsko",
+        "title": "Walraven",
+        "description": "Solární fasáda a střecha pro průmyslový areál Walraven, kombinovaná instalace BIPV a klasické rooftop FV.",
+        "tag": "vlastní",
+        "image": "/images/walraven.png"
+      },
+      {
+        "location": "🇭🇷 Jižní Evropa",
+        "title": "Utility-scale solární park",
+        "description": "Velkokapacitní park s montovanou konstrukcí, navržený pro maximální výnos v jižních podmínkách.",
+        "tag": "vlastní",
+        "image": "/images/solar-park-1.jpg"
+      },
+      {
+        "location": "🇳🇴 Norsko",
+        "title": "Solární park",
+        "description": "Park ve skandinávských podmínkách s důrazem na statiku konstrukce a celoroční výnos.",
+        "tag": "vlastní",
+        "image": "/images/solar-park-2.jpg"
+      },
+      {
+        "location": "🇳🇴 Norsko",
+        "title": "Střešní instalace",
+        "description": "Rooftop fotovoltaika přizpůsobená severským klimatickým podmínkám a sněhovému zatížení.",
+        "tag": "vlastní",
+        "image": "/images/solar-park-3.jpg"
+      },
+      {
+        "location": "🇪🇺 Evropa",
+        "title": "Plovoucí elektrárna FPV",
+        "description": "Realizace plovoucí fotovoltaiky na vodní ploše bez nutnosti záboru zemědělské půdy.",
+        "tag": "vlastní",
+        "image": "/images/floating-solar.jpg"
+      },
+      {
+        "location": "🇸🇪 Švédsko",
+        "title": "Sunsurf, plovoucí FPV",
+        "description": "Společný projekt plovoucí fotovoltaiky a piling-free instalace na bývalé skládce.",
+        "tag": "partner-sunsurf",
+        "image": ""
+      }
+    ],
+    "ctaViewAll": "Všechny reference"
   },
   "Partners": {
-    "label": "",
-    "title": "",
-    "lead": ""
+    "label": "Partneři a certifikace",
+    "title": "Spolupracujeme s předními výrobci v oboru",
+    "lead": "Certifikát PanelClaw, partnerství se Sunsurf a Solar SK. Naši dodavatelé vědí, koho do projektů pouštějí."
   },
   "Contact": {
-    "label": "",
-    "title": "",
-    "lead": "",
+    "label": "Kontakt",
+    "title": "Pojďme si o projektu promluvit",
+    "lead": "Napište nám, co plánujete. Ozveme se vám zpravidla do jednoho pracovního dne.",
     "form": {
-      "name": "",
-      "email": "",
-      "phone": "",
-      "projectType": "",
-      "message": "",
-      "gdpr": "",
-      "submit": "",
-      "success": "",
-      "error": ""
+      "name": "Jméno a příjmení",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "projectType": "Typ projektu",
+      "message": "Vaše zpráva",
+      "gdpr": "Souhlasím se zpracováním osobních údajů pro účely vyřízení poptávky.",
+      "submit": "Odeslat poptávku",
+      "success": "Děkujeme. Ozveme se vám do jednoho pracovního dne.",
+      "error": "Něco se pokazilo, zkuste to prosím znovu nebo nám napište přímo na info@northsun-eu.com."
     },
     "info": {
-      "phone": "",
-      "email": "",
-      "addresses": []
+      "phone": "+420 734 383 340",
+      "email": "info@northsun-eu.com",
+      "addresses": [
+        {
+          "country": "🇨🇿 Česko",
+          "office": "Sídlo (HQ)",
+          "lines": ["North Sun s.r.o.", "Sokolská 137", "330 27 Vejprnice"]
+        },
+        {
+          "country": "🇸🇪 Švédsko",
+          "office": "Pobočka",
+          "lines": ["Malmö"]
+        },
+        {
+          "country": "🇳🇴 Norsko",
+          "office": "Pobočka",
+          "lines": ["Molde"]
+        }
+      ]
     }
   }
 }

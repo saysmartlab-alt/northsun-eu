@@ -23,87 +23,224 @@
   },
   "Common": {
     "cta": {
-      "contact": "",
-      "learnMore": "",
-      "back": "",
-      "viewAll": "",
-      "readMore": ""
+      "contact": "Get in touch",
+      "learnMore": "Learn more",
+      "back": "Back",
+      "viewAll": "View all",
+      "readMore": "Read more"
     }
   },
   "Header": {
     "nav": {
-      "about": "",
-      "services": "",
-      "references": "",
-      "contact": ""
+      "about": "About",
+      "services": "Services",
+      "references": "References",
+      "contact": "Contact"
     },
     "cta": {
-      "consultation": ""
+      "consultation": "Free consultation"
     }
   },
   "Footer": {
-    "tagline": "",
-    "columns": [],
+    "tagline": "Premium solar EPC across Northern Europe.",
+    "columns": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "href": "/about" },
+          { "label": "References", "href": "/references" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          { "label": "Residential", "href": "/services/residential" },
+          { "label": "Solar parks", "href": "/services/solar-parks" },
+          { "label": "Carports", "href": "/services/carports" },
+          { "label": "Solar facades", "href": "/services/facades" },
+          { "label": "Floating PV", "href": "/services/floating-pv" },
+          { "label": "Repairs and re-engineering", "href": "/services/repairs" }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          { "label": "info@northsun-eu.com", "href": "mailto:info@northsun-eu.com" },
+          { "label": "+420 734 383 340", "href": "tel:+420734383340" },
+          { "label": "Vejprnice (HQ)", "href": "/contact#vejprnice" },
+          { "label": "Malmö", "href": "/contact#malmo" },
+          { "label": "Molde", "href": "/contact#molde" }
+        ]
+      }
+    ],
     "legal": {
-      "copyright": ""
+      "copyright": "© 2026 North Sun s.r.o. · Reg. No. 17279976 · <privacy>Privacy policy</privacy>"
     }
   },
   "Hero": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "ctaPrimary": "",
-    "ctaSecondary": ""
+    "label": "ENGINEERING-LED SOLAR EPC",
+    "title": "Premium solar EPC across Northern Europe",
+    "lead": "We deliver where others can't. Solar parks, floating plants, facades and more across Europe.",
+    "ctaPrimary": "Free consultation",
+    "ctaSecondary": "Our projects"
   },
   "About": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "body": ""
+    "label": "About NorthSun",
+    "title": "Engineering-led EPC with a Nordic accent",
+    "lead": "A Czech-Swedish-Norwegian firm focused on solar.",
+    "body": "Unlike typical installation contractors, we produce our own technical documentation, structural calculations and 3D models in-house. We work in PV syst and PV sol, and we run every project from the first feasibility study through to handover. Our team speaks eight languages and trains every year at Intersolar in Munich."
   },
   "Services": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": []
+    "label": "What we do",
+    "title": "Six product lines, one engineering team",
+    "lead": "From family homes to utility-scale parks. Always with in-house documentation and structural design.",
+    "items": [
+      {
+        "slug": "residential",
+        "title": "Residential",
+        "description": "Rooftop PV for family homes, sized for actual consumption and built to last."
+      },
+      {
+        "slug": "solar-parks",
+        "title": "Solar parks",
+        "description": "Utility-scale parks, agri-PV, brownfield sites and commercial rooftops for investors and developers."
+      },
+      {
+        "slug": "carports",
+        "title": "Solar parking and carports",
+        "description": "Covered parking that generates electricity and adds value to existing surfaces."
+      },
+      {
+        "slug": "facades",
+        "title": "Solar facades and BIPV",
+        "description": "Photovoltaics integrated into the building envelope. An architectural element and an energy source."
+      },
+      {
+        "slug": "floating-pv",
+        "title": "Floating solar (FPV)",
+        "description": "Installations on water surfaces, lagoons and reservoirs without taking up arable land."
+      },
+      {
+        "slug": "repairs",
+        "title": "Repairs and re-engineering",
+        "description": "Diagnostics, remediation and redesign of existing plants underperforming due to poor delivery."
+      }
+    ]
   },
   "Why": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": []
+    "label": "Why NorthSun",
+    "title": "An engineering firm, not a crew with ladders",
+    "lead": "Four reasons clients hire us for projects others turn down.",
+    "items": [
+      {
+        "title": "Engineering-led EPC",
+        "description": "In-house technical documentation, structural calculations, 3D modelling and PV syst simulations. We don't outsource the decisions that matter."
+      },
+      {
+        "title": "International experience",
+        "description": "References in Germany, the Netherlands, Sweden, Norway, Belgium and Croatia. We work where the project makes sense, regardless of borders."
+      },
+      {
+        "title": "Certified quality",
+        "description": "We hold a PanelClaw certification for the successful installation of their mounting systems. Quality on paper, not just in pitch decks."
+      },
+      {
+        "title": "Multilingual team",
+        "description": "We communicate in eight languages and train every year at Intersolar in Munich. We follow the technology where it's made."
+      }
+    ]
   },
   "References": {
-    "label": "",
-    "title": "",
-    "lead": "",
-    "items": [],
-    "ctaViewAll": ""
+    "label": "Our work",
+    "title": "Projects across Europe",
+    "lead": "A selection of our own deliveries and partner projects.",
+    "items": [
+      {
+        "location": "🇳🇱 Netherlands",
+        "title": "Walraven",
+        "description": "Solar facade and rooftop for the Walraven industrial site, combining BIPV with a conventional rooftop PV system.",
+        "tag": "own",
+        "image": "/images/walraven.png"
+      },
+      {
+        "location": "🇭🇷 Southern Europe",
+        "title": "Utility-scale solar park",
+        "description": "Large-scale park with mounted structures, engineered for maximum yield in southern climate conditions.",
+        "tag": "own",
+        "image": "/images/solar-park-1.jpg"
+      },
+      {
+        "location": "🇳🇴 Norway",
+        "title": "Solar park",
+        "description": "A park built for Scandinavian conditions with structural design tuned to local loads and year-round yield.",
+        "tag": "own",
+        "image": "/images/solar-park-2.jpg"
+      },
+      {
+        "location": "🇳🇴 Norway",
+        "title": "Rooftop installation",
+        "description": "Rooftop photovoltaics adapted to Nordic climate and snow loading.",
+        "tag": "own",
+        "image": "/images/solar-park-3.jpg"
+      },
+      {
+        "location": "🇪🇺 Europe",
+        "title": "Floating PV plant",
+        "description": "A floating photovoltaic installation on a water surface, with no need to occupy farmland.",
+        "tag": "own",
+        "image": "/images/floating-solar.jpg"
+      },
+      {
+        "location": "🇸🇪 Sweden",
+        "title": "Sunsurf, floating PV",
+        "description": "A joint project covering floating PV and piling-free installation on a former landfill site.",
+        "tag": "partner-sunsurf",
+        "image": ""
+      }
+    ],
+    "ctaViewAll": "All references"
   },
   "Partners": {
-    "label": "",
-    "title": "",
-    "lead": ""
+    "label": "Partners and certifications",
+    "title": "We work with leading manufacturers in the industry",
+    "lead": "A PanelClaw certification, a partnership with Sunsurf and Solar SK. Our suppliers know who they're letting into their projects."
   },
   "Contact": {
-    "label": "",
-    "title": "",
-    "lead": "",
+    "label": "Contact",
+    "title": "Let's talk about your project",
+    "lead": "Tell us what you're planning. We usually get back to you within one business day.",
     "form": {
-      "name": "",
-      "email": "",
-      "phone": "",
-      "projectType": "",
-      "message": "",
-      "gdpr": "",
-      "submit": "",
-      "success": "",
-      "error": ""
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectType": "Project type",
+      "message": "Your message",
+      "gdpr": "I agree to the processing of my personal data for the purpose of handling this enquiry.",
+      "submit": "Send enquiry",
+      "success": "Thank you. We'll get back to you within one business day.",
+      "error": "Something went wrong, please try again or email us directly at info@northsun-eu.com."
     },
     "info": {
-      "phone": "",
-      "email": "",
-      "addresses": []
+      "phone": "+420 734 383 340",
+      "email": "info@northsun-eu.com",
+      "addresses": [
+        {
+          "country": "🇨🇿 Czechia",
+          "office": "Headquarters",
+          "lines": ["North Sun s.r.o.", "Sokolská 137", "330 27 Vejprnice"]
+        },
+        {
+          "country": "🇸🇪 Sweden",
+          "office": "Office",
+          "lines": ["Malmö"]
+        },
+        {
+          "country": "🇳🇴 Norway",
+          "office": "Office",
+          "lines": ["Molde"]
+        }
+      ]
     }
   }
 }
