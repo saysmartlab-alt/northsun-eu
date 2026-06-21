@@ -17,11 +17,20 @@ Doména: northsun-eu.com (Vercel)
 - **Hosting:** Vercel
 
 ## Pravidla pro práci
-- Po každé úpravě commit + push (Vercel auto-deploy)
+
+### Git workflow (MVP fáze, od 2026-06-21)
+- **Pracovní branch: `dev`** — všechny změny commitovat tam
+- **`master` = pre-launch produkce** — NIKDY na něj nepushovat bez explicitního souhlasu uživatele
+- **`git push` jen na vyžádání** — commitovat lokálně, push až řekne uživatel
+- Po větších změnách spustit `npm run dev`, poslat localhost URL (`http://localhost:3000`)
+- Vercel auto-deploy je vázaný na master → push na master = nasazení pre-launch verze, pozor!
+
+### Obsah a stylistika
 - Nikdy nepoužívat em pomlčku (—), nahrazovat čárkou
 - Spojky (a, i, v, s, k, z, u, o) nesmí zůstat na konci řádku (česká typografie)
 - CZ verze používá **vykání** (formálnější než starý web)
-- Neposílat odkaz na localhost, uživatel kontroluje na Vercelu
+
+### Architektura
 - Server Components default, Client Components jen kde je potřeba interaktivity
 - Mobile-first design (50%+ traffic z mobilu)
 - Lighthouse 90+ ve všech kategoriích
