@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import { Flag } from '@/components/ui/Flag'
 
 interface TrustStripTexts {
   locations: string
@@ -50,12 +51,12 @@ export function TrustStrip({ texts }: TrustStripProps) {
         {/* Left: flags + locations (always visible) */}
         <div className="flex items-center gap-3 md:gap-4">
           <span
-            className="flex items-center gap-1 text-[20px] leading-none"
+            className="flex items-center gap-1.5"
             aria-hidden="true"
           >
-            <span>🇨🇿</span>
-            <span>🇸🇪</span>
-            <span>🇳🇴</span>
+            <Flag code="CZ" className="h-3.5" />
+            <Flag code="SE" className="h-3.5" />
+            <Flag code="NO" className="h-3.5" />
           </span>
           <span className="text-caption uppercase tracking-wider text-white/60">
             {texts.locations}

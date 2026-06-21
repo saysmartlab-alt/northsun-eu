@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { Flag } from '@/components/ui/Flag'
 import { ContactForm } from './ContactForm'
 
 interface ContactProps {
@@ -10,6 +11,7 @@ interface ContactProps {
 }
 
 interface AddressItem {
+  flag: 'CZ' | 'SE' | 'NO'
   country: string
   office: string
   lines: string[]
@@ -162,8 +164,9 @@ export async function Contact({ locale }: ContactProps) {
                           className="rounded-xl border border-white/10 bg-navy-mid/10 p-5 transition-colors duration-200 hover:border-white/20 hover:bg-navy-mid/15"
                         >
                           <div className="flex items-baseline justify-between gap-3">
-                            <h3 className="text-h4 font-semibold text-white">
-                              {addr.country}
+                            <h3 className="text-h4 font-semibold text-white flex items-center gap-2.5">
+                              <Flag code={addr.flag} className="h-4" />
+                              <span>{addr.country}</span>
                             </h3>
                             <span
                               className={

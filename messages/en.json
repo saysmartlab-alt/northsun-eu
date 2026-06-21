@@ -298,7 +298,7 @@
       "email": "info@northsun-eu.com",
       "addresses": [
         {
-          "country": "🇨🇿 Czechia",
+          "flag": "CZ", "country": "Czechia",
           "office": "Headquarters",
           "lines": [
             "North Sun s.r.o.",
@@ -307,14 +307,14 @@
           ]
         },
         {
-          "country": "🇸🇪 Sweden",
+          "flag": "SE", "country": "Sweden",
           "office": "Office",
           "lines": [
             "Malmö"
           ]
         },
         {
-          "country": "🇳🇴 Norway",
+          "flag": "NO", "country": "Norway",
           "office": "Office",
           "lines": [
             "Molde"

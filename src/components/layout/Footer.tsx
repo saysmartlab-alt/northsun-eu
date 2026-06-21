@@ -29,10 +29,6 @@ export async function Footer({ locale }: FooterProps) {
   const tagline = t('tagline')
   const columns = t.raw('columns') as FooterColumn[]
 
-  // Column span hints to balance widths on desktop.
-  // Logo block 3, Company 2, Services 3, Contact 4 => sums to 12.
-  const columnSpans = ['lg:col-span-2', 'lg:col-span-3', 'lg:col-span-4']
-
   return (
     <footer
       role="contentinfo"
@@ -74,8 +70,8 @@ export async function Footer({ locale }: FooterProps) {
             }
             className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8"
           >
-            {columns.map((column, idx) => (
-              <div key={column.title} className={columnSpans[idx]}>
+            {columns.map((column) => (
+              <div key={column.title}>
                 <h2 className="text-small uppercase tracking-[0.18em] font-semibold text-yellow mb-5">
                   {column.title}
                 </h2>
