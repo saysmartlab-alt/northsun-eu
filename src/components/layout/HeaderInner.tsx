@@ -124,7 +124,7 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
           headerBg
         )}
       >
-        <Container className="flex h-16 lg:h-20 items-center justify-between gap-6">
+        <Container className="flex h-20 lg:h-24 items-center justify-between gap-6">
           {/* Logo (left) */}
           <a
             href="#hero"
@@ -136,9 +136,9 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
               src="/logo.svg"
               alt="NorthSun"
               width={140}
-              height={40}
+              height={64}
               priority
-              className="h-10 w-auto"
+              className="h-14 lg:h-16 w-auto"
             />
           </a>
 
