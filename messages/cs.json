@@ -83,7 +83,12 @@
     "title": "Premium solární EPC napříč severní Evropou",
     "lead": "Realizujeme i tam, kam ostatní nedosáhnou. Solární parky, plovoucí elektrárny, fasády a další po celé Evropě.",
     "ctaPrimary": "Nezávazná konzultace",
-    "ctaSecondary": "Naše projekty"
+    "ctaSecondary": "Naše projekty",
+    "trustStrip": {
+      "locations": "Česko · Švédsko · Norsko",
+      "cert": "Certifikováno PanelClaw",
+      "partner": "Partner Sunsurf"
+    }
   },
   "About": {
     "label": "O NorthSun",

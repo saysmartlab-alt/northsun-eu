@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server'
-import { Container } from '@/components/ui/Container'
+import { Hero } from '@/components/sections/Hero'
 
 export default async function Home({
   params,
@@ -10,12 +10,8 @@ export default async function Home({
   setRequestLocale(locale)
 
   return (
-    <main id="main-content" className="min-h-screen flex items-center justify-center bg-white">
-      <Container>
-        <p className="text-center text-body-lg text-gray-medium">
-          MVP homepage, coming soon (literally).
-        </p>
-      </Container>
+    <main id="main-content">
+      <Hero locale={locale} />
     </main>
   )
 }

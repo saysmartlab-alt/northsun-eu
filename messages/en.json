@@ -83,7 +83,12 @@
     "title": "Premium solar EPC across Northern Europe",
     "lead": "We deliver where others can't. Solar parks, floating plants, facades and more across Europe.",
     "ctaPrimary": "Free consultation",
-    "ctaSecondary": "Our projects"
+    "ctaSecondary": "Our projects",
+    "trustStrip": {
+      "locations": "Czechia · Sweden · Norway",
+      "cert": "PanelClaw certified",
+      "partner": "Sunsurf partner"
+    }
   },
   "About": {
     "label": "About NorthSun",
