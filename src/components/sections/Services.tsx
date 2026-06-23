@@ -85,7 +85,7 @@ export async function Services({ locale }: ServicesProps) {
                 num: (chunks) => <span className="text-yellow">{chunks}</span>,
               })}
             </h2>
-            <p className="mt-5 text-body-lg text-white/75 whitespace-pre-line max-w-3xl">
+            <p className="mt-5 text-body-lg text-white/75 whitespace-pre-line max-w-3xl [text-wrap:balance]">
               {lead}
             </p>
           </div>

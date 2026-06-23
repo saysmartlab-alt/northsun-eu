@@ -82,10 +82,12 @@ export async function Why({ locale }: WhyProps) {
                     aria-labelledby={headingId}
                     className="group flex items-start gap-6 md:gap-8"
                   >
-                    {/* Big number, decorative — dominates the left side */}
+                    {/* Big number, decorative — dominates the left side.
+                        inline-block + min-w + tabular-nums = consistent width so item 01
+                        (narrow "1" glyph) aligns with items 02–04 (wider digits). */}
                     <span
                       aria-hidden="true"
-                      className="font-syne font-extrabold leading-none text-yellow transition-colors duration-200 ease-out group-hover:text-white"
+                      className="inline-block tabular-nums shrink-0 min-w-[1.6em] font-syne font-extrabold leading-none text-yellow transition-colors duration-200 ease-out group-hover:text-white"
                       style={{ fontSize: 'clamp(3.5rem, 7vw, 6rem)' }}
                     >
                       {number}
