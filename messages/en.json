@@ -123,7 +123,7 @@
   "Hero": {
     "label": "ENGINEERING-LED SOLAR EPC",
     "title": "Premium solar EPC for Northern Europe",
-    "lead": "We deliver where others can't. Solar parks, floating plants, facades and more across Europe.",
+    "lead": "We deliver where others can't.\nSolar parks, floating plants, facades and more across Europe.",
     "ctaPrimary": "Free consultation",
     "ctaSecondary": "Our projects",
     "trustStrip": {
@@ -317,7 +317,7 @@
   "Contact": {
     "label": "Contact",
     "title": "Let's talk about your project",
-    "lead": "Tell us what you're planning. We usually get back to you within one business day.",
+    "lead": "Tell us what you're planning.\nWe usually get back to you within one business day.",
     "form": {
       "name": "Full name",
       "email": "Email",

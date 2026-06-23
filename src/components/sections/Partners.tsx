@@ -47,7 +47,8 @@ export async function Partners({ locale }: PartnersProps) {
             </span>
             <h2
               id="partners-heading"
-              className="mt-5 text-h1 text-navy [text-wrap:balance]"
+              className="mt-5 text-h1 text-navy [text-wrap:balance] [overflow-wrap:anywhere] hyphens-auto"
+              lang={locale}
             >
               {title}
             </h2>

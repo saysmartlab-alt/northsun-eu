@@ -17,6 +17,7 @@ body {
   font-size: 1.125rem; /* 18px editorial default — friendly to older readers */
   line-height: 1.7;
   overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {

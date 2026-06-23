@@ -88,7 +88,7 @@ export function HeroContent({ texts }: HeroContentProps) {
         initial="hidden"
         animate="visible"
         variants={buildVariants(0.5)}
-        className="mt-6 text-body-lg text-white/85 max-w-2xl"
+        className="mt-6 text-body-lg text-white/85 max-w-2xl whitespace-pre-line"
       >
         {texts.lead}
       </motion.p>

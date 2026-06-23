@@ -73,7 +73,7 @@ export async function Contact({ locale }: ContactProps) {
             >
               {title}
             </h2>
-            <p className="mt-5 text-body-lg text-white/75 max-w-3xl [text-wrap:pretty]">
+            <p className="mt-5 text-body-lg text-white/75 max-w-3xl whitespace-pre-line">
               {lead}
             </p>
           </div>

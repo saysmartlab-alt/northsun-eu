@@ -42,7 +42,7 @@ export async function About({ locale }: AboutProps) {
               </p>
               <Link
                 href="#reference"
-                className="group mt-auto self-start inline-flex items-center gap-2 rounded-lg bg-yellow px-7 py-4 text-base font-syne font-semibold text-navy shadow-sm transition-all duration-200 ease-out hover:bg-yellow-600 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
+                className="group mt-10 lg:mt-auto self-start inline-flex items-center gap-2 rounded-lg bg-yellow px-7 py-4 text-base font-syne font-semibold text-navy shadow-sm transition-all duration-200 ease-out hover:bg-yellow-600 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
               >
                 <span>{ctaReferences}</span>
                 <ArrowRight

@@ -123,7 +123,7 @@
   "Hero": {
     "label": "ENGINEERING-LED SOLAR EPC",
     "title": "Premium solární EPC pro severní Evropu",
-    "lead": "Realizujeme i tam, kam ostatní nedosáhnou. Solární parky, plovoucí elektrárny, fasády a další po celé Evropě.",
+    "lead": "Realizujeme i tam, kam ostatní nedosáhnou.\nSolární parky, plovoucí elektrárny, fasády a další po celé Evropě.",
     "ctaPrimary": "Nezávazná konzultace",
     "ctaSecondary": "Naše projekty",
     "trustStrip": {
@@ -317,7 +317,7 @@
   "Contact": {
     "label": "Kontakt",
     "title": "Pojďme si o projektu promluvit",
-    "lead": "Napište nám, co plánujete. Ozveme se vám zpravidla do jednoho pracovního dne.",
+    "lead": "Napište nám, co plánujete.\nOzveme se vám zpravidla do jednoho pracovního dne.",
     "form": {
       "name": "Jméno a příjmení",
       "email": "E-mail",
