@@ -227,7 +227,7 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
                       <a
                         href={item.href}
                         onClick={onNavClick}
-                        className="block py-4 text-h3 font-semibold text-white hover:text-yellow transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow rounded-sm"
+                        className="block py-4 text-h3 font-semibold text-white text-right hover:text-yellow transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow rounded-sm"
                       >
                         {item.label}
                       </a>
