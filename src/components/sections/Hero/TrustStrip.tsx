@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import { Container } from '@/components/ui/Container'
 import { Flag } from '@/components/ui/Flag'
 
 interface TrustStripTexts {
@@ -47,7 +48,7 @@ export function TrustStrip({ texts }: TrustStripProps) {
       variants={variants}
       className="absolute inset-x-0 bottom-0 z-10 bg-navy/30 backdrop-blur-sm border-t border-white/10 py-5 md:py-6"
     >
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-12 flex items-center justify-between gap-6">
+      <Container className="flex items-center justify-between gap-6">
         {/* Left: flags + locations (always visible) */}
         <div className="flex items-center gap-3 md:gap-4">
           <span
@@ -70,7 +71,7 @@ export function TrustStrip({ texts }: TrustStripProps) {
           <span aria-hidden="true">·</span>
           <span>{texts.partner}</span>
         </div>
-      </div>
+      </Container>
     </motion.div>
   )
 }
