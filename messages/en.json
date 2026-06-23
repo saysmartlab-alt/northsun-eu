@@ -94,8 +94,8 @@
         "title": "Contact",
         "links": [
           {
-            "label": "northsunsro@gmail.com",
-            "href": "mailto:northsunsro@gmail.com"
+            "label": "northsun@qualitysolar.com",
+            "href": "mailto:northsun@qualitysolar.com"
           },
           {
             "label": "+420 734 383 340",
@@ -340,7 +340,7 @@
       "submit": "Send enquiry",
       "submitting": "Sending…",
       "success": "Thank you. We'll get back to you within one business day.",
-      "error": "Something went wrong, please try again or email us directly at northsunsro@gmail.com.",
+      "error": "Something went wrong, please try again or email us directly at northsun@qualitysolar.com.",
       "errors": {
         "name_min": "Please enter your name (at least 2 characters).",
         "name_max": "Name is too long.",
@@ -355,7 +355,7 @@
     },
     "info": {
       "phone": "+420 734 383 340",
-      "email": "northsunsro@gmail.com",
+      "email": "northsun@qualitysolar.com",
       "addresses": [
         {
           "flag": "CZ",

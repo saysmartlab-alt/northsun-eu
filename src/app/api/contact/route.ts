@@ -5,7 +5,7 @@ import { contactSchema } from '@/lib/schemas/contact'
 
 const LEAD_INDEX_KEY = 'contact:leads:index'
 const LEAD_KEY_PREFIX = 'contact:lead:'
-const NOTIFY_TO = 'northsunsro@gmail.com'
+const NOTIFY_TO = 'northsun@qualitysolar.com'
 // Resend's onboarding sender works without verifying a custom domain.
 // Replace with `notifications@northsun-eu.com` once the domain is verified.
 const NOTIFY_FROM = 'NorthSun web <onboarding@resend.dev>'
@@ -73,21 +73,35 @@ export async function POST(req: NextRequest) {
   if (resendKey) {
     try {
       const resend = new Resend(resendKey)
-      const subject = `Nová poptávka z webu - ${lead.name}`
-      const text =
-        `Email: ${lead.email}\n` +
-        `Telefon: ${lead.phone || '-'}\n` +
-        `Typ projektu: ${lead.projectType}\n\n` +
-        `Zpráva:\n${lead.message}\n\n` +
-        `Locale: ${lead.locale}\n` +
-        `Čas: ${new Date(now).toISOString()}\n` +
-        `IP: ${lead.ip || '-'}\n`
+      const subject = `Nová poptávka: ${lead.projectType} — ${lead.name}`
+      const escape = (s: string) =>
+        s
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+      const html = `
+        <h2 style="font-family: Arial, sans-serif; color: #030057;">Nová poptávka z webu</h2>
+        <table style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;">
+          <tr><td style="padding: 4px 12px 4px 0;"><strong>Jméno:</strong></td><td>${escape(lead.name)}</td></tr>
+          <tr><td style="padding: 4px 12px 4px 0;"><strong>Email:</strong></td><td><a href="mailto:${escape(lead.email)}" style="color: #030057;">${escape(lead.email)}</a></td></tr>
+          <tr><td style="padding: 4px 12px 4px 0;"><strong>Telefon:</strong></td><td>${escape(lead.phone || 'neuvedeno')}</td></tr>
+          <tr><td style="padding: 4px 12px 4px 0;"><strong>Typ projektu:</strong></td><td>${escape(lead.projectType)}</td></tr>
+        </table>
+        <h3 style="font-family: Arial, sans-serif; color: #030057; margin-top: 24px;">Zpráva</h3>
+        <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${escape(lead.message)}</p>
+        <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 24px 0;">
+        <p style="font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">
+          Locale: ${escape(lead.locale)} · Čas: ${new Date(now).toISOString()} · IP: ${escape(lead.ip || '-')}
+        </p>
+      `.trim()
       const { error } = await resend.emails.send({
         from: NOTIFY_FROM,
         to: NOTIFY_TO,
         replyTo: lead.email,
         subject,
-        text,
+        html,
       })
       if (error) {
         console.error('contact_resend_error', error)

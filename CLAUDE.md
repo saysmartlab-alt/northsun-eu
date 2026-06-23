@@ -135,7 +135,7 @@ Pobočky:
 4. **Multijazyčný tým** — komunikujeme v 8 jazycích, vzděláváme se na Intersolar v Mnichově
 
 ### Kontakt
-- **Email:** northsunsro@gmail.com
+- **Email:** northsun@qualitysolar.com
 - **Telefon:** +420 734 383 340 (Lukáš Bílek, Head of EPC Projects)
 
 ### Footer / legal
