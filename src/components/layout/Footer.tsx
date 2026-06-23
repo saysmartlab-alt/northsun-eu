@@ -36,6 +36,15 @@ interface FooterColumn {
   links: FooterLink[]
 }
 
+const PARTNER_LOGOS = [
+  { slug: 'panelclaw', name: 'PanelClaw', logo: '/images/partners/panelclaw/logo.jpeg' },
+  { slug: 'pillar', name: 'Pillar', logo: '/images/partners/pillar/logo.png' },
+  { slug: 'sunsurf', name: 'Sunsurf', logo: '/images/partners/sunsurf/logo.svg' },
+  { slug: 'aikosolar', name: 'Aiko Solar', logo: '/images/partners/aikosolar/logo.svg' },
+  { slug: 'ecosol', name: 'Ecosol', logo: '/images/partners/ecosol/logo.png' },
+  { slug: 'solarsk', name: 'Solar SK', logo: '/images/partners/solarsk/logo.png' },
+] as const
+
 /**
  * Footer is intentionally a static Server Component (no motion, no client JS).
  * It uses plain anchor tags for internal links because the localized routes
@@ -55,6 +64,36 @@ export async function Footer({ locale }: FooterProps) {
       className="bg-white text-gray-dark"
     >
       <Container className="pt-20 md:pt-24 lg:pt-28 pb-10 md:pb-12">
+        {/* Partner logos strip (premium credibility marker, links scroll to Partners section) */}
+        <div className="mb-16 md:mb-20 pb-12 md:pb-16 border-b border-border">
+          <p className="text-caption uppercase tracking-[0.18em] font-semibold text-gray-medium mb-7 text-center md:text-left">
+            {locale === 'cs' ? 'Naši partneři' : 'Our partners'}
+          </p>
+          <ul
+            role="list"
+            className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 md:gap-x-6 gap-y-6"
+          >
+            {PARTNER_LOGOS.map((p) => (
+              <li key={p.slug} className="list-none">
+                <a
+                  href="#partneri"
+                  aria-label={p.name}
+                  title={p.name}
+                  className="block opacity-75 transition-opacity duration-200 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm"
+                >
+                  <Image
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    width={140}
+                    height={36}
+                    className="h-7 md:h-8 w-auto object-contain"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Main grid: logo + 3 link columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-8">
           {/* Logo + tagline block */}

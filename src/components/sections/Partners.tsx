@@ -19,6 +19,7 @@ interface PartnerItem {
   logoAlt: string
   certUrl?: string
   certLabel?: string
+  websiteUrl?: string
 }
 
 export async function Partners({ locale }: PartnersProps) {
@@ -28,6 +29,8 @@ export async function Partners({ locale }: PartnersProps) {
   const title = t('title')
   const lead = t('lead')
   const items = t.raw('items') as PartnerItem[]
+
+  const websiteLabel = locale === 'cs' ? 'Web partnera' : 'Visit website'
 
   return (
     <Section
@@ -53,18 +56,22 @@ export async function Partners({ locale }: PartnersProps) {
             </p>
           </div>
 
-          {/* Partner cards grid */}
+          {/* Partner cards grid (3 cols desktop, 2 tablet, 1 mobile) */}
           <ul
             role="list"
-            className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+            className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {items.map((item, idx) => {
               const headingId = `partner-${item.slug}`
+              const hasLogo = item.logo && item.logo.length > 0
+              const linkUrl = item.certUrl || item.websiteUrl
+              const linkLabel = item.certLabel || (item.websiteUrl ? websiteLabel : undefined)
+
               return (
                 <AnimatedSection
                   key={item.slug}
                   as="li"
-                  delay={idx * 0.08}
+                  delay={idx * 0.06}
                   y={20}
                   className="list-none"
                 >
@@ -72,15 +79,24 @@ export async function Partners({ locale }: PartnersProps) {
                     aria-labelledby={headingId}
                     className="group flex h-full flex-col rounded-2xl border border-border bg-white p-7 md:p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-navy/20 hover:shadow-lg"
                   >
-                    {/* Logo area — fixed height, centered logo, object-contain */}
+                    {/* Logo area — fixed height, centered logo OR text placeholder */}
                     <div className="relative flex h-20 md:h-24 w-full items-center justify-center">
-                      <Image
-                        src={item.logo}
-                        alt={item.logoAlt}
-                        width={200}
-                        height={80}
-                        className="max-h-full w-auto object-contain"
-                      />
+                      {hasLogo ? (
+                        <Image
+                          src={item.logo}
+                          alt={item.logoAlt}
+                          width={200}
+                          height={80}
+                          className="max-h-full w-auto object-contain"
+                        />
+                      ) : (
+                        <span
+                          aria-label={item.logoAlt}
+                          className="font-syne text-2xl md:text-3xl font-bold tracking-tight text-navy/85"
+                        >
+                          {item.name}
+                        </span>
+                      )}
                     </div>
 
                     {/* Cert badge (only PanelClaw) */}
@@ -117,16 +133,16 @@ export async function Partners({ locale }: PartnersProps) {
                       {item.description}
                     </p>
 
-                    {/* Cert link (only PanelClaw) */}
-                    {item.certUrl && item.certLabel && (
+                    {/* External link: certificate OR partner website */}
+                    {linkUrl && linkLabel && (
                       <div className="mt-5 flex justify-center">
                         <a
-                          href={item.certUrl}
+                          href={linkUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-small font-semibold text-navy underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm"
                         >
-                          <span>{item.certLabel}</span>
+                          <span>{linkLabel}</span>
                           <ExternalLink
                             className="h-3.5 w-3.5"
                             strokeWidth={2}

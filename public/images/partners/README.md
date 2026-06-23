@@ -1,39 +1,118 @@
-# Partneři — loga a materiály
+# Loga partnerů — instrukce pro Claude
 
-Loga partnerských firem pro sekci "Naši partneři" na homepage.
+Tato složka obsahuje **3 nová loga partnerů** (Pillar, Ecosol, Aiko Solar) ve všech potřebných variantách.
 
-## Struktura
+## Co dělat
+
+**Zkopíruj obsah `partners/` do `public/images/partners/`** v projektu. Tím doplníš:
 
 ```
-partners/
-├── panelclaw/       # PanelClaw (US, mounting systems)
-├── sunsurf/         # Sunsurf (SE, floating solar + landfill)
-└── solarsk/         # Solar SK (UA, carport mounting)
+public/images/partners/
+├── panelclaw/    ← už máš
+├── sunsurf/      ← už máš
+├── solarsk/      ← už máš
+├── pillar/       ← NOVÉ (z tohoto ZIP)
+├── ecosol/       ← NOVÉ (z tohoto ZIP)
+└── aikosolar/    ← NOVÉ (z tohoto ZIP)
 ```
 
-## Konvence názvů
+## Struktura a logika názvů
 
-V každé partner složce:
-- `logo.svg` (preferováno) nebo `logo.png` — hlavní logo
-- `logo-white.svg` (volitelné) — bílá verze pro tmavé pozadí
-- `logo-dark.svg` (volitelné) — tmavá verze pro světlé pozadí
+Každá partner složka má:
 
-## Doporučené rozlišení
+- **`logo.svg`** nebo **`logo.png`** = DEFAULT verze pro běžné použití (světlé pozadí)
+- **`logo-white.*`** = pro tmavá pozadí (footer, hero, dark sections)
+- **`logo-400w.png`** (volitelné) = menší verze pro mobile/kompaktní karty
 
-- SVG: vektor (preferováno)
-- PNG: minimálně 400x200px, transparentní pozadí
+### Pravidlo
 
-## Použití
+V Partners sekci (světlé pozadí) → použij `logo.svg` nebo `logo.png`  
+Ve footeru (navy pozadí) → použij `logo-white.svg` nebo `logo-white.png`
 
-Loga se ukazují v:
-1. **Trust strip pod hero** (4-6 log v řadě, grayscale, na hover plné barvy)
-2. **Sekce "Naši partneři"** (větší zobrazení s krátkým popisem)
-3. **Footer** (drobné)
+## Stav log
 
-## Status k 21.6.2026
+| Partner | Default | White verze | Vektor SVG |
+|---------|---------|-------------|------------|
+| **PanelClaw** | ✅ logo.png | (existuje) | ❌ |
+| **Pillar** | ✅ logo.png (NOVÉ — wordmark v navy) | ✅ logo-white.png | ❌ |
+| **Sunsurf** | ✅ logo.svg | ✅ logo-white.svg | ✅ |
+| **Aiko Solar** | ✅ logo.svg (NOVÉ — wordmark v navy) | ✅ logo-white.svg | ✅ |
+| **Ecosol** | ✅ logo.png (NOVÉ — barevné) | (stejné — barevné) | ❌ |
+| **Solar SK** | ✅ logo.png | (existuje) | ❌ |
 
-| Partner | Logo | Certifikát | Web zveřejněno |
-|---------|------|------------|----------------|
-| PanelClaw | ✅ panelclaw-logo.jpeg | ✅ panelclaw-cert.png | ⚠️ OVĚŘIT |
-| Sunsurf | ❌ chybí | n/a | ⚠️ OVĚŘIT |
-| Solar SK | ✅ solarsk-logo.png | n/a | ⚠️ OVĚŘIT |
+## ⚠️ Důležité poznámky
+
+### Pillar a Aiko logo úpravy
+
+Originální loga obou těchto firem mají **bílý wordmark** (navrženo pro tmavá pozadí). Pro Northsun web s **bílým pozadím** v Partners sekci jsem vytvořil **upravené verze**:
+
+- **Pillar:** Bílý wordmark nahrazen navy (#030057). Žlutá ikona zachována.
+- **Aiko Solar:** Bílý wordmark v SVG nahrazen navy. Oranžový čtvereček ikony zachován.
+
+Tím jsou viditelné a ladí s tvojí brand barvou.
+
+### Pokud se loga budou ukazovat v "trust strip" v hero (na navy pozadí)
+
+V tom případě použij **`logo-white.*`** verze (originální bílé).
+
+## Použití v kódu
+
+```tsx
+// Příklad: Partners grid sekce na světlém pozadí
+const partners = [
+  {
+    name: "PanelClaw",
+    logo: "/images/partners/panelclaw/logo.png",
+    country: "USA · Mounting systémy",
+    description: "..."
+  },
+  {
+    name: "Pillar",
+    logo: "/images/partners/pillar/logo.png",
+    country: "Ukrajina · Solární parky, carporty",
+    description: "..."
+  },
+  {
+    name: "Sunsurf",
+    logo: "/images/partners/sunsurf/logo.svg",
+    country: "Švédsko · Floating PV a piling-free",
+    description: "..."
+  },
+  {
+    name: "Aiko Solar",
+    logo: "/images/partners/aikosolar/logo.svg",
+    country: "Čína / EU · Solární panely",
+    description: "..."
+  },
+  {
+    name: "Ecosol",
+    logo: "/images/partners/ecosol/logo.png",
+    country: "Norsko · Instalace",
+    description: "..."
+  },
+  {
+    name: "Solar SK",
+    logo: "/images/partners/solarsk/logo.png",
+    country: "Ukrajina · Carport mounting",
+    description: "..."
+  },
+];
+```
+
+## Doporučení pro zobrazení v gridu
+
+Aby loga vypadala konzistentně přes všechny karty:
+
+```tsx
+<div className="h-16 flex items-center justify-center">
+  <Image
+    src={partner.logo}
+    alt={`${partner.name} logo`}
+    width={160}
+    height={40}
+    className="max-h-12 w-auto object-contain"
+  />
+</div>
+```
+
+Loga mají různé poměry stran (Aiko je téměř čtvercové, Pillar je široké), takže `max-h-12 w-auto object-contain` zajistí, že **výška je konzistentní** a loga se proporčně škálují.

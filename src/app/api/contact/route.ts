@@ -5,7 +5,7 @@ import { contactSchema } from '@/lib/schemas/contact'
 
 const LEAD_INDEX_KEY = 'contact:leads:index'
 const LEAD_KEY_PREFIX = 'contact:lead:'
-const NOTIFY_TO = 'info@northsun-eu.com'
+const NOTIFY_TO = 'northsunsro@gmail.com'
 // Resend's onboarding sender works without verifying a custom domain.
 // Replace with `notifications@northsun-eu.com` once the domain is verified.
 const NOTIFY_FROM = 'NorthSun web <onboarding@resend.dev>'

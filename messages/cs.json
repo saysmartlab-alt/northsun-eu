@@ -94,8 +94,8 @@
         "title": "Kontakt",
         "links": [
           {
-            "label": "info@northsun-eu.com",
-            "href": "mailto:info@northsun-eu.com"
+            "label": "northsunsro@gmail.com",
+            "href": "mailto:northsunsro@gmail.com"
           },
           {
             "label": "+420 734 383 340",
@@ -106,12 +106,12 @@
             "href": "/kontakt#vejprnice"
           },
           {
-            "label": "Malmö",
-            "href": "/kontakt#malmo"
+            "label": "Marieholm",
+            "href": "/kontakt#marieholm"
           },
           {
-            "label": "Molde",
-            "href": "/kontakt#molde"
+            "label": "Moss",
+            "href": "/kontakt#moss"
           }
         ]
       }
@@ -205,18 +205,6 @@
     "lead": "Vlastní realizace napříč Evropou a partnerské projekty s předními výrobci v oboru.\nKaždý projekt s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
-        "slug": "walraven-nl",
-        "flag": "NL",
-        "location": "Nizozemsko",
-        "title": "Walraven",
-        "year": "2023",
-        "type": "Komerční střecha",
-        "description": "Komerční solární střecha pro průmyslový areál Walraven v Nizozemsku.",
-        "tag": "own",
-        "image": "/images/projects/walraven/cover.png",
-        "alt": "Solární střecha na průmyslovém objektu Walraven"
-      },
-      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norsko (Oslo, Hammar)",
@@ -240,6 +228,19 @@
         "tag": "own-with-sunsurf",
         "image": "/images/projects/floating-solar/cover.jpg",
         "alt": "Plovoucí solární elektrárna ve Švédsku"
+      },
+      {
+        "slug": "walraven-nl",
+        "flag": "NL",
+        "location": "Nizozemsko",
+        "title": "Walraven",
+        "year": "2023",
+        "type": "Komerční střecha",
+        "description": "Komerční solární střecha pro průmyslový areál Walraven v Nizozemsku.",
+        "tag": "own",
+        "videoUrl": "https://www.linkedin.com/posts/lukas-kohout-412a121b6_work-solarpower-projects-activity-7373192896902090752-6Iw7",
+        "image": "/images/projects/walraven/cover.jpg",
+        "alt": "Solární střecha na průmyslovém objektu Walraven"
       }
     ],
     "ctaViewAll": "Všechny reference",
@@ -250,7 +251,7 @@
   "Partners": {
     "label": "Partneři a certifikace",
     "title": "Spolupracujeme s výrobci v oboru",
-    "lead": "Certifikát PanelClaw, partnerství se Sunsurf a Solar SK.\nNaši dodavatelé vědí, koho do projektů pouštějí.",
+    "lead": "Certifikát PanelClaw a dlouhodobá spolupráce s předními dodavateli komponent.\nNaši dodavatelé vědí, koho do projektů pouštějí.",
     "items": [
       {
         "slug": "panelclaw",
@@ -264,6 +265,16 @@
         "certLabel": "Zobrazit certifikát"
       },
       {
+        "slug": "pillar",
+        "name": "Pillar",
+        "country": "Ukrajina",
+        "role": "Solární parky, carporty",
+        "description": "Klíčový partner pro výrobu konstrukcí solárních parků a carportů. Prioritní spolupráce na instalacích v Evropě.",
+        "logo": "/images/partners/pillar/logo.png",
+        "logoAlt": "Pillar logo",
+        "websiteUrl": "https://pillar.ua/en/"
+      },
+      {
         "slug": "sunsurf",
         "name": "Sunsurf",
         "country": "Švédsko",
@@ -273,11 +284,31 @@
         "logoAlt": "Sunsurf logo"
       },
       {
+        "slug": "aikosolar",
+        "name": "Aiko Solar",
+        "country": "Čína / EU",
+        "role": "Solární panely",
+        "description": "Dodavatel solárních panelů pro naše projekty. Klíčový partner pro distribuci a naceňování zakázek.",
+        "logo": "/images/partners/aikosolar/logo.svg",
+        "logoAlt": "Aiko Solar logo",
+        "websiteUrl": "https://aikosolar.com"
+      },
+      {
+        "slug": "ecosol",
+        "name": "Ecosol",
+        "country": "Norsko",
+        "role": "Instalace",
+        "description": "Klíčový instalační partner pro střešní projekty ve Skandinávii. Spolupráce v Norsku.",
+        "logo": "/images/partners/ecosol/logo.png",
+        "logoAlt": "Ecosol logo",
+        "websiteUrl": "https://ecosol.no"
+      },
+      {
         "slug": "solarsk",
         "name": "Solar SK",
         "country": "Ukrajina",
         "role": "Carport mounting",
-        "description": "Carport mounting systems pro komerční a rezidenční projekty. Reference v Ukrajině a EU.",
+        "description": "Carport mounting systémy pro komerční a rezidenční projekty. Reference v Ukrajině a EU.",
         "logo": "/images/partners/solarsk/logo.png",
         "logoAlt": "Solar SK logo"
       }
@@ -309,7 +340,7 @@
       "submit": "Odeslat poptávku",
       "submitting": "Odesílám…",
       "success": "Děkujeme. Ozveme se vám do jednoho pracovního dne.",
-      "error": "Něco se pokazilo, zkuste to prosím znovu nebo nám napište přímo na info@northsun-eu.com.",
+      "error": "Něco se pokazilo, zkuste to prosím znovu nebo nám napište přímo na northsunsro@gmail.com.",
       "errors": {
         "name_min": "Zadejte prosím jméno (alespoň 2 znaky).",
         "name_max": "Jméno je příliš dlouhé.",
@@ -324,7 +355,7 @@
     },
     "info": {
       "phone": "+420 734 383 340",
-      "email": "info@northsun-eu.com",
+      "email": "northsunsro@gmail.com",
       "addresses": [
         {
           "flag": "CZ",
@@ -341,7 +372,8 @@
           "country": "Švédsko",
           "office": "Pobočka",
           "lines": [
-            "Malmö"
+            "Kungsgatan 5F",
+            "240 30 Marieholm"
           ]
         },
         {
@@ -349,7 +381,8 @@
           "country": "Norsko",
           "office": "Pobočka",
           "lines": [
-            "Molde"
+            "Bernt Ankers gate 17",
+            "1534 Moss"
           ]
         }
       ]

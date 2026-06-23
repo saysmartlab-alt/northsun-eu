@@ -155,8 +155,8 @@ export async function Contact({ locale }: ContactProps) {
                       idx === 0
                         ? 'vejprnice'
                         : idx === 1
-                          ? 'malmo'
-                          : 'molde'
+                          ? 'marieholm'
+                          : 'moss'
                     return (
                       <li key={anchorId} className="list-none">
                         <article

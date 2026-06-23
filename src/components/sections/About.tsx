@@ -22,29 +22,9 @@ export async function About({ locale }: AboutProps) {
     <Section id="o-nas" aria-labelledby="about-heading" className="bg-white">
       <Container>
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            {/* Left column: portrait video — Norsko Solar Roof reference (5/12) */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-navy shadow-xl ring-1 ring-navy/10">
-                <video
-                  src="/video/norway-rooftop.mp4#t=6.75"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label={
-                    locale === 'cs'
-                      ? 'NorthSun: Komerční solární střecha v Norsku'
-                      : 'NorthSun: Commercial solar rooftop in Norway'
-                  }
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right column: content stack (7/12) */}
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+            {/* Left column: content stack (7/12) — heading-left rhythm matches rest of page */}
+            <div className="lg:col-span-7 flex flex-col">
               <span className="block text-small uppercase tracking-[0.18em] font-semibold text-yellow">
                 {label}
               </span>
@@ -62,7 +42,7 @@ export async function About({ locale }: AboutProps) {
               </p>
               <Link
                 href="#reference"
-                className="group mt-8 inline-flex items-center gap-2 rounded-lg bg-yellow px-7 py-4 text-base font-syne font-semibold text-navy shadow-sm transition-all duration-200 ease-out hover:bg-yellow-600 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
+                className="group mt-auto self-start inline-flex items-center gap-2 rounded-lg bg-yellow px-7 py-4 text-base font-syne font-semibold text-navy shadow-sm transition-all duration-200 ease-out hover:bg-yellow-600 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
               >
                 <span>{ctaReferences}</span>
                 <ArrowRight
@@ -70,6 +50,26 @@ export async function About({ locale }: AboutProps) {
                   aria-hidden="true"
                 />
               </Link>
+            </div>
+
+            {/* Right column: portrait video — Norsko Solar Roof reference (5/12) */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-navy shadow-xl ring-1 ring-navy/10">
+                <video
+                  src="/video/norway-rooftop.mp4#t=6.75"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={
+                    locale === 'cs'
+                      ? 'NorthSun: Komerční solární střecha v Norsku'
+                      : 'NorthSun: Commercial solar rooftop in Norway'
+                  }
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </AnimatedSection>

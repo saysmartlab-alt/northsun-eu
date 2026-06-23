@@ -94,8 +94,8 @@
         "title": "Contact",
         "links": [
           {
-            "label": "info@northsun-eu.com",
-            "href": "mailto:info@northsun-eu.com"
+            "label": "northsunsro@gmail.com",
+            "href": "mailto:northsunsro@gmail.com"
           },
           {
             "label": "+420 734 383 340",
@@ -106,12 +106,12 @@
             "href": "/contact#vejprnice"
           },
           {
-            "label": "Malmö",
-            "href": "/contact#malmo"
+            "label": "Marieholm",
+            "href": "/contact#marieholm"
           },
           {
-            "label": "Molde",
-            "href": "/contact#molde"
+            "label": "Moss",
+            "href": "/contact#moss"
           }
         ]
       }
@@ -205,18 +205,6 @@
     "lead": "Own deliveries across Europe and partner projects with leading manufacturers in the industry.\nEvery project carries our own engineering documentation and structural design.",
     "items": [
       {
-        "slug": "walraven-nl",
-        "flag": "NL",
-        "location": "Netherlands",
-        "title": "Walraven",
-        "year": "2023",
-        "type": "Commercial rooftop",
-        "description": "Commercial solar rooftop for the Walraven industrial site in the Netherlands.",
-        "tag": "own",
-        "image": "/images/projects/walraven/cover.png",
-        "alt": "Solar rooftop on the Walraven industrial building"
-      },
-      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norway (Oslo, Hammar)",
@@ -240,6 +228,19 @@
         "tag": "own-with-sunsurf",
         "image": "/images/projects/floating-solar/cover.jpg",
         "alt": "Floating solar power plant in Sweden"
+      },
+      {
+        "slug": "walraven-nl",
+        "flag": "NL",
+        "location": "Netherlands",
+        "title": "Walraven",
+        "year": "2023",
+        "type": "Commercial rooftop",
+        "description": "Commercial solar rooftop for the Walraven industrial site in the Netherlands.",
+        "tag": "own",
+        "videoUrl": "https://www.linkedin.com/posts/lukas-kohout-412a121b6_work-solarpower-projects-activity-7373192896902090752-6Iw7",
+        "image": "/images/projects/walraven/cover.jpg",
+        "alt": "Solar rooftop on the Walraven industrial building"
       }
     ],
     "ctaViewAll": "All references",
@@ -250,27 +251,57 @@
   "Partners": {
     "label": "Partners and certifications",
     "title": "We work with manufacturers in the industry",
-    "lead": "A PanelClaw certification, a partnership with Sunsurf and Solar SK.\nOur suppliers know who they're letting into their projects.",
+    "lead": "A PanelClaw certification and long-term cooperation with leading component suppliers.\nOur suppliers know who they're letting into their projects.",
     "items": [
       {
         "slug": "panelclaw",
         "name": "PanelClaw",
         "country": "USA",
         "role": "Mounting systems",
-        "description": "Mounting systems for commercial photovoltaics. We are certified for successful installation.",
+        "description": "Mounting systems for commercial photovoltaics. Certified for successful installation.",
         "logo": "/images/partners/panelclaw/logo.jpeg",
         "logoAlt": "PanelClaw logo",
         "certUrl": "/images/certifications/panelclaw-cert.png",
         "certLabel": "View certificate"
       },
       {
+        "slug": "pillar",
+        "name": "Pillar",
+        "country": "Ukraine",
+        "role": "Solar parks, carports",
+        "description": "Key manufacturing partner for solar park and carport structures. Priority cooperation for installations across Europe.",
+        "logo": "/images/partners/pillar/logo.png",
+        "logoAlt": "Pillar logo",
+        "websiteUrl": "https://pillar.ua/en/"
+      },
+      {
         "slug": "sunsurf",
         "name": "Sunsurf",
         "country": "Sweden",
         "role": "Floating PV and piling-free",
-        "description": "Floating photovoltaics and piling-free installations on former landfill sites. Joint deliveries in northern Europe.",
+        "description": "Floating photovoltaics and piling-free installations on former landfills. Cooperation on realizations in Northern Europe.",
         "logo": "/images/partners/sunsurf/logo.svg",
         "logoAlt": "Sunsurf logo"
+      },
+      {
+        "slug": "aikosolar",
+        "name": "Aiko Solar",
+        "country": "China / EU",
+        "role": "Solar panels",
+        "description": "Solar panel supplier for our projects. Key partner for distribution and project pricing.",
+        "logo": "/images/partners/aikosolar/logo.svg",
+        "logoAlt": "Aiko Solar logo",
+        "websiteUrl": "https://aikosolar.com"
+      },
+      {
+        "slug": "ecosol",
+        "name": "Ecosol",
+        "country": "Norway",
+        "role": "Installation",
+        "description": "Key installation partner for rooftop projects in Scandinavia. Cooperation in Norway.",
+        "logo": "/images/partners/ecosol/logo.png",
+        "logoAlt": "Ecosol logo",
+        "websiteUrl": "https://ecosol.no"
       },
       {
         "slug": "solarsk",
@@ -309,7 +340,7 @@
       "submit": "Send enquiry",
       "submitting": "Sending…",
       "success": "Thank you. We'll get back to you within one business day.",
-      "error": "Something went wrong, please try again or email us directly at info@northsun-eu.com.",
+      "error": "Something went wrong, please try again or email us directly at northsunsro@gmail.com.",
       "errors": {
         "name_min": "Please enter your name (at least 2 characters).",
         "name_max": "Name is too long.",
@@ -324,7 +355,7 @@
     },
     "info": {
       "phone": "+420 734 383 340",
-      "email": "info@northsun-eu.com",
+      "email": "northsunsro@gmail.com",
       "addresses": [
         {
           "flag": "CZ",
@@ -341,7 +372,8 @@
           "country": "Sweden",
           "office": "Office",
           "lines": [
-            "Malmö"
+            "Kungsgatan 5F",
+            "240 30 Marieholm"
           ]
         },
         {
@@ -349,7 +381,8 @@
           "country": "Norway",
           "office": "Office",
           "lines": [
-            "Molde"
+            "Bernt Ankers gate 17",
+            "1534 Moss"
           ]
         }
       ]
