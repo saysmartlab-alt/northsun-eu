@@ -202,7 +202,7 @@
   "References": {
     "label": "Naše práce",
     "title": "Premium projekty napříč Evropou",
-    "lead": "Vlastní realizace napříč Evropou a partnerské projekty s předními výrobci v oboru.\nKaždý projekt s vlastní projektovou dokumentací a statikou.",
+    "lead": "Vlastní realizace i partnerské projekty napříč Evropou.\nKaždý projekt s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
         "slug": "solar-roof-norway",
@@ -251,7 +251,7 @@
   "Partners": {
     "label": "Partneři a certifikace",
     "title": "Spolupracujeme s výrobci v oboru",
-    "lead": "Certifikát PanelClaw a dlouhodobá spolupráce s předními dodavateli komponent.\nNaši dodavatelé vědí, koho do projektů pouštějí.",
+    "lead": "Certifikát PanelClaw a dlouhodobá partnerství s dodavateli.\nNaši dodavatelé vědí, koho do projektů pouštějí.",
     "items": [
       {
         "slug": "panelclaw",

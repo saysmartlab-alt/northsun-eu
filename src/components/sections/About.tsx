@@ -22,7 +22,7 @@ export async function About({ locale }: AboutProps) {
     <Section id="o-nas" aria-labelledby="about-heading" className="bg-white">
       <Container>
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 xl:gap-24 items-stretch">
             {/* Left column: content stack (7/12) — heading-left rhythm matches rest of page */}
             <div className="lg:col-span-7 flex flex-col">
               <span className="block text-small uppercase tracking-[0.18em] font-semibold text-yellow">
@@ -37,7 +37,7 @@ export async function About({ locale }: AboutProps) {
               <p className="mt-8 text-body-lg font-medium text-gray-dark [text-wrap:pretty]">
                 {lead}
               </p>
-              <p className="mt-5 text-body text-gray-dark/85 [text-wrap:pretty]">
+              <p className="mt-5 text-body text-gray-dark/85 [text-wrap:pretty] max-w-prose">
                 {body}
               </p>
               <Link
