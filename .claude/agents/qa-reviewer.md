@@ -58,7 +58,7 @@ Run through this list every time:
 - [ ] Slogan correct: "Neděláme nejlevněji, děláme nejlépe."
 - [ ] All references properly labeled (vlastní vs partnership)
 - [ ] PanelClaw mentioned where relevant
-- [ ] Contact info correct: northsun@qualitysolar.com, +420 734 383 340
+- [ ] Contact info correct: info@northsun-eu.com, +420 734 383 340
 - [ ] Address correct: Sokolská 137, 330 27 Vejprnice
 - [ ] IČO correct: 17279976
 

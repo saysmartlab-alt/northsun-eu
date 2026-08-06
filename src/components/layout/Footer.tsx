@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { Container } from '@/components/ui/Container'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 const socialLinkClass =
   'flex h-10 w-10 items-center justify-center rounded-full border border-border text-gray-dark/70 transition-colors duration-200 hover:border-navy hover:bg-navy hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2'
@@ -55,7 +56,15 @@ export async function Footer({ locale }: FooterProps) {
   const t = await getTranslations({ locale, namespace: 'Footer' })
 
   const tagline = t('tagline')
-  const columns = t.raw('columns') as FooterColumn[]
+  const rawColumns = t.raw('columns') as FooterColumn[]
+  // Replace {email} placeholder with CONTACT_EMAIL constant (single source of truth)
+  const columns: FooterColumn[] = rawColumns.map((col) => ({
+    ...col,
+    links: col.links.map((link) => ({
+      label: link.label.replace('{email}', CONTACT_EMAIL),
+      href: link.href.replace('{email}', CONTACT_EMAIL),
+    })),
+  }))
 
   return (
     <footer

@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, Check, AlertCircle, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
+import { CONTACT_EMAIL } from '@/lib/constants'
 import {
   contactSchema,
   PROJECT_TYPES,
@@ -72,7 +73,7 @@ export function ContactForm({ locale }: ContactFormProps) {
       reset()
     } catch (err) {
       console.error('contact_submit_failed', err)
-      setSubmitError(t('error'))
+      setSubmitError(t('error', { email: CONTACT_EMAIL }))
       setState('error')
     }
   }

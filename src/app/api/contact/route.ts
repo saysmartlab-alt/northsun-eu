@@ -2,12 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { redis } from '@/lib/redis'
 import { contactSchema } from '@/lib/schemas/contact'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 const LEAD_INDEX_KEY = 'contact:leads:index'
 const LEAD_KEY_PREFIX = 'contact:lead:'
-const NOTIFY_TO = 'northsun@qualitysolar.com'
-// Resend's onboarding sender works without verifying a custom domain.
-// Replace with `notifications@northsun-eu.com` once the domain is verified.
+const NOTIFY_TO = CONTACT_EMAIL
 const NOTIFY_FROM = 'NorthSun web <onboarding@resend.dev>'
 
 function randomId(): string {

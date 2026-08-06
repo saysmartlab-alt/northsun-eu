@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Flag } from '@/components/ui/Flag'
+import { CONTACT_EMAIL } from '@/lib/constants'
 import { ContactForm } from './ContactForm'
 
 interface ContactProps {
@@ -25,7 +26,8 @@ export async function Contact({ locale }: ContactProps) {
   const lead = t('lead')
 
   const phone = t('info.phone')
-  const email = t('info.email')
+  // Single source of truth for contact email — ignore i18n placeholder value
+  const email = CONTACT_EMAIL
   const phoneLabel = t('phoneLabel')
   const phoneSubtitle = t('phoneSubtitle')
   const emailLabel = t('emailLabel')
