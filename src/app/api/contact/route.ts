@@ -7,7 +7,8 @@ import { CONTACT_EMAIL } from '@/lib/constants'
 const LEAD_INDEX_KEY = 'contact:leads:index'
 const LEAD_KEY_PREFIX = 'contact:lead:'
 const NOTIFY_TO = CONTACT_EMAIL
-const NOTIFY_FROM = 'NorthSun web <onboarding@resend.dev>'
+// Send subdomain for Resend (requires SPF/DKIM verification of send.northsun-eu.com).
+const NOTIFY_FROM = 'NorthSun web <web@send.northsun-eu.com>'
 
 function randomId(): string {
   // 8 hex chars is plenty for collision avoidance within the same millisecond.
