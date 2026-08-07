@@ -16,7 +16,8 @@
       "Bash(git ls-remote *)",
       "Bash(git commit *)",
       "Bash(npx tsc *)",
-      "Bash(grep -v \":0$\")"
+      "Bash(grep -v \":0$\")",
+      "Bash(git commit -m 'fix: contact form select — persist selected value visibility \\(color-scheme: dark\\) *)"
     ]
   }
 }
