@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 import { redis } from '@/lib/redis'
 import { contactSchema } from '@/lib/schemas/contact'
 import { CONTACT_EMAIL } from '@/lib/constants'
@@ -7,8 +7,9 @@ import { CONTACT_EMAIL } from '@/lib/constants'
 const LEAD_INDEX_KEY = 'contact:leads:index'
 const LEAD_KEY_PREFIX = 'contact:lead:'
 const NOTIFY_TO = CONTACT_EMAIL
-// Send subdomain for Resend (requires SPF/DKIM verification of send.northsun-eu.com).
-const NOTIFY_FROM = 'NorthSun web <web@send.northsun-eu.com>'
+
+// Nodemailer needs the Node runtime (net + tls). Edge would reject the SMTP transport.
+export const runtime = 'nodejs'
 
 function randomId(): string {
   // 8 hex chars is plenty for collision avoidance within the same millisecond.
@@ -24,6 +25,15 @@ function clientIp(req: NextRequest): string {
   const xff = req.headers.get('x-forwarded-for')
   if (xff) return xff.split(',')[0]?.trim() ?? ''
   return req.headers.get('x-real-ip') ?? ''
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }
 
 export async function POST(req: NextRequest) {
@@ -56,71 +66,66 @@ export async function POST(req: NextRequest) {
     ua: req.headers.get('user-agent')?.slice(0, 200) ?? '',
   }
 
-  // 1) Store lead. If Redis fails we still want to try email so the lead
-  //    isn't lost completely. We return 500 only when both legs fail.
-  let storedOk = false
+  // 1) Store lead in KV — independent leg. If Redis is down we still try the
+  //    email so Lukáš gets the notification, and vice versa. Logged but no
+  //    early return.
   try {
     await redis.hset(key, lead)
     await redis.zadd(LEAD_INDEX_KEY, { score: now, member: id })
-    storedOk = true
   } catch (err) {
     console.error('contact_redis_error', err)
   }
 
-  // 2) Email notification (only if RESEND_API_KEY is configured).
-  let mailedOk = false
-  const resendKey = process.env.RESEND_API_KEY
-  if (resendKey) {
-    try {
-      const resend = new Resend(resendKey)
-      const subject = `Nová poptávka: ${lead.projectType} — ${lead.name}`
-      const escape = (s: string) =>
-        s
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;')
-      const html = `
-        <h2 style="font-family: Arial, sans-serif; color: #030057;">Nová poptávka z webu</h2>
-        <table style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;">
-          <tr><td style="padding: 4px 12px 4px 0;"><strong>Jméno:</strong></td><td>${escape(lead.name)}</td></tr>
-          <tr><td style="padding: 4px 12px 4px 0;"><strong>Email:</strong></td><td><a href="mailto:${escape(lead.email)}" style="color: #030057;">${escape(lead.email)}</a></td></tr>
-          <tr><td style="padding: 4px 12px 4px 0;"><strong>Telefon:</strong></td><td>${escape(lead.phone || 'neuvedeno')}</td></tr>
-          <tr><td style="padding: 4px 12px 4px 0;"><strong>Typ projektu:</strong></td><td>${escape(lead.projectType)}</td></tr>
-        </table>
-        <h3 style="font-family: Arial, sans-serif; color: #030057; margin-top: 24px;">Zpráva</h3>
-        <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${escape(lead.message)}</p>
-        <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 24px 0;">
-        <p style="font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">
-          Locale: ${escape(lead.locale)} · Čas: ${new Date(now).toISOString()} · IP: ${escape(lead.ip || '-')}
-        </p>
-      `.trim()
-      const { error } = await resend.emails.send({
-        from: NOTIFY_FROM,
-        to: NOTIFY_TO,
-        replyTo: lead.email,
-        subject,
-        html,
-      })
-      if (error) {
-        console.error('contact_resend_error', error)
-      } else {
-        mailedOk = true
-      }
-    } catch (err) {
-      console.error('contact_resend_exception', err)
-    }
-  } else {
-    console.info('contact_lead_received', {
-      id,
-      email: lead.email,
-      projectType: lead.projectType,
+  // 2) Email via Gmail SMTP (nodemailer). Failure here means Lukáš won't be
+  //    notified, so this is the surface-visible error path — return 500.
+  const gmailUser = process.env.GMAIL_USER
+  const gmailPass = process.env.GMAIL_APP_PASSWORD
+  if (!gmailUser || !gmailPass) {
+    console.error('contact_smtp_config_missing', {
+      hasUser: Boolean(gmailUser),
+      hasPass: Boolean(gmailPass),
     })
+    return NextResponse.json({ error: 'email_not_sent' }, { status: 500 })
   }
 
-  if (!storedOk && !mailedOk) {
-    return NextResponse.json({ error: 'persist_failed' }, { status: 500 })
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+    })
+
+    const subject = `Nová poptávka: ${lead.projectType} — ${lead.name}`
+    const html = `
+      <h2 style="font-family: Arial, sans-serif; color: #030057;">Nová poptávka z webu</h2>
+      <table style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;">
+        <tr><td style="padding: 4px 12px 4px 0;"><strong>Jméno:</strong></td><td>${escapeHtml(lead.name)}</td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><strong>Email:</strong></td><td><a href="mailto:${escapeHtml(lead.email)}" style="color: #030057;">${escapeHtml(lead.email)}</a></td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><strong>Telefon:</strong></td><td>${escapeHtml(lead.phone || 'neuvedeno')}</td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><strong>Typ projektu:</strong></td><td>${escapeHtml(lead.projectType)}</td></tr>
+      </table>
+      <h3 style="font-family: Arial, sans-serif; color: #030057; margin-top: 24px;">Zpráva</h3>
+      <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${escapeHtml(lead.message)}</p>
+      <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 24px 0;">
+      <p style="font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">
+        Locale: ${escapeHtml(lead.locale)} · Čas: ${new Date(now).toISOString()} · IP: ${escapeHtml(lead.ip || '-')}
+      </p>
+    `.trim()
+
+    await transporter.sendMail({
+      from: gmailUser,
+      to: NOTIFY_TO,
+      replyTo: lead.email,
+      subject,
+      html,
+    })
+  } catch (err) {
+    console.error('contact_smtp_error', err)
+    return NextResponse.json({ error: 'email_not_sent' }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true })

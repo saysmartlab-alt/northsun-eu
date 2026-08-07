@@ -14,7 +14,9 @@
       "Read(//c/Users/spiso/Downloads/northsun-images-structure/public/images/**)",
       "Read(//c/Users/spiso/Downloads/partner-logos-3new/**)",
       "Bash(git ls-remote *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(npx tsc *)",
+      "Bash(grep -v \":0$\")"
     ]
   }
 }
