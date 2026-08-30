@@ -56,7 +56,7 @@ export async function About({ locale }: AboutProps) {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-navy shadow-xl ring-1 ring-navy/10">
                 <video
-                  src="/video/norway-rooftop.mp4#t=6.75"
+                  src="/video/norway-rooftop.mp4#t=7.75"
                   autoPlay
                   muted
                   loop
