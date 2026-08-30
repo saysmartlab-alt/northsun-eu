@@ -32,7 +32,8 @@
       "Bash(curl -s \"http://localhost:3000/en/privacy\" -o /dev/null -w \"%{http_code}\\\\n\")",
       "Bash(pkill -f \"next-server\")",
       "Bash(kill %1)",
-      "Bash(wait)"
+      "Bash(wait)",
+      "Bash(git commit -m 'fix: 404 pages actually render our styled UI \\(catch-all + root not-found\\) *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"
