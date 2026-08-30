@@ -277,6 +277,18 @@
         "alt": "1 MW solar installation in Rudshøgda, Norway"
       },
       {
+        "slug": "lulea-sweden",
+        "flag": "SE",
+        "location": "Luleå, Sweden",
+        "title": "Luleå, Sweden",
+        "type": "Rooftop installations, series",
+        "description": "Our largest footprint: a series of rooftop solar installations in and around Luleå, northern Sweden. Family houses, commercial roofs and special projects.",
+        "tag": "own",
+        "image": "/images/projects/lulea/black-roof.jpg",
+        "alt": "Drone view of a rooftop solar installation in Luleå",
+        "gallery": "lulea"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norway (Oslo, Hammar)",
@@ -315,6 +327,62 @@
         "alt": "Solar rooftop on the Walraven industrial building"
       }
     ],
+    "luleaGallery": {
+      "ctaLabel": "Browse installations",
+      "modalTitle": "Installations in Luleå",
+      "modalSubtitle": "Six deliveries in and around Luleå, northern Sweden.",
+      "modalClose": "Close gallery",
+      "videoPlayLabel": "Play video",
+      "installations": [
+        {
+          "slug": "black-roof",
+          "title": "Luleå - Black roof",
+          "description": "Rooftop installation on a dark metal roof. Panels integrated into the visual rhythm of the cladding.",
+          "image": "/images/projects/lulea/black-roof.jpg",
+          "alt": "Black roof rooftop installation in Luleå",
+          "youtubeId": "AmPz8PQ4Mjo"
+        },
+        {
+          "slug": "family-house",
+          "title": "Luleå - Family house",
+          "description": "Residential installation on a family home in the Luleå area.",
+          "image": "/images/projects/lulea/family-house.jpg",
+          "alt": "Solar installation on a family house near Luleå",
+          "youtubeId": "YfuXYKfvIjU"
+        },
+        {
+          "slug": "100-panels",
+          "title": "Luleå - 100 panels",
+          "description": "Rooftop installation with one hundred panels. Commercial-scale output.",
+          "image": "/images/projects/lulea/100-panels.jpg",
+          "alt": "Rooftop array of 100 panels in Luleå",
+          "youtubeId": "39qbhp94UVk"
+        },
+        {
+          "slug": "john-deere",
+          "title": "Luleå - John Deere",
+          "description": "Installation for a John Deere agricultural site with high on-site consumption.",
+          "image": "/images/projects/lulea/john-deere.jpg",
+          "alt": "Solar installation for a John Deere site in Luleå",
+          "youtubeId": "g_cz-EtJ7Q8"
+        },
+        {
+          "slug": "arvidsjaur-2023",
+          "title": "Luleå - Arvidsjaur 2023",
+          "description": "Delivery in Arvidsjaur from 2023, in demanding Nordic conditions.",
+          "image": "/images/projects/lulea/arvidsjaur-2023.jpg",
+          "alt": "Solar installation in Arvidsjaur, 2023",
+          "youtubeId": "3VtmUdGD8ak"
+        },
+        {
+          "slug": "boden-2023",
+          "title": "Luleå - Boden 2023",
+          "description": "Rooftop installation in Boden from 2023.",
+          "image": "/images/projects/lulea/boden-2023.jpg",
+          "alt": "Solar rooftop in Boden, 2023"
+        }
+      ]
+    },
     "ctaViewAll": "All references",
     "tagOwn": "Own project",
     "tagOwnWithSunsurf": "Own project in partnership with Sunsurf",

@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Badge } from '@/components/ui/Badge'
 import { ReferenceCardMedia } from './ReferenceCardMedia'
+import { LuleaGalleryTrigger } from './LuleaGalleryTrigger'
 
 interface ReferencesProps {
   locale: string
@@ -30,6 +31,27 @@ interface ReferenceItem {
   videoPoster?: string
   image: string
   alt: string
+  /** Optional gallery key — currently only "lulea". Swaps the standard tag
+   *  badge for a CTA that opens a modal with sub-installations. */
+  gallery?: 'lulea'
+}
+
+interface LuleaInstallation {
+  slug: string
+  title: string
+  description: string
+  image: string
+  alt: string
+  youtubeId?: string
+}
+
+interface LuleaGalleryData {
+  ctaLabel: string
+  modalTitle: string
+  modalSubtitle: string
+  modalClose: string
+  videoPlayLabel: string
+  installations: LuleaInstallation[]
 }
 
 export async function References({ locale }: ReferencesProps) {
@@ -43,6 +65,7 @@ export async function References({ locale }: ReferencesProps) {
   const tagPartnerSunsurf = t('tagPartnerSunsurf')
   const videoLabel = locale === 'cs' ? 'Video' : 'Video'
   const items = t.raw('items') as ReferenceItem[]
+  const luleaGallery = t.raw('luleaGallery') as LuleaGalleryData
 
   const tagLabel = (tag: RefTag): string => {
     if (tag === 'own') return tagOwn
@@ -129,10 +152,13 @@ export async function References({ locale }: ReferencesProps) {
                       <p className="mt-3 text-body text-gray-dark/75 leading-relaxed [text-wrap:pretty]">
                         {item.description}
                       </p>
-                      <div className="mt-4 flex">
+                      <div className="mt-4 flex flex-wrap items-center gap-3">
                         <Badge variant={badgeVariant(item.tag)}>
                           {tagLabel(item.tag)}
                         </Badge>
+                        {item.gallery === 'lulea' && (
+                          <LuleaGalleryTrigger texts={luleaGallery} />
+                        )}
                       </div>
                     </div>
                   </article>

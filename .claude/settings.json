@@ -43,7 +43,11 @@
       "Bash(curl -s \"http://localhost:3000/cs\" -o /dev/null -w \"cs: %{http_code}\\\\n\")",
       "Bash(curl -s \"http://localhost:3000/en\" -o /dev/null -w \"en: %{http_code}\\\\n\")",
       "Bash(curl -s \"http://localhost:3000/projects/rudshogda-1mw.mp4\" -o /dev/null -w \"video: %{http_code} \\(size %{size_download}\\)\\\\n\")",
-      "Bash(curl -s \"http://localhost:3000/projects/rudshogda-1mw-poster.jpg\" -o /dev/null -w \"poster: %{http_code} \\(size %{size_download}\\)\\\\n\")"
+      "Bash(curl -s \"http://localhost:3000/projects/rudshogda-1mw-poster.jpg\" -o /dev/null -w \"poster: %{http_code} \\(size %{size_download}\\)\\\\n\")",
+      "Bash(git check-ignore *)",
+      "Bash(git rm *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/cs.json', 'utf8'\\)\\); console.log\\('cs.json valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json', 'utf8'\\)\\); console.log\\('en.json valid'\\)\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"

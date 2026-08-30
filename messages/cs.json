@@ -277,6 +277,18 @@
         "alt": "1 MW solární instalace v norské Rudshøgdě"
       },
       {
+        "slug": "lulea-sweden",
+        "flag": "SE",
+        "location": "Luleå, Švédsko",
+        "title": "Luleå, Švédsko",
+        "type": "Střešní instalace, série",
+        "description": "Naše největší působení: série střešních fotovoltaických instalací v Luleå a okolí (severní Švédsko). Rodinné domy, komerční střechy i speciální realizace.",
+        "tag": "own",
+        "image": "/images/projects/lulea/black-roof.jpg",
+        "alt": "Dron pohled na střešní fotovoltaickou instalaci v Luleå",
+        "gallery": "lulea"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norsko (Oslo, Hammar)",
@@ -315,6 +327,62 @@
         "alt": "Solární střecha na průmyslovém objektu Walraven"
       }
     ],
+    "luleaGallery": {
+      "ctaLabel": "Prohlédnout instalace",
+      "modalTitle": "Instalace v Luleå",
+      "modalSubtitle": "Šest realizací v okolí Luleå (severní Švédsko).",
+      "modalClose": "Zavřít galerii",
+      "videoPlayLabel": "Přehrát video",
+      "installations": [
+        {
+          "slug": "black-roof",
+          "title": "Luleå - Black roof",
+          "description": "Střešní instalace na tmavém plechovém krytu. Panely integrované do vizuálního rytmu střechy.",
+          "image": "/images/projects/lulea/black-roof.jpg",
+          "alt": "Střešní instalace Black roof v Luleå",
+          "youtubeId": "AmPz8PQ4Mjo"
+        },
+        {
+          "slug": "family-house",
+          "title": "Luleå - Family house",
+          "description": "Rezidenční instalace na rodinném domě v okolí Luleå.",
+          "image": "/images/projects/lulea/family-house.jpg",
+          "alt": "Fotovoltaická instalace na rodinném domě v Luleå",
+          "youtubeId": "YfuXYKfvIjU"
+        },
+        {
+          "slug": "100-panels",
+          "title": "Luleå - 100 panels",
+          "description": "Střešní instalace se stovkou panelů. Kapacita pro komerční provoz.",
+          "image": "/images/projects/lulea/100-panels.jpg",
+          "alt": "Střešní pole 100 panelů v Luleå",
+          "youtubeId": "39qbhp94UVk"
+        },
+        {
+          "slug": "john-deere",
+          "title": "Luleå - John Deere",
+          "description": "Instalace pro zemědělský objekt John Deere s vysokou vlastní spotřebou.",
+          "image": "/images/projects/lulea/john-deere.jpg",
+          "alt": "Fotovoltaická instalace pro objekt John Deere v Luleå",
+          "youtubeId": "g_cz-EtJ7Q8"
+        },
+        {
+          "slug": "arvidsjaur-2023",
+          "title": "Luleå - Arvidsjaur 2023",
+          "description": "Realizace v Arvidsjauru z roku 2023 ve složitých severských podmínkách.",
+          "image": "/images/projects/lulea/arvidsjaur-2023.jpg",
+          "alt": "Solární instalace v Arvidsjauru, 2023",
+          "youtubeId": "3VtmUdGD8ak"
+        },
+        {
+          "slug": "boden-2023",
+          "title": "Luleå - Boden 2023",
+          "description": "Střešní instalace v Bodenu z roku 2023.",
+          "image": "/images/projects/lulea/boden-2023.jpg",
+          "alt": "Solární střecha v Bodenu, 2023"
+        }
+      ]
+    },
     "ctaViewAll": "Všechny reference",
     "tagOwn": "Vlastní realizace",
     "tagOwnWithSunsurf": "Vlastní realizace ve spolupráci se Sunsurf",
