@@ -33,7 +33,17 @@
       "Bash(pkill -f \"next-server\")",
       "Bash(kill %1)",
       "Bash(wait)",
-      "Bash(git commit -m 'fix: 404 pages actually render our styled UI \\(catch-all + root not-found\\) *)"
+      "Bash(git commit -m 'fix: 404 pages actually render our styled UI \\(catch-all + root not-found\\) *)",
+      "Bash(ffmpeg -version)",
+      "PowerShell(winget --version 2>&1)",
+      "PowerShell(winget install --id Gyan.FFmpeg -e --accept-source-agreements --accept-package-agreements --silent 2>&1)",
+      "Bash(cat /tmp/nsu.log 2>&1 | tail -10 *)",
+      "Read(//tmp/**)",
+      "Bash(npm start *)",
+      "Bash(curl -s \"http://localhost:3000/cs\" -o /dev/null -w \"cs: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/en\" -o /dev/null -w \"en: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/projects/rudshogda-1mw.mp4\" -o /dev/null -w \"video: %{http_code} \\(size %{size_download}\\)\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/projects/rudshogda-1mw-poster.jpg\" -o /dev/null -w \"poster: %{http_code} \\(size %{size_download}\\)\\\\n\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"

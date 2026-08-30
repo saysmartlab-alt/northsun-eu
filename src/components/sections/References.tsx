@@ -22,7 +22,12 @@ interface ReferenceItem {
   type?: string
   description: string
   tag: RefTag
+  /** External video link — shows a small "Video" badge overlay on the card. */
   videoUrl?: string
+  /** Self-hosted video file (in /public). Renders inline `<video>` with poster + native controls. */
+  videoSrc?: string
+  /** Poster image for self-hosted video (fallback: falls back to `image`). */
+  videoPoster?: string
   image: string
   alt: string
 }
@@ -104,6 +109,8 @@ export async function References({ locale }: ReferencesProps) {
                       locale={locale}
                       videoUrl={item.videoUrl}
                       videoLabel={item.videoUrl ? videoLabel : undefined}
+                      videoSrc={item.videoSrc}
+                      videoPoster={item.videoPoster}
                     />
 
                     {/* Card body */}

@@ -30,3 +30,8 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw source videos (compressed web-friendly variants live in /public/projects/)
+public/video/norway-Rudshøgda.mp4
+public/video/norway-Rudshogda.mp4
+

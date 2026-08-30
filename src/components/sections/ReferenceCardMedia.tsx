@@ -15,15 +15,24 @@ interface ReferenceCardMediaProps {
   location: string
   title: string
   locale: string
+  /** External video link (YouTube, LinkedIn, etc.) — renders as small yellow badge overlay. */
   videoUrl?: string
   videoLabel?: string
+  /** Self-hosted video source (served from /public). When present, the card
+   *  renders a <video> element with the poster instead of the image, so the
+   *  visitor can play inline. Mutually exclusive with the videoUrl overlay
+   *  (self-hosted takes precedence). */
+  videoSrc?: string
+  videoPoster?: string
 }
 
 /**
- * Reference card image + click-to-zoom lightbox.
- * Client component because of useState/useEffect for modal + ESC handler.
- * Lightbox rendered via portal to document.body to escape article's
- * overflow-hidden + transform on hover.
+ * Reference card media area. Three modes, in priority order:
+ * 1. `videoSrc` → self-hosted <video> with poster + native controls (click-to-play).
+ * 2. `videoUrl` → static Image + small overlay badge that links to the external video.
+ * 3. neither    → static Image, click opens a fullscreen lightbox for closer look.
+ *
+ * Client component because of useState/useEffect for the lightbox modal + ESC handler.
  */
 export function ReferenceCardMedia({
   image,
@@ -34,6 +43,8 @@ export function ReferenceCardMedia({
   locale,
   videoUrl,
   videoLabel,
+  videoSrc,
+  videoPoster,
 }: ReferenceCardMediaProps) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -63,30 +74,50 @@ export function ReferenceCardMedia({
     locale === 'cs'
       ? `Otevřít video k projektu ${title}`
       : `Open video for project ${title}`
+  const inlineVideoLabel =
+    locale === 'cs' ? `Video: ${title}` : `Video: ${title}`
+
+  const hasInlineVideo = Boolean(videoSrc)
 
   return (
     <>
-      {/* Image area (clickable to open lightbox) */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy/5">
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label={openLabel}
-          aria-haspopup="dialog"
-          className="group/img absolute inset-0 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-yellow"
-        >
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        {hasInlineVideo ? (
+          /* Self-hosted video: preload="none" so the ~25 MB file only downloads
+             when the visitor actually clicks Play — no page-load hit. Poster
+             shows immediately, controls give the native play button. */
+          <video
+            src={videoSrc}
+            poster={videoPoster ?? image}
+            controls
+            preload="none"
+            playsInline
+            aria-label={inlineVideoLabel}
+            className="absolute inset-0 h-full w-full bg-navy object-cover"
           />
-        </button>
-        {/* Bottom gradient pro readability location badge */}
+        ) : (
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label={openLabel}
+            aria-haspopup="dialog"
+            className="group/img absolute inset-0 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-yellow"
+          >
+            <Image
+              src={image}
+              alt={alt}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </button>
+        )}
+
+        {/* Bottom gradient — improves badge contrast for both image and video posters.
+            pointer-events-none so it never blocks the video controls or button click. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/50 via-navy/10 to-transparent"
         />
         {/* Location badge (non-interactive) */}
         <div className="pointer-events-none absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-md bg-black/50 px-2.5 py-1 backdrop-blur-sm">
@@ -95,8 +126,10 @@ export function ReferenceCardMedia({
             {location}
           </span>
         </div>
-        {/* Video badge (separately clickable, on top of image button) */}
-        {videoUrl && videoLabel && (
+        {/* External-video badge — only when no self-hosted video (mutex).
+            Positioned so it doesn't collide with native <video> controls,
+            which native browsers overlay at the bottom of the element. */}
+        {!hasInlineVideo && videoUrl && videoLabel && (
           <a
             href={videoUrl}
             target="_blank"
@@ -113,8 +146,10 @@ export function ReferenceCardMedia({
         )}
       </div>
 
-      {/* Lightbox modal (rendered via portal) */}
-      {mounted &&
+      {/* Lightbox modal (only for image-only cards — self-hosted video already
+          plays inline; opening a modal on top of a video would be redundant). */}
+      {!hasInlineVideo &&
+        mounted &&
         open &&
         createPortal(
           <div
@@ -124,7 +159,6 @@ export function ReferenceCardMedia({
             onClick={() => setOpen(false)}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-8 backdrop-blur-sm"
           >
-            {/* Close button (top-right) */}
             <button
               type="button"
               onClick={(e) => {
@@ -137,7 +171,6 @@ export function ReferenceCardMedia({
             >
               <X className="h-6 w-6" strokeWidth={2} aria-hidden="true" />
             </button>
-            {/* Image container (click stops propagation to keep modal open) */}
             <div
               className="relative max-h-[90vh] w-auto max-w-7xl"
               onClick={(e) => e.stopPropagation()}

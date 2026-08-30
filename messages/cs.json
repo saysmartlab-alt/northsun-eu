@@ -262,6 +262,21 @@
     "lead": "Vlastní realizace i partnerské projekty napříč Evropou.\nKaždý projekt s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
+        "slug": "rudshogda-norway-1mw",
+        "flag": "NO",
+        "location": "Rudshøgda, Norsko",
+        "title": "Solární instalace 1 MW, Rudshøgda",
+        "year": "2026",
+        "power": "1 MW",
+        "type": "Komerční střecha",
+        "description": "Dokončili jsme 1MW instalaci v norské Rudshøgdě. Realizace proběhla podle plánu, hladce a v profesionální kvalitě. Použili jsme montážní systém PanelClaw Europe (Enstall Group) a panely Longi 645 W. DC měření proběhlo úspěšně přístrojem Metrel MI3114PS.",
+        "tag": "own",
+        "videoSrc": "/projects/rudshogda-1mw.mp4",
+        "videoPoster": "/projects/rudshogda-1mw-poster.jpg",
+        "image": "/projects/rudshogda-1mw-poster.jpg",
+        "alt": "1 MW solární instalace v norské Rudshøgdě"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norsko (Oslo, Hammar)",

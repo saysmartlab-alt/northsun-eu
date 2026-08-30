@@ -262,6 +262,21 @@
     "lead": "Own deliveries and partner projects across Europe.\nEvery project carries our own engineering documentation and structural design.",
     "items": [
       {
+        "slug": "rudshogda-norway-1mw",
+        "flag": "NO",
+        "location": "Rudshøgda, Norway",
+        "title": "1 MW Solar Installation, Rudshøgda",
+        "year": "2026",
+        "power": "1 MW",
+        "type": "Commercial roof",
+        "description": "We completed a 1 MW installation in Rudshøgda, Norway. The project went according to plan, smoothly and with professional quality. We used the PanelClaw Europe (Enstall Group) mounting system and Longi 645 W panels. DC measurement was completed successfully with the Metrel MI3114PS.",
+        "tag": "own",
+        "videoSrc": "/projects/rudshogda-1mw.mp4",
+        "videoPoster": "/projects/rudshogda-1mw-poster.jpg",
+        "image": "/projects/rudshogda-1mw-poster.jpg",
+        "alt": "1 MW solar installation in Rudshøgda, Norway"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norway (Oslo, Hammar)",
