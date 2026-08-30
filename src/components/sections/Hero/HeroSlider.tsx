@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { useReducedMotion } from 'framer-motion'
-import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { motion, useReducedMotion } from 'framer-motion'
 
 export interface HeroSlide {
   src: string
@@ -12,109 +11,74 @@ export interface HeroSlide {
 
 interface HeroSliderProps {
   slides: HeroSlide[]
-  paused: boolean
-  locale: string
-  autoAdvanceMs?: number
+  /** Index of the slide to display. Auto-advance + dot clicks are driven from
+   *  the parent (HeroSection). */
+  index: number
+  /** Crossfade duration in ms. */
   crossfadeMs?: number
+  /** Ken Burns zoom animation duration in ms — slow, so it plays through the
+   *  slide's whole visible time even if the visitor lingers. */
+  kenBurnsMs?: number
 }
 
 /**
- * Full-bleed hero background slider. Sits at the same z-plane as the old
- * single background image (-z-10), gets overlaid by the gradient/content
- * layers unchanged.
+ * Hero background slider with Ken Burns zoom on the active slide + crossfade
+ * to the next. Ken Burns adds a slow scale that reveals more of the panels
+ * or landscape during the ~6s each slide is visible, so the hero never feels
+ * static. Fully collapses to a still image under prefers-reduced-motion.
  *
- * Behavior:
- *  - Crossfade (opacity) between slides, ~1.2s ease-in-out.
- *  - Auto-advance every `autoAdvanceMs` when not paused.
- *  - Paused when the parent Hero section reports hover.
- *  - prefers-reduced-motion: no auto-advance, transitions collapsed to
- *    instant switches; the first slide is always shown initially and
- *    manual dots still work if the visitor wants to browse.
- *  - Dots for manual switching, keyboard accessible.
- *  - First slide priority + eager, others lazy.
+ * All slides stay mounted so opacity crossfade is smooth (no unmount flicker).
+ * First slide is priority + eager; the rest are lazy so page load isn't hit.
  */
 export function HeroSlider({
   slides,
-  paused,
-  locale,
-  autoAdvanceMs = 6000,
-  crossfadeMs = 1200,
+  index,
+  crossfadeMs = 1500,
+  kenBurnsMs = 8000,
 }: HeroSliderProps) {
-  const [index, setIndex] = useState(0)
   const [mounted, setMounted] = useState(false)
   const userPrefersReducedMotion = useReducedMotion()
   const prefersReducedMotion = mounted && userPrefersReducedMotion
 
   useEffect(() => setMounted(true), [])
 
-  useEffect(() => {
-    if (!mounted || prefersReducedMotion || paused || slides.length <= 1) return
-    const timer = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length)
-    }, autoAdvanceMs)
-    return () => window.clearInterval(timer)
-  }, [mounted, prefersReducedMotion, paused, slides.length, autoAdvanceMs])
-
-  const dotLabel = locale === 'cs' ? 'Zobrazit snímek' : 'Show slide'
-  const groupLabel =
-    locale === 'cs' ? 'Přepínač snímků hero' : 'Hero slide switcher'
-
-  const transitionStyle = { transitionDuration: `${crossfadeMs}ms` }
-
   return (
-    <>
-      {/* Slide stack — same z-plane as the previous single background. */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-        {slides.map((slide, i) => (
-          <Image
+    <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
+      {slides.map((slide, i) => {
+        const isActive = i === index
+        return (
+          <motion.div
             key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            quality={75}
-            sizes="100vw"
-            style={transitionStyle}
-            className={cn(
-              'object-cover object-[60%_center] md:object-center',
-              'transition-opacity ease-in-out motion-reduce:transition-none',
-              i === index ? 'opacity-100' : 'opacity-0'
-            )}
-          />
-        ))}
-      </div>
-
-      {/* Manual dots — only when there is more than one slide. Positioned
-          above the TrustStrip (bottom ~50-60 px), always accessible. */}
-      {slides.length > 1 && (
-        <div
-          role="group"
-          aria-label={groupLabel}
-          className="pointer-events-none absolute inset-x-0 bottom-24 md:bottom-28 z-20 flex justify-center"
-        >
-          <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-black/30 px-3 py-2 backdrop-blur-sm">
-            {slides.map((slide, i) => {
-              const isActive = i === index
-              return (
-                <button
-                  key={slide.src}
-                  type="button"
-                  onClick={() => setIndex(i)}
-                  aria-label={`${dotLabel} ${i + 1}: ${slide.alt}`}
-                  aria-current={isActive}
-                  className={cn(
-                    'h-2 rounded-full transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
-                    isActive
-                      ? 'bg-white w-8'
-                      : 'bg-white/40 hover:bg-white/70 w-2'
-                  )}
-                />
-              )
-            })}
-          </div>
-        </div>
-      )}
-    </>
+            className="absolute inset-0"
+            initial={{ opacity: i === 0 ? 0 : 0, scale: 1 }}
+            animate={{
+              opacity: isActive ? 1 : 0,
+              scale: prefersReducedMotion ? 1 : isActive ? 1.08 : 1,
+            }}
+            transition={{
+              opacity: {
+                duration: prefersReducedMotion ? 0 : crossfadeMs / 1000,
+                ease: 'easeInOut',
+              },
+              scale: {
+                duration: prefersReducedMotion ? 0 : kenBurnsMs / 1000,
+                ease: [0.16, 1, 0.3, 1],
+              },
+            }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              quality={75}
+              sizes="100vw"
+              className="object-cover object-[60%_center] md:object-center"
+            />
+          </motion.div>
+        )
+      })}
+    </div>
   )
 }

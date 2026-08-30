@@ -16,6 +16,9 @@ interface HeroContentTexts {
 
 interface HeroContentProps {
   texts: HeroContentTexts
+  /** Slide switcher dots — rendered at the end of the CTA row so their bottom
+   *  edge aligns with the CTA buttons on desktop. Optional; omit for a static hero. */
+  slideDots?: React.ReactNode
 }
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
@@ -31,7 +34,7 @@ const ctaPrimaryClasses =
 const ctaSecondaryClasses =
   'border-2 border-white/70 text-white hover:bg-white hover:text-navy hover:border-white'
 
-export function HeroContent({ texts }: HeroContentProps) {
+export function HeroContent({ texts, slideDots }: HeroContentProps) {
   const [mounted, setMounted] = useState(false)
   const userPrefersReducedMotion = useReducedMotion()
   // During SSR + first client paint, render full motion so server/client markup matches.
@@ -97,7 +100,7 @@ export function HeroContent({ texts }: HeroContentProps) {
         initial="hidden"
         animate="visible"
         variants={buildVariants(0.7)}
-        className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
+        className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-end"
       >
         <Link href="#kontakt" className={cn(ctaBase, ctaPrimaryClasses)}>
           <span>{texts.ctaPrimary}</span>
@@ -110,6 +113,11 @@ export function HeroContent({ texts }: HeroContentProps) {
         <Link href="#reference" className={cn(ctaBase, ctaSecondaryClasses)}>
           {texts.ctaSecondary}
         </Link>
+
+        {/* Slide dots — right-aligned via self-end / ml-auto on the child so
+            its bottom edge sits flush with the CTA buttons on desktop. On
+            mobile the CTA row flips to flex-col and dots stack below. */}
+        {slideDots}
       </motion.div>
     </div>
   )
