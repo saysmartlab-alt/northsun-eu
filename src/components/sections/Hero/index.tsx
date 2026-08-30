@@ -22,7 +22,7 @@ function buildSlides(locale: string): HeroSlide[] {
         : 'Floating solar power plant, southern Sweden',
     },
     {
-      src: '/projects/rudshogda-1mw-poster.jpg',
+      src: '/images/projects/rudshogda/cover.jpg',
       alt: cs
         ? '1 MW solární instalace v Rudshøgdě, Norsko'
         : '1 MW solar installation in Rudshøgda, Norway',
