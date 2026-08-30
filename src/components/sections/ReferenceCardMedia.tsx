@@ -3,10 +3,18 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
-import { PlayCircle, X } from 'lucide-react'
+import { Images, PlayCircle, X } from 'lucide-react'
 import { Flag } from '@/components/ui/Flag'
 
 type FlagCode = 'CZ' | 'SE' | 'NO' | 'NL' | 'HR' | 'DE' | 'BE' | 'EU'
+
+interface GalleryBadge {
+  /** Short uppercase text like "6 INSTALACÍ" / "3 INSTALLATIONS". */
+  label: string
+  /** Full a11y label read by screen readers ("Zobrazit galerii 6 instalací"). */
+  ariaLabel: string
+  onClick: () => void
+}
 
 interface ReferenceCardMediaProps {
   image: string
@@ -28,6 +36,10 @@ interface ReferenceCardMediaProps {
    *  badge → iframe (youtube-nocookie.com) is injected in place of the image.
    *  GDPR-friendly: no YouTube request until the visitor opts in. */
   youtubeId?: string
+  /** Gallery entry badge in bottom-right corner (same slot as VIDEO badge).
+   *  Click opens the parent-owned gallery modal. Used on flagship cards
+   *  like Luleå and Skellefteå to hint at more content inside. */
+  galleryBadge?: GalleryBadge
 }
 
 /**
@@ -52,6 +64,7 @@ export function ReferenceCardMedia({
   videoSrc,
   videoPoster,
   youtubeId,
+  galleryBadge,
 }: ReferenceCardMediaProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -192,6 +205,27 @@ export function ReferenceCardMedia({
               {videoLabel}
             </span>
           </a>
+        )}
+
+        {/* Gallery badge (same slot as VIDEO badge — flagship gallery cards
+            never have their own video, so the slot is free). Clicks bubble
+            up to the card owner which manages the shared modal state so
+            the pill button below can also trigger the same modal. */}
+        {showOverlays && galleryBadge && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              galleryBadge.onClick()
+            }}
+            aria-label={galleryBadge.ariaLabel}
+            className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-yellow px-2.5 py-1 text-navy backdrop-blur-sm transition-colors duration-200 hover:bg-yellow-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          >
+            <Images className="h-3.5 w-3.5" strokeWidth={2} />
+            <span className="text-caption font-semibold uppercase tracking-wider">
+              {galleryBadge.label}
+            </span>
+          </button>
         )}
       </div>
 

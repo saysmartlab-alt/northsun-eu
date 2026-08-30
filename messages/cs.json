@@ -396,6 +396,8 @@
     "luleaGallery": {
       "eyebrow": "Luleå",
       "ctaLabel": "Prohlédnout instalace",
+      "badgeLabel": "6 instalací",
+      "badgeAriaLabel": "Zobrazit galerii šesti instalací v Luleå",
       "modalTitle": "Instalace v Luleå",
       "modalSubtitle": "Šest realizací v okolí Luleå (severní Švédsko).",
       "modalClose": "Zavřít galerii",
@@ -453,6 +455,8 @@
     "skellefteaGallery": {
       "eyebrow": "Skellefteå",
       "ctaLabel": "Prohlédnout instalace",
+      "badgeLabel": "3 instalace",
+      "badgeAriaLabel": "Zobrazit galerii tří instalací v Skellefteå",
       "modalTitle": "Instalace v Skellefteå",
       "modalSubtitle": "Tři realizace v Skellefteå a okolí (severní Švédsko).",
       "modalClose": "Zavřít galerii",

@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
-import { ArrowRight, PlayCircle, X } from 'lucide-react'
+import { PlayCircle, X } from 'lucide-react'
 
-interface Installation {
+export interface GalleryInstallation {
   slug: string
   title: string
   description: string
@@ -14,34 +14,38 @@ interface Installation {
   youtubeId?: string
 }
 
-export interface GalleryTexts {
-  /** Short uppercase label above the modal title (e.g. "Luleå", "Skellefteå"). */
+export interface GalleryModalTexts {
   eyebrow: string
-  ctaLabel: string
   modalTitle: string
   modalSubtitle: string
   modalClose: string
   videoPlayLabel: string
-  installations: Installation[]
+  installations: GalleryInstallation[]
 }
 
-interface GalleryTriggerProps {
-  texts: GalleryTexts
-  /** Stable id used for the a11y label association. Unique per gallery instance. */
+interface GalleryModalProps {
+  open: boolean
+  onClose: () => void
+  texts: GalleryModalTexts
   galleryId: string
 }
 
 /**
- * Reusable flagship-card gallery: CTA button + fullscreen modal grid of
- * sub-installations. Videos load via facade pattern (image + play overlay,
- * iframe injected only after visitor clicks). Uses youtube-nocookie.com so
- * no YouTube cookies are set until the user opts in by clicking Play.
+ * Fullscreen gallery modal — pure display component. State (open/close) is
+ * owned by the parent so a single modal can be triggered from multiple
+ * callers on the same card (e.g. the corner badge on the media AND the pill
+ * button in the card body).
  *
- * Same component powers Luleå and Skellefteå (and any future grouped
- * project) — configured entirely by translation data + galleryId.
+ * Videos load via facade pattern: image + play overlay, iframe only injected
+ * after the visitor clicks. Uses youtube-nocookie.com so no YouTube cookies
+ * are set until the user opts in.
  */
-export function GalleryTrigger({ texts, galleryId }: GalleryTriggerProps) {
-  const [open, setOpen] = useState(false)
+export function GalleryModal({
+  open,
+  onClose,
+  texts,
+  galleryId,
+}: GalleryModalProps) {
   const [mounted, setMounted] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const previouslyFocused = useRef<HTMLElement | null>(null)
@@ -52,13 +56,11 @@ export function GalleryTrigger({ texts, galleryId }: GalleryTriggerProps) {
     if (!open) return
     previouslyFocused.current = document.activeElement as HTMLElement
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key === 'Escape') onClose()
     }
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', onKey)
-    // Focus close button on open so keyboard users have a starting point.
-    // Short delay gives the portal a paint before focus fires.
     const focusTimer = setTimeout(() => closeButtonRef.current?.focus(), 40)
     return () => {
       document.body.style.overflow = prevOverflow
@@ -66,54 +68,13 @@ export function GalleryTrigger({ texts, galleryId }: GalleryTriggerProps) {
       clearTimeout(focusTimer)
       previouslyFocused.current?.focus()
     }
-  }, [open])
+  }, [open, onClose])
 
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        className="group inline-flex items-center gap-2 rounded-full bg-navy px-4 py-1.5 text-small font-syne font-semibold text-white ring-1 ring-navy transition-colors duration-200 ease-out hover:bg-navy/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
-      >
-        <span>{texts.ctaLabel}</span>
-        <ArrowRight
-          className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
-          aria-hidden="true"
-        />
-      </button>
+  if (!mounted || !open) return null
 
-      {mounted &&
-        open &&
-        createPortal(
-          <GalleryModal
-            texts={texts}
-            galleryId={galleryId}
-            onClose={() => setOpen(false)}
-            closeButtonRef={closeButtonRef}
-          />,
-          document.body
-        )}
-    </>
-  )
-}
-
-interface GalleryModalProps {
-  texts: GalleryTexts
-  galleryId: string
-  onClose: () => void
-  closeButtonRef: React.RefObject<HTMLButtonElement | null>
-}
-
-function GalleryModal({
-  texts,
-  galleryId,
-  onClose,
-  closeButtonRef,
-}: GalleryModalProps) {
   const titleId = `${galleryId}-title`
-  return (
+
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -165,12 +126,13 @@ function GalleryModal({
           ))}
         </ul>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 
 interface InstallationCardProps {
-  installation: Installation
+  installation: GalleryInstallation
   playLabel: string
 }
 

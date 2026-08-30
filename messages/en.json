@@ -396,6 +396,8 @@
     "luleaGallery": {
       "eyebrow": "Luleå",
       "ctaLabel": "Browse installations",
+      "badgeLabel": "6 installations",
+      "badgeAriaLabel": "Open gallery of six installations in Luleå",
       "modalTitle": "Installations in Luleå",
       "modalSubtitle": "Six deliveries in and around Luleå, northern Sweden.",
       "modalClose": "Close gallery",
@@ -453,6 +455,8 @@
     "skellefteaGallery": {
       "eyebrow": "Skellefteå",
       "ctaLabel": "Browse installations",
+      "badgeLabel": "3 installations",
+      "badgeAriaLabel": "Open gallery of three installations in Skellefteå",
       "modalTitle": "Installations in Skellefteå",
       "modalSubtitle": "Three deliveries in and around Skellefteå, northern Sweden.",
       "modalClose": "Close gallery",
