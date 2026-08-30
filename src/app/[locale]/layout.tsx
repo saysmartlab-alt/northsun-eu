@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { BackToTop } from '@/components/layout/BackToTop'
+import { ResetScrollOnReload } from '@/components/layout/ResetScrollOnReload'
 import { CookieConsent } from '@/components/layout/CookieConsent'
 import { JsonLd } from '@/components/layout/JsonLd'
 import '../globals.css'
@@ -94,6 +95,7 @@ export default async function LocaleLayout({
           <Footer locale={locale} />
         </NextIntlClientProvider>
         <JsonLd />
+        <ResetScrollOnReload />
         <BackToTop locale={locale} />
         <CookieConsent locale={locale} texts={cookieTexts} />
       </body>
