@@ -71,7 +71,7 @@ export function HeroSection({
   }
 
   const desktopDots = (
-    <div className="hidden md:flex self-end ml-auto translate-y-4">
+    <div className="hidden md:flex self-end ml-auto translate-y-3">
       <HeroSlideDots {...dotsProps} />
     </div>
   )
