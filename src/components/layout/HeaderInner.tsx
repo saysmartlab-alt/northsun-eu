@@ -58,11 +58,17 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
 
   useEffect(() => setMounted(true), [])
 
+  // On sub-pages (e.g. /privacy) anchor-only links would stay on the sub-page
+  // and never resolve. Prefix with locale root so clicks jump to homepage
+  // section. On the homepage itself, plain anchors scroll without a reload.
+  const isHomepage = pathname === '/'
+  const anchorPrefix = isHomepage ? '' : `/${locale}`
+
   const navItems: NavItem[] = [
-    { key: 'about', href: '#o-nas', label: texts.nav.about },
-    { key: 'services', href: '#sluzby', label: texts.nav.services },
-    { key: 'references', href: '#reference', label: texts.nav.references },
-    { key: 'contact', href: '#kontakt', label: texts.nav.contact },
+    { key: 'about', href: `${anchorPrefix}#o-nas`, label: texts.nav.about },
+    { key: 'services', href: `${anchorPrefix}#sluzby`, label: texts.nav.services },
+    { key: 'references', href: `${anchorPrefix}#reference`, label: texts.nav.references },
+    { key: 'contact', href: `${anchorPrefix}#kontakt`, label: texts.nav.contact },
   ]
 
   // Scroll listener: toggle solid background past threshold.
@@ -110,7 +116,10 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
     setMobileOpen(false)
   }
 
-  const headerBg = scrolled
+  // Sub-pages need always-solid header (light body bg + transparent header
+  // = white nav text on white = invisible). Homepage keeps the scroll-driven
+  // transparent → solid transition for editorial hero feel.
+  const headerBg = scrolled || !isHomepage
     ? 'bg-navy/95 backdrop-blur-md border-b border-navy-mid/30'
     : 'bg-transparent border-b border-transparent'
 
