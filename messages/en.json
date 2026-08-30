@@ -5,6 +5,47 @@
     "ogTitle": "NorthSun, premium solar EPC",
     "ogDescription": "We don't do it cheapest, we do it best."
   },
+  "Privacy": {
+    "label": "Legal document",
+    "title": "Privacy policy",
+    "metaDescription": "How North Sun s.r.o. processes personal data — controller, purpose, scope, data subject rights under the GDPR.",
+    "intro": "North Sun s.r.o. (Company No. 17279976, registered at Sokolská 137, 330 27 Vejprnice, Czech Republic) respects the privacy of website visitors and clients. This document explains how we process personal data in accordance with Regulation (EU) 2016/679 (GDPR). Contact: {email}.",
+    "lastUpdated": "Last updated: 22 June 2026",
+    "sections": [
+      {
+        "heading": "1. Data controller",
+        "body": "Controller: North Sun s.r.o.\nCompany No. 17279976, VAT ID CZ17279976\nRegistered office: Sokolská 137, 330 27 Vejprnice, Czech Republic\nContact: {email}"
+      },
+      {
+        "heading": "2. What data we process",
+        "body": "When you submit the contact form, we process: your full name, email address, phone number (optional), project type and the message you send. For anti-spam and abuse protection we also technically store your IP address and browser information (User-Agent)."
+      },
+      {
+        "heading": "3. Purpose and legal basis",
+        "body": "We process the form data to respond to your enquiry and any subsequent communication. The legal basis is taking steps at your request prior to entering into a contract (Art. 6(1)(b) GDPR) and our legitimate interest in protection against abuse (Art. 6(1)(f) GDPR)."
+      },
+      {
+        "heading": "4. Retention period",
+        "body": "Personal data from the contact form is retained for 24 months from submission, or for the duration of the business relationship and any applicable statutory limitation periods. After this period the data is anonymised or erased."
+      },
+      {
+        "heading": "5. Third-party recipients",
+        "body": "We do not share your data with third parties outside our company except for our processors (Vercel Inc. — website hosting, Upstash Inc. — database for storing messages, and our email service provider for notification delivery). We have Data Processing Agreements with all processors as required by Art. 28 GDPR."
+      },
+      {
+        "heading": "6. Cookies and analytics",
+        "body": "Essential cookies are always used (site functionality, language preference). Analytics cookies (Vercel Analytics — anonymised traffic statistics) are used only with your consent, which you can grant or refuse in the cookie banner on your first visit. You can withdraw consent at any time by clearing cookies in your browser."
+      },
+      {
+        "heading": "7. Your rights under the GDPR",
+        "body": "You have the right to:\n– request access to your personal data (Art. 15),\n– request correction of inaccurate data (Art. 16),\n– request erasure (Art. 17),\n– request restriction of processing (Art. 18),\n– data portability (Art. 20),\n– object to processing (Art. 21),\n– lodge a complaint with the Czech Data Protection Authority (uoou.cz).\n\nTo exercise your rights, contact us at {email}."
+      },
+      {
+        "heading": "8. Security",
+        "body": "We apply appropriate technical and organisational measures to protect personal data against loss, unauthorised access or disclosure. All communication with the site is encrypted (HTTPS)."
+      }
+    ]
+  },
   "ComingSoon": {
     "headingLine1": "Launching",
     "headingLine2": "soon",
@@ -20,6 +61,15 @@
     "thanksMessage": "Thank you. We'll let you know first.",
     "errorMessage": "Something went wrong, please try again.",
     "copyright": "© 2026 NorthSun"
+  },
+  "CookieConsent": {
+    "message": "We use essential cookies for the site to work. With your consent we'd also like to use anonymised analytics (Vercel Analytics) to measure traffic.",
+    "privacyLabel": "Privacy policy",
+    "accept": "Accept all",
+    "reject": "Reject",
+    "ariaBanner": "Cookie consent",
+    "ariaAccept": "Accept all cookies",
+    "ariaReject": "Reject analytics cookies"
   },
   "Common": {
     "cta": {

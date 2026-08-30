@@ -5,6 +5,47 @@
     "ogTitle": "NorthSun, premium solární EPC",
     "ogDescription": "Neděláme nejlevněji, děláme nejlépe."
   },
+  "Privacy": {
+    "label": "Právní dokument",
+    "title": "Ochrana osobních údajů",
+    "metaDescription": "Zásady zpracování osobních údajů společnosti North Sun s.r.o. — správce, účel, rozsah, práva subjektů podle GDPR.",
+    "intro": "Společnost North Sun s.r.o., IČO 17279976, se sídlem Sokolská 137, 330 27 Vejprnice, respektuje soukromí návštěvníků webu a klientů. Tento dokument popisuje, jak zpracováváme osobní údaje v souladu s Nařízením (EU) 2016/679 (GDPR). Kontakt: {email}.",
+    "lastUpdated": "Poslední aktualizace: 22. června 2026",
+    "sections": [
+      {
+        "heading": "1. Správce osobních údajů",
+        "body": "Správce: North Sun s.r.o.\nIČO: 17279976, DIČ: CZ17279976\nSídlo: Sokolská 137, 330 27 Vejprnice, Česká republika\nKontakt: {email}"
+      },
+      {
+        "heading": "2. Jaké údaje zpracováváme",
+        "body": "Při vyplnění kontaktního formuláře zpracováváme: jméno a příjmení, e-mailovou adresu, telefonní číslo (nepovinné), typ projektu a obsah zprávy. Technicky ukládáme také IP adresu a informace o prohlížeči (User-Agent) pro ochranu proti spamu a zneužití."
+      },
+      {
+        "heading": "3. Účel a právní základ zpracování",
+        "body": "Údaje z formuláře zpracováváme za účelem vyřízení Vaší poptávky a související komunikace. Právním základem je plnění opatření přijatých před uzavřením smlouvy na Vaši žádost (čl. 6 odst. 1 písm. b GDPR) a náš oprávněný zájem na ochraně proti zneužití (čl. 6 odst. 1 písm. f GDPR)."
+      },
+      {
+        "heading": "4. Doba uchování údajů",
+        "body": "Osobní údaje z kontaktního formuláře uchováváme po dobu 24 měsíců od odeslání poptávky, případně po dobu trvání obchodního vztahu a promlčecí lhůty stanovené právními předpisy. Poté jsou údaje anonymizovány nebo vymazány."
+      },
+      {
+        "heading": "5. Předání údajů třetím stranám",
+        "body": "Vaše údaje nesdílíme s třetími stranami mimo naši firmu s výjimkou zpracovatelů (Vercel Inc. — hosting webu, Upstash Inc. — databáze pro ukládání zpráv, poskytovatel e-mailové služby pro doručení notifikací). Se všemi zpracovateli máme uzavřené smlouvy o zpracování osobních údajů podle čl. 28 GDPR."
+      },
+      {
+        "heading": "6. Cookies a analytika",
+        "body": "Nezbytné cookies používáme vždy (fungování webu, preference jazyka). Analytické cookies (Vercel Analytics — anonymizované statistiky návštěvnosti) používáme pouze s Vaším souhlasem, který můžete udělit nebo odmítnout v cookie liště při první návštěvě. Souhlas můžete kdykoliv odvolat vymazáním cookies v prohlížeči."
+      },
+      {
+        "heading": "7. Vaše práva podle GDPR",
+        "body": "Máte právo:\n– požadovat přístup ke svým osobním údajům (čl. 15),\n– požadovat opravu nepřesných údajů (čl. 16),\n– požadovat výmaz (čl. 17),\n– požadovat omezení zpracování (čl. 18),\n– na přenositelnost údajů (čl. 20),\n– vznést námitku proti zpracování (čl. 21),\n– podat stížnost u Úřadu pro ochranu osobních údajů (uoou.cz).\n\nPro uplatnění práv nás kontaktujte na {email}."
+      },
+      {
+        "heading": "8. Zabezpečení",
+        "body": "Uplatňujeme přiměřená technická a organizační opatření k ochraně osobních údajů před ztrátou, neoprávněným přístupem nebo zveřejněním. Komunikace s webem probíhá výhradně přes šifrované spojení (HTTPS)."
+      }
+    ]
+  },
   "ComingSoon": {
     "headingLine1": "Brzy",
     "headingLine2": "spouštíme",
@@ -20,6 +61,15 @@
     "thanksMessage": "Děkujeme. Dáme vám vědět jako prvním.",
     "errorMessage": "Něco se pokazilo, zkuste to prosím znovu.",
     "copyright": "© 2026 NorthSun"
+  },
+  "CookieConsent": {
+    "message": "Používáme nezbytné cookies pro fungování webu. S vaším souhlasem bychom rádi použili anonymizovanou analytiku (Vercel Analytics) pro měření návštěvnosti.",
+    "privacyLabel": "Zásady zpracování",
+    "accept": "Přijmout vše",
+    "reject": "Odmítnout",
+    "ariaBanner": "Souhlas s cookies",
+    "ariaAccept": "Přijmout všechny cookies",
+    "ariaReject": "Odmítnout analytické cookies"
   },
   "Common": {
     "cta": {

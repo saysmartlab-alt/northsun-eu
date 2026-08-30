@@ -3,10 +3,11 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Syne, JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { CookieConsent } from '@/components/layout/CookieConsent'
+import { JsonLd } from '@/components/layout/JsonLd'
 import '../globals.css'
 
 const syne = Syne({
@@ -38,11 +39,11 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
-    metadataBase: new URL('https://northsun-eu.com'),
+    metadataBase: new URL('https://www.northsun-eu.com'),
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),
-      url: `https://northsun-eu.com/${locale}`,
+      url: `https://www.northsun-eu.com/${locale}`,
       siteName: 'NorthSun',
       locale: locale === 'cs' ? 'cs_CZ' : 'en_US',
       type: 'website',
@@ -69,6 +70,17 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale)
 
+  const c = await getTranslations({ locale, namespace: 'CookieConsent' })
+  const cookieTexts = {
+    message: c('message'),
+    privacyLabel: c('privacyLabel'),
+    accept: c('accept'),
+    reject: c('reject'),
+    ariaBanner: c('ariaBanner'),
+    ariaAccept: c('ariaAccept'),
+    ariaReject: c('ariaReject'),
+  }
+
   return (
     <html lang={locale} className={`${syne.variable} ${jetbrains.variable}`}>
       <body>
@@ -80,7 +92,8 @@ export default async function LocaleLayout({
           {children}
           <Footer locale={locale} />
         </NextIntlClientProvider>
-        <Analytics />
+        <JsonLd />
+        <CookieConsent locale={locale} texts={cookieTexts} />
       </body>
     </html>
   )

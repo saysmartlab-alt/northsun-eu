@@ -17,7 +17,25 @@
       "Bash(git commit *)",
       "Bash(npx tsc *)",
       "Bash(grep -v \":0$\")",
-      "Bash(git commit -m 'fix: contact form select — persist selected value visibility \\(color-scheme: dark\\) *)"
+      "Bash(git commit -m 'fix: contact form select — persist selected value visibility \\(color-scheme: dark\\) *)",
+      "Bash([ -d \"$DIR\" ])",
+      "Bash(echo 'EXISTS: c:/Users/spiso/OneDrive/Dokumenty/claude_projects/pizzafastplzen \\(won'\\\\''t overwrite, listing contents\\)')",
+      "Bash(ls -la c:/Users/spiso/OneDrive/Dokumenty/claude_projects/pizzafastplzen)",
+      "Bash(mkdir -p c:/Users/spiso/OneDrive/Dokumenty/claude_projects/pizzafastplzen)",
+      "Bash(echo 'CREATED: c:/Users/spiso/OneDrive/Dokumenty/claude_projects/pizzafastplzen')",
+      "Bash(npx create-next-app@15 . --ts --tailwind --app --src-dir --import-alias \"@/*\" --use-npm --eslint --yes)",
+      "Bash(git init *)",
+      "Bash(git commit -m 'chore: initial Next.js 15 + TS + Tailwind v4 scaffold + Claude Code setup *)",
+      "Bash(curl -s http://localhost:3000/robots.txt)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s \"http://localhost:3000/cs/privacy\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/en/privacy\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(kill %1)",
+      "Bash(wait)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"
     ]
   }
 }
