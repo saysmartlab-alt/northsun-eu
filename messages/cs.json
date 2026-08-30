@@ -62,6 +62,13 @@
     "errorMessage": "Něco se pokazilo, zkuste to prosím znovu.",
     "copyright": "© 2026 NorthSun"
   },
+  "NotFound": {
+    "label": "Chyba 404",
+    "heading": "Tady nic nesvítí.",
+    "lead": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta. Zkuste hlavní stránku nebo nám napište.",
+    "primaryCta": "Zpět na hlavní stránku",
+    "secondaryCta": "Napište nám"
+  },
   "CookieConsent": {
     "message": "Používáme nezbytné cookies pro fungování webu. S vaším souhlasem bychom rádi použili anonymizovanou analytiku (Vercel Analytics) pro měření návštěvnosti.",
     "privacyLabel": "Zásady zpracování",
