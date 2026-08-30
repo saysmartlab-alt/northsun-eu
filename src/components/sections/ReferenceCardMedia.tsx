@@ -44,13 +44,15 @@ interface ReferenceCardMediaProps {
 
 /**
  * Reference card media area. Four modes, in priority order:
- * 1. `videoSrc`  → self-hosted <video> with poster + native controls.
+ * 1. `videoSrc`  → poster image + VIDEO badge; on click, <video> replaces
+ *                  the poster and starts playing (same facade UX as YouTube).
  * 2. `youtubeId` → image + small VIDEO badge, iframe on click (facade).
  * 3. `videoUrl`  → image + small VIDEO badge that opens external link.
  * 4. neither     → image, click opens fullscreen lightbox.
  *
- * Both YouTube and image cards share the same lightbox for a bigger look
- * at the poster; only the badge action differs.
+ * All video cards share the same visual — clean poster + small yellow VIDEO
+ * badge in the bottom-right — so the section reads as one system regardless
+ * of where the video actually lives.
  */
 export function ReferenceCardMedia({
   image,
@@ -69,6 +71,7 @@ export function ReferenceCardMedia({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [ytLoaded, setYtLoaded] = useState(false)
+  const [videoStarted, setVideoStarted] = useState(false)
 
   useEffect(() => setMounted(true), [])
 
@@ -103,21 +106,27 @@ export function ReferenceCardMedia({
   const hasYouTube = Boolean(youtubeId)
   const hasExternal = Boolean(videoUrl && videoLabel) && !hasSelfHosted && !hasYouTube
   const ytActive = hasYouTube && ytLoaded
+  const videoActive = hasSelfHosted && videoStarted
 
-  // Location badge + gradient hide when the YouTube iframe is live so
-  // YouTube's own player chrome stays readable and unobstructed.
-  const showOverlays = !ytActive && !hasSelfHosted
+  // Location badge + gradient hide when any inline video is live so the
+  // player chrome (native <video> or YouTube iframe) stays readable.
+  const showOverlays = !ytActive && !videoActive
+  // Show poster image with a click-to-load VIDEO badge for cards that have
+  // an inline video (YouTube OR self-hosted) but haven't been started yet.
+  const showVideoBadge = (hasYouTube && !ytLoaded) || (hasSelfHosted && !videoStarted)
 
   return (
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy/5">
         {/* Primary media */}
-        {hasSelfHosted ? (
+        {videoActive ? (
+          /* Self-hosted <video> — autoplays because the visitor just clicked
+             the VIDEO badge (user gesture satisfies autoplay policies). */
           <video
             src={videoSrc}
             poster={videoPoster ?? image}
             controls
-            preload="none"
+            autoPlay
             playsInline
             aria-label={inlineVideoLabel}
             className="absolute inset-0 h-full w-full bg-navy object-cover"
@@ -132,8 +141,11 @@ export function ReferenceCardMedia({
             className="absolute inset-0 h-full w-full"
           />
         ) : (
-          /* Default: image + lightbox click. Same for pure image cards,
-             YouTube-badge cards (before iframe load), and external-link cards. */
+          /* Poster / image — shown for pure image cards, YouTube facade
+             (before iframe load), self-hosted video facade (before <video>
+             loads), and external-link cards. Click opens the lightbox for
+             a bigger look. `videoPoster` takes precedence over `image` so
+             a video card can use a dedicated poster frame if provided. */
           <button
             type="button"
             onClick={() => setLightboxOpen(true)}
@@ -142,7 +154,7 @@ export function ReferenceCardMedia({
             className="group/img absolute inset-0 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-yellow"
           >
             <Image
-              src={image}
+              src={hasSelfHosted ? (videoPoster ?? image) : image}
               alt={alt}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -171,14 +183,16 @@ export function ReferenceCardMedia({
           </div>
         )}
 
-        {/* YouTube badge — click to load iframe inline. Same visual as the
-            external-link badge; only the action differs. */}
-        {hasYouTube && !ytLoaded && (
+        {/* Inline video badge — click to load either the YouTube iframe or
+            the self-hosted <video> element in place of the poster. Same
+            visual for both so the section reads as one system. */}
+        {showVideoBadge && (
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation()
-              setYtLoaded(true)
+              if (hasYouTube) setYtLoaded(true)
+              else if (hasSelfHosted) setVideoStarted(true)
             }}
             aria-label={ytPlayAria}
             className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-yellow px-2.5 py-1 text-navy backdrop-blur-sm transition-colors duration-200 hover:bg-yellow-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
@@ -229,12 +243,11 @@ export function ReferenceCardMedia({
         )}
       </div>
 
-      {/* Lightbox modal — only for image-based cards (not for cards showing
-          an inline video). Available to pure image cards AND to cards with
-          YouTube badges (before the iframe loads) so a visitor can see the
-          poster full-screen before deciding to watch. */}
-      {!hasSelfHosted &&
-        !ytActive &&
+      {/* Lightbox modal — for the poster/image while no video is playing
+          inline. Once a video (YouTube iframe or self-hosted <video>) is
+          active, the lightbox is disabled so it can't cover the player. */}
+      {!ytActive &&
+        !videoActive &&
         mounted &&
         lightboxOpen &&
         createPortal(
