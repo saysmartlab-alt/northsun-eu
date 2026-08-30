@@ -36,6 +36,10 @@ const AUTO_ADVANCE_MS = 6000
  *     dots pill (so hover-preview isn't fought by the timer). The rest of the
  *     hero — text, CTAs — does NOT pause the rotation.
  *   - `index`: which slide is currently visible (also driven by dot hover/click).
+ *
+ * Dots render in two places, driven by the SAME index/setIndex — mobile gets
+ * a floating bottom-center pill above the trust strip (widget-like), desktop
+ * keeps them inline with the CTA row (right-aligned).
  */
 export function HeroSection({
   content,
@@ -49,11 +53,6 @@ export function HeroSection({
 
   useEffect(() => setMounted(true), [])
 
-  // Auto-advance runs regardless of prefers-reduced-motion — the OS setting
-  // should mute the transition (crossfade/zoom), not silently disable the
-  // slider. Reduced motion is handled inside HeroSlider by collapsing the
-  // motion durations to 0 (instant swap), so users with Windows "Animation
-  // effects: Off" still see slides rotate, just without the fade.
   useEffect(() => {
     if (!mounted || paused || slides.length <= 1) return
     const timer = window.setInterval(() => {
@@ -62,15 +61,19 @@ export function HeroSection({
     return () => window.clearInterval(timer)
   }, [mounted, paused, slides.length])
 
-  const dots = (
-    <HeroSlideDots
-      slides={slides}
-      index={index}
-      onSelect={setIndex}
-      onHoverStart={() => setPaused(true)}
-      onHoverEnd={() => setPaused(false)}
-      locale={locale}
-    />
+  const dotsProps = {
+    slides,
+    index,
+    onSelect: setIndex,
+    onHoverStart: () => setPaused(true),
+    onHoverEnd: () => setPaused(false),
+    locale,
+  }
+
+  const desktopDots = (
+    <div className="hidden md:flex self-end ml-auto">
+      <HeroSlideDots {...dotsProps} />
+    </div>
   )
 
   return (
@@ -91,8 +94,17 @@ export function HeroSection({
       />
 
       <Container className="relative z-10">
-        <HeroContent texts={content} slideDots={dots} />
+        <HeroContent texts={content} slideDots={desktopDots} />
       </Container>
+
+      {/* Mobile-only floating dots pill — sits above the TrustStrip
+          (which occupies bottom-0 with py-5). z-20 keeps it above the
+          trust strip's z-10 so it stays tappable. */}
+      <div className="md:hidden absolute inset-x-0 bottom-24 z-20 flex justify-center pointer-events-none">
+        <div className="pointer-events-auto">
+          <HeroSlideDots {...dotsProps} />
+        </div>
+      </div>
 
       <TrustStrip texts={trust} />
     </section>

@@ -16,14 +16,15 @@ interface HeroSlideDotsProps {
 }
 
 /**
- * Manual slide switcher — pill of dots. Rendered as a sibling of the two
- * hero CTA buttons so its bottom edge aligns with the CTAs' bottom edge on
- * desktop (right-aligned via `sm:ml-auto`). On mobile the CTA row switches
- * to flex-col so the dots stack under the buttons without overflow.
+ * Manual slide switcher — pill of dots. Position-agnostic (no self-* or
+ * ml-* classes) so the caller can drop it wherever it fits: mobile hero
+ * renders it as a floating bottom-center overlay above the trust strip;
+ * desktop hero renders it inside the CTA row (right-aligned via a wrapper).
  *
  * Hover behavior: hovering a dot immediately shows that slide, and auto-
  * advance is paused for the entire pill so the visitor can browse without
- * the timer jumping ahead.
+ * the timer jumping ahead. Dots have an invisible p-2 hit area so mobile
+ * taps land reliably (48 px tap target inside the 8 px visual dot).
  */
 export function HeroSlideDots({
   slides,
@@ -45,7 +46,7 @@ export function HeroSlideDots({
       aria-label={groupLabel}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
-      className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-2 backdrop-blur-sm self-end sm:ml-auto"
+      className="flex items-center gap-1 rounded-full bg-black/40 px-2 py-1 backdrop-blur-sm ring-1 ring-white/10"
     >
       {slides.map((slide, i) => {
         const isActive = i === index
@@ -58,11 +59,18 @@ export function HeroSlideDots({
             onFocus={() => onSelect(i)}
             aria-label={`${dotLabel} ${i + 1}: ${slide.alt}`}
             aria-current={isActive}
-            className={cn(
-              'h-2 rounded-full transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
-              isActive ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/70 w-2'
-            )}
-          />
+            className="group/dot relative -m-1 flex h-6 w-6 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          >
+            <span
+              aria-hidden="true"
+              className={cn(
+                'block h-2 rounded-full transition-all duration-300 ease-out',
+                isActive
+                  ? 'bg-white w-8'
+                  : 'bg-white/40 group-hover/dot:bg-white/70 w-2'
+              )}
+            />
+          </button>
         )
       })}
     </div>
