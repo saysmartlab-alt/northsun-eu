@@ -56,7 +56,8 @@
       "Bash(curl -s \"http://localhost:3000/images/projects/skelleftea/hotel-sara-kulturhus.jpg\" -o /dev/null -w \"sk/hotel: %{http_code}\\\\n\")",
       "Bash(xargs echo \"URLs:\")",
       "Bash(xargs echo \"Skellefteå spellings:\")",
-      "Bash(xargs echo \"Services count text:\")"
+      "Bash(xargs echo \"Services count text:\")",
+      "Bash(git commit -m 'polish\\(GalleryTrigger\\): navy pill button to match badge shape + differentiate from yellow tag *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"

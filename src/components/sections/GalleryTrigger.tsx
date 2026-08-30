@@ -75,11 +75,11 @@ export function GalleryTrigger({ texts, galleryId }: GalleryTriggerProps) {
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="group inline-flex items-center gap-2 rounded-lg bg-yellow px-5 py-2.5 text-small font-syne font-semibold text-navy shadow-sm transition-all duration-200 ease-out hover:bg-yellow-600 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
+        className="group inline-flex items-center gap-2 rounded-full bg-navy px-4 py-1.5 text-small font-syne font-semibold text-white ring-1 ring-navy transition-colors duration-200 ease-out hover:bg-navy/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2"
       >
         <span>{texts.ctaLabel}</span>
         <ArrowRight
-          className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+          className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
           aria-hidden="true"
         />
       </button>
