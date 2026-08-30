@@ -302,8 +302,8 @@
         "description": "Dokončili jsme 1MW instalaci v norské Rudshøgdě. Realizace proběhla podle plánu, hladce a v profesionální kvalitě. Použili jsme montážní systém PanelClaw Europe (Enstall Group) a panely Longi 645 W. DC měření proběhlo úspěšně přístrojem Metrel MI3114PS.",
         "tag": "own",
         "videoSrc": "/projects/rudshogda-1mw.mp4",
-        "videoPoster": "/projects/rudshogda-1mw-poster.jpg",
-        "image": "/projects/rudshogda-1mw-poster.jpg",
+        "videoPoster": "/images/projects/rudshogda/cover.jpg",
+        "image": "/images/projects/rudshogda/cover.jpg",
         "alt": "1 MW solární instalace v norské Rudshøgdě"
       },
       {

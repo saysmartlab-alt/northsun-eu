@@ -23,12 +23,15 @@ interface HeroSliderProps {
 
 /**
  * Hero background slider with Ken Burns zoom on the active slide + crossfade
- * to the next. Ken Burns adds a slow scale that reveals more of the panels
- * or landscape during the ~6s each slide is visible, so the hero never feels
- * static. Fully collapses to a still image under prefers-reduced-motion.
+ * to the next. All slides stay mounted so opacity crossfade is smooth. First
+ * slide is priority + eager (visible immediately, no fade-in), the rest are
+ * lazy so page load isn't hit. Fully collapses to a still image under
+ * prefers-reduced-motion.
  *
- * All slides stay mounted so opacity crossfade is smooth (no unmount flicker).
- * First slide is priority + eager; the rest are lazy so page load isn't hit.
+ * Mobile framing: `object-center` keeps the subject centered on portrait
+ * viewports (was `object-[60%_center]` which pushed the subject off-frame
+ * on narrow screens); desktop keeps the 60% offset so the left side stays
+ * dark enough for the headline overlay to read.
  */
 export function HeroSlider({
   slides,
@@ -50,10 +53,10 @@ export function HeroSlider({
           <motion.div
             key={slide.src}
             className="absolute inset-0"
-            initial={{ opacity: i === 0 ? 0 : 0, scale: 1 }}
+            initial={{ opacity: i === 0 ? 1 : 0, scale: 1 }}
             animate={{
               opacity: isActive ? 1 : 0,
-              scale: prefersReducedMotion ? 1 : isActive ? 1.08 : 1,
+              scale: prefersReducedMotion ? 1 : isActive ? 1.06 : 1,
             }}
             transition={{
               opacity: {
@@ -74,7 +77,7 @@ export function HeroSlider({
               loading={i === 0 ? 'eager' : 'lazy'}
               quality={75}
               sizes="100vw"
-              className="object-cover object-[60%_center] md:object-center"
+              className="object-cover object-center md:object-[60%_center]"
             />
           </motion.div>
         )

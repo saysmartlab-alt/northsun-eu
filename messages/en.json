@@ -302,8 +302,8 @@
         "description": "We completed a 1 MW installation in Rudshøgda, Norway. The project went according to plan, smoothly and with professional quality. We used the PanelClaw Europe (Enstall Group) mounting system and Longi 645 W panels. DC measurement was completed successfully with the Metrel MI3114PS.",
         "tag": "own",
         "videoSrc": "/projects/rudshogda-1mw.mp4",
-        "videoPoster": "/projects/rudshogda-1mw-poster.jpg",
-        "image": "/projects/rudshogda-1mw-poster.jpg",
+        "videoPoster": "/images/projects/rudshogda/cover.jpg",
+        "image": "/images/projects/rudshogda/cover.jpg",
         "alt": "1 MW solar installation in Rudshøgda, Norway"
       },
       {
