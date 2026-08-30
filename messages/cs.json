@@ -106,15 +106,27 @@
         "links": [
           {
             "label": "O nás",
-            "href": "/o-nas"
+            "href": "/cs#o-nas"
+          },
+          {
+            "label": "Služby",
+            "href": "/cs#sluzby"
           },
           {
             "label": "Reference",
-            "href": "/reference"
+            "href": "/cs#reference"
+          },
+          {
+            "label": "Proč NorthSun",
+            "href": "/cs#proc-northsun"
+          },
+          {
+            "label": "Partneři",
+            "href": "/cs#partneri"
           },
           {
             "label": "Kontakt",
-            "href": "/kontakt"
+            "href": "/cs#kontakt"
           }
         ]
       },
@@ -123,35 +135,35 @@
         "links": [
           {
             "label": "Rezidence",
-            "href": "/sluzby/rezidence"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Solární parky",
-            "href": "/sluzby/solarni-parky"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Carporty",
-            "href": "/sluzby/carporty"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Solární fasády",
-            "href": "/sluzby/fasady"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Plovoucí FPV",
-            "href": "/sluzby/fpv"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Opravy a re-engineering",
-            "href": "/sluzby/opravy"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Agrofotovoltaika",
-            "href": "/sluzby/agrofotovoltaika"
+            "href": "/cs#sluzby"
           },
           {
             "label": "Komerční a průmyslové střechy",
-            "href": "/sluzby/komercni-strechy"
+            "href": "/cs#sluzby"
           }
         ]
       },
@@ -168,15 +180,15 @@
           },
           {
             "label": "Vejprnice (HQ)",
-            "href": "/kontakt#vejprnice"
+            "href": "/cs#vejprnice"
           },
           {
             "label": "Marieholm",
-            "href": "/kontakt#marieholm"
+            "href": "/cs#marieholm"
           },
           {
             "label": "Moss",
-            "href": "/kontakt#moss"
+            "href": "/cs#moss"
           }
         ]
       }
@@ -364,7 +376,7 @@
         "type": "Komerční střecha",
         "description": "Komerční solární instalace v norských klimatických podmínkách. K projektu je dokumentární video.",
         "tag": "own",
-        "videoUrl": "https://www.youtube.com/watch?v=YvpCblroTYY",
+        "youtubeId": "YvpCblroTYY",
         "image": "/hero/2.jpg",
         "alt": "Komerční solární střecha v Norsku"
       },
@@ -396,7 +408,7 @@
     "luleaGallery": {
       "eyebrow": "Luleå",
       "ctaLabel": "Prohlédnout instalace",
-      "badgeLabel": "6 instalací",
+      "badgeLabel": "6",
       "badgeAriaLabel": "Zobrazit galerii šesti instalací v Luleå",
       "modalTitle": "Instalace v Luleå",
       "modalSubtitle": "Šest realizací v okolí Luleå (severní Švédsko).",
@@ -455,7 +467,7 @@
     "skellefteaGallery": {
       "eyebrow": "Skellefteå",
       "ctaLabel": "Prohlédnout instalace",
-      "badgeLabel": "3 instalace",
+      "badgeLabel": "3",
       "badgeAriaLabel": "Zobrazit galerii tří instalací v Skellefteå",
       "modalTitle": "Instalace v Skellefteå",
       "modalSubtitle": "Tři realizace v Skellefteå a okolí (severní Švédsko).",

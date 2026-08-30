@@ -106,15 +106,27 @@
         "links": [
           {
             "label": "About",
-            "href": "/about"
+            "href": "/en#o-nas"
+          },
+          {
+            "label": "Services",
+            "href": "/en#sluzby"
           },
           {
             "label": "References",
-            "href": "/references"
+            "href": "/en#reference"
+          },
+          {
+            "label": "Why NorthSun",
+            "href": "/en#proc-northsun"
+          },
+          {
+            "label": "Partners",
+            "href": "/en#partneri"
           },
           {
             "label": "Contact",
-            "href": "/contact"
+            "href": "/en#kontakt"
           }
         ]
       },
@@ -123,35 +135,35 @@
         "links": [
           {
             "label": "Residential",
-            "href": "/services/residential"
+            "href": "/en#sluzby"
           },
           {
             "label": "Solar parks",
-            "href": "/services/solar-parks"
+            "href": "/en#sluzby"
           },
           {
             "label": "Carports",
-            "href": "/services/carports"
+            "href": "/en#sluzby"
           },
           {
             "label": "Solar facades",
-            "href": "/services/facades"
+            "href": "/en#sluzby"
           },
           {
             "label": "Floating PV",
-            "href": "/services/floating-pv"
+            "href": "/en#sluzby"
           },
           {
             "label": "Repairs and re-engineering",
-            "href": "/services/repairs"
+            "href": "/en#sluzby"
           },
           {
             "label": "Agrophotovoltaics",
-            "href": "/services/agrophotovoltaics"
+            "href": "/en#sluzby"
           },
           {
             "label": "Commercial and industrial roofs",
-            "href": "/services/commercial-industrial-roofs"
+            "href": "/en#sluzby"
           }
         ]
       },
@@ -168,15 +180,15 @@
           },
           {
             "label": "Vejprnice (HQ)",
-            "href": "/contact#vejprnice"
+            "href": "/en#vejprnice"
           },
           {
             "label": "Marieholm",
-            "href": "/contact#marieholm"
+            "href": "/en#marieholm"
           },
           {
             "label": "Moss",
-            "href": "/contact#moss"
+            "href": "/en#moss"
           }
         ]
       }
@@ -364,7 +376,7 @@
         "type": "Commercial rooftop",
         "description": "Commercial solar installation in Norwegian climate conditions. Documentary video available.",
         "tag": "own",
-        "videoUrl": "https://www.youtube.com/watch?v=YvpCblroTYY",
+        "youtubeId": "YvpCblroTYY",
         "image": "/hero/2.jpg",
         "alt": "Commercial solar rooftop in Norway"
       },
@@ -396,7 +408,7 @@
     "luleaGallery": {
       "eyebrow": "Luleå",
       "ctaLabel": "Browse installations",
-      "badgeLabel": "6 installations",
+      "badgeLabel": "6",
       "badgeAriaLabel": "Open gallery of six installations in Luleå",
       "modalTitle": "Installations in Luleå",
       "modalSubtitle": "Six deliveries in and around Luleå, northern Sweden.",
@@ -455,7 +467,7 @@
     "skellefteaGallery": {
       "eyebrow": "Skellefteå",
       "ctaLabel": "Browse installations",
-      "badgeLabel": "3 installations",
+      "badgeLabel": "3",
       "badgeAriaLabel": "Open gallery of three installations in Skellefteå",
       "modalTitle": "Installations in Skellefteå",
       "modalSubtitle": "Three deliveries in and around Skellefteå, northern Sweden.",

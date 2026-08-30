@@ -63,7 +63,7 @@ export function NotFoundContent({ locale, texts }: NotFoundContentProps) {
         <div
           aria-hidden="true"
           className="flex items-center justify-center font-syne font-extrabold leading-none tracking-tighter"
-          style={{ fontSize: 'clamp(7rem, 22vw, 16rem)' }}
+          style={{ fontSize: 'clamp(3.5rem, 11vw, 8rem)' }}
         >
           {digits.map((digit, idx) => {
             const isMiddle = idx === middleIndex
