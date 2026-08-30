@@ -6,6 +6,8 @@ import {
   Building2,
   Waves,
   Wrench,
+  Sprout,
+  Factory,
   type LucideIcon,
 } from 'lucide-react'
 import { Section } from '@/components/ui/Section'
@@ -23,6 +25,8 @@ type ServiceSlug =
   | 'facades'
   | 'floating-pv'
   | 'repairs'
+  | 'agrophotovoltaics'
+  | 'commercial-industrial-roofs'
 
 interface ServiceItem {
   slug: ServiceSlug
@@ -37,6 +41,8 @@ const ICON_MAP: Record<ServiceSlug, LucideIcon> = {
   facades: Building2,
   'floating-pv': Waves,
   repairs: Wrench,
+  agrophotovoltaics: Sprout,
+  'commercial-industrial-roofs': Factory,
 }
 
 export async function Services({ locale }: ServicesProps) {

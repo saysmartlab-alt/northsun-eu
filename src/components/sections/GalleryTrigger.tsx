@@ -14,7 +14,9 @@ interface Installation {
   youtubeId?: string
 }
 
-interface LuleaGalleryTexts {
+export interface GalleryTexts {
+  /** Short uppercase label above the modal title (e.g. "Luleå", "Skellefteå"). */
+  eyebrow: string
   ctaLabel: string
   modalTitle: string
   modalSubtitle: string
@@ -23,18 +25,22 @@ interface LuleaGalleryTexts {
   installations: Installation[]
 }
 
-interface LuleaGalleryTriggerProps {
-  texts: LuleaGalleryTexts
+interface GalleryTriggerProps {
+  texts: GalleryTexts
+  /** Stable id used for the a11y label association. Unique per gallery instance. */
+  galleryId: string
 }
 
 /**
- * Flagship Luleå card CTA + gallery modal. Combines the trigger button
- * (rendered inside the reference card body) and the fullscreen modal
- * (rendered via portal). Videos load via facade pattern: image + play
- * overlay, iframe injected only after the visitor clicks — respects GDPR
- * (no YouTube cookies until consent) and page-load performance.
+ * Reusable flagship-card gallery: CTA button + fullscreen modal grid of
+ * sub-installations. Videos load via facade pattern (image + play overlay,
+ * iframe injected only after visitor clicks). Uses youtube-nocookie.com so
+ * no YouTube cookies are set until the user opts in by clicking Play.
+ *
+ * Same component powers Luleå and Skellefteå (and any future grouped
+ * project) — configured entirely by translation data + galleryId.
  */
-export function LuleaGalleryTrigger({ texts }: LuleaGalleryTriggerProps) {
+export function GalleryTrigger({ texts, galleryId }: GalleryTriggerProps) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -51,14 +57,13 @@ export function LuleaGalleryTrigger({ texts }: LuleaGalleryTriggerProps) {
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', onKey)
-    // Focus the close button on open so keyboard users have a starting point.
-    // Small timeout gives the portal a paint before we focus.
+    // Focus close button on open so keyboard users have a starting point.
+    // Short delay gives the portal a paint before focus fires.
     const focusTimer = setTimeout(() => closeButtonRef.current?.focus(), 40)
     return () => {
       document.body.style.overflow = prevOverflow
       document.removeEventListener('keydown', onKey)
       clearTimeout(focusTimer)
-      // Return focus to the trigger button when the modal closes.
       previouslyFocused.current?.focus()
     }
   }, [open])
@@ -82,8 +87,9 @@ export function LuleaGalleryTrigger({ texts }: LuleaGalleryTriggerProps) {
       {mounted &&
         open &&
         createPortal(
-          <LuleaGalleryModal
+          <GalleryModal
             texts={texts}
+            galleryId={galleryId}
             onClose={() => setOpen(false)}
             closeButtonRef={closeButtonRef}
           />,
@@ -93,22 +99,25 @@ export function LuleaGalleryTrigger({ texts }: LuleaGalleryTriggerProps) {
   )
 }
 
-interface LuleaGalleryModalProps {
-  texts: LuleaGalleryTexts
+interface GalleryModalProps {
+  texts: GalleryTexts
+  galleryId: string
   onClose: () => void
   closeButtonRef: React.RefObject<HTMLButtonElement | null>
 }
 
-function LuleaGalleryModal({
+function GalleryModal({
   texts,
+  galleryId,
   onClose,
   closeButtonRef,
-}: LuleaGalleryModalProps) {
+}: GalleryModalProps) {
+  const titleId = `${galleryId}-title`
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-labelledby="lulea-gallery-title"
+      aria-labelledby={titleId}
       className="fixed inset-0 z-[100] flex flex-col bg-navy/95 backdrop-blur-sm"
       onClick={onClose}
     >
@@ -119,12 +128,9 @@ function LuleaGalleryModal({
       >
         <div>
           <p className="text-caption uppercase tracking-[0.18em] font-semibold text-yellow">
-            Luleå
+            {texts.eyebrow}
           </p>
-          <h2
-            id="lulea-gallery-title"
-            className="mt-1 text-h3 font-semibold text-white"
-          >
+          <h2 id={titleId} className="mt-1 text-h3 font-semibold text-white">
             {texts.modalTitle}
           </h2>
           <p className="mt-1 text-small text-white/60">{texts.modalSubtitle}</p>
@@ -241,7 +247,6 @@ function YouTubeFacade({
         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         className="object-cover transition-transform duration-300 group-hover/facade:scale-105"
       />
-      {/* Dark overlay to boost play-icon contrast; slightly lighter on hover to signal interactivity */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-navy/30 transition-colors duration-200 group-hover/facade:bg-navy/45"

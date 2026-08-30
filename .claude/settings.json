@@ -47,7 +47,16 @@
       "Bash(git check-ignore *)",
       "Bash(git rm *)",
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/cs.json', 'utf8'\\)\\); console.log\\('cs.json valid'\\)\")",
-      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json', 'utf8'\\)\\); console.log\\('en.json valid'\\)\")"
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json', 'utf8'\\)\\); console.log\\('en.json valid'\\)\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\('Sprout:', typeof l.Sprout, ' Factory:', typeof l.Factory\\)\")",
+      "Read(//c/Users/spiso/OneDrive/Dokumenty/northsun-eu/messages/**)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/cs.json','utf8'\\)\\); console.log\\('cs valid'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); console.log\\('en valid'\\)\")",
+      "Bash(curl -s \"http://localhost:3000/images/projects/skelleftea/skelleftea.jpg\" -o /dev/null -w \"sk/main: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:3000/images/projects/skelleftea/hotel-sara-kulturhus.jpg\" -o /dev/null -w \"sk/hotel: %{http_code}\\\\n\")",
+      "Bash(xargs echo \"URLs:\")",
+      "Bash(xargs echo \"Skellefteå spellings:\")",
+      "Bash(xargs echo \"Services count text:\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"

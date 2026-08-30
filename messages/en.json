@@ -144,6 +144,14 @@
           {
             "label": "Repairs and re-engineering",
             "href": "/services/repairs"
+          },
+          {
+            "label": "Agrophotovoltaics",
+            "href": "/services/agrophotovoltaics"
+          },
+          {
+            "label": "Commercial and industrial roofs",
+            "href": "/services/commercial-industrial-roofs"
           }
         ]
       },
@@ -198,7 +206,7 @@
   },
   "Services": {
     "label": "What we do",
-    "title": "<num>6</num> solutions, one\nengineering team",
+    "title": "<num>8</num> solutions, one\nengineering team",
     "lead": "From family homes to utility-scale parks.\nAlways with in-house documentation and structural design.",
     "items": [
       {
@@ -230,6 +238,16 @@
         "slug": "repairs",
         "title": "Repairs and re-engineering",
         "description": "Diagnostics, remediation and redesign of existing plants underperforming due to poor delivery."
+      },
+      {
+        "slug": "agrophotovoltaics",
+        "title": "Agrophotovoltaics",
+        "description": "Combining farmland with solar generation. Panels above crops or pasture protect the harvest while producing clean electricity, a dual use of the land."
+      },
+      {
+        "slug": "commercial-industrial-roofs",
+        "title": "Commercial and industrial roofs",
+        "description": "Solar on the roofs of companies, warehouses and industrial buildings. Making the most of flat and pitched roofs to cut energy costs."
       }
     ]
   },
@@ -289,6 +307,54 @@
         "gallery": "lulea"
       },
       {
+        "slug": "skelleftea-sweden",
+        "flag": "SE",
+        "location": "Skellefteå, Sweden",
+        "title": "Skellefteå, Sweden",
+        "type": "Rooftop installations, series",
+        "description": "Deliveries in Skellefteå, including the Sara Kulturhus hotel and apartment buildings. Rooftop solar in northern Swedish conditions.",
+        "tag": "own",
+        "image": "/images/projects/skelleftea/skelleftea.jpg",
+        "alt": "Rooftop solar installation in Skellefteå",
+        "gallery": "skelleftea"
+      },
+      {
+        "slug": "installation-winter",
+        "flag": "SE",
+        "location": "Sweden",
+        "title": "Winter installation",
+        "type": "Rooftop installation",
+        "description": "A winter rooftop solar installation. Work in demanding Nordic conditions.",
+        "tag": "own",
+        "youtubeId": "VndlLcG-fy8",
+        "image": "/images/projects/installation-winter/cover.jpg",
+        "alt": "Rooftop solar installation in winter conditions"
+      },
+      {
+        "slug": "kramfors-sweden",
+        "flag": "SE",
+        "location": "Kramfors, Sweden",
+        "title": "Kramfors",
+        "type": "Rooftop installation",
+        "description": "Rooftop solar installation in Kramfors, central Sweden.",
+        "tag": "own",
+        "youtubeId": "P67F32WdENg",
+        "image": "/images/projects/kramfors/cover.jpg",
+        "alt": "Solar installation in Kramfors, Sweden"
+      },
+      {
+        "slug": "germany-installation",
+        "flag": "DE",
+        "location": "Germany",
+        "title": "Germany",
+        "type": "Rooftop installation",
+        "description": "Rooftop solar installation in Germany.",
+        "tag": "own",
+        "youtubeId": "b_pqoWG5Pa8",
+        "image": "/images/projects/germany/cover.jpg",
+        "alt": "Solar installation in Germany"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norway (Oslo, Hammar)",
@@ -328,6 +394,7 @@
       }
     ],
     "luleaGallery": {
+      "eyebrow": "Luleå",
       "ctaLabel": "Browse installations",
       "modalTitle": "Installations in Luleå",
       "modalSubtitle": "Six deliveries in and around Luleå, northern Sweden.",
@@ -380,6 +447,40 @@
           "description": "Rooftop installation in Boden from 2023.",
           "image": "/images/projects/lulea/boden-2023.jpg",
           "alt": "Solar rooftop in Boden, 2023"
+        }
+      ]
+    },
+    "skellefteaGallery": {
+      "eyebrow": "Skellefteå",
+      "ctaLabel": "Browse installations",
+      "modalTitle": "Installations in Skellefteå",
+      "modalSubtitle": "Three deliveries in and around Skellefteå, northern Sweden.",
+      "modalClose": "Close gallery",
+      "videoPlayLabel": "Play video",
+      "installations": [
+        {
+          "slug": "skelleftea",
+          "title": "Skellefteå",
+          "description": "Rooftop solar installation in Skellefteå.",
+          "image": "/images/projects/skelleftea/skelleftea.jpg",
+          "alt": "Rooftop installation in Skellefteå",
+          "youtubeId": "tJGS92SzuwU"
+        },
+        {
+          "slug": "hotel-sara-kulturhus",
+          "title": "Skellefteå - Hotel Sara Kulturhus",
+          "description": "Installation on the Sara Kulturhus hotel, a modern timber high-rise in Skellefteå.",
+          "image": "/images/projects/skelleftea/hotel-sara-kulturhus.jpg",
+          "alt": "Photovoltaics on the Sara Kulturhus hotel",
+          "youtubeId": "9uo6N4sc6Ik"
+        },
+        {
+          "slug": "apartments",
+          "title": "Skellefteå - Apartments",
+          "description": "Solar installation on apartment buildings in Skellefteå.",
+          "image": "/images/projects/skelleftea/apartments.jpg",
+          "alt": "Solar installation on apartment buildings in Skellefteå",
+          "youtubeId": "Ri7N7ziSaiw"
         }
       ]
     },
@@ -472,6 +573,8 @@
         "facades": "Facades and BIPV",
         "floating-pv": "Floating PV",
         "repairs": "Repairs and re-engineering",
+        "agrophotovoltaics": "Agrophotovoltaics",
+        "commercial-industrial-roofs": "Commercial and industrial roofs",
         "other": "Other"
       },
       "message": "Your message",

@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { Badge } from '@/components/ui/Badge'
 import { ReferenceCardMedia } from './ReferenceCardMedia'
-import { LuleaGalleryTrigger } from './LuleaGalleryTrigger'
+import { GalleryTrigger, type GalleryTexts } from './GalleryTrigger'
 
 interface ReferencesProps {
   locale: string
@@ -12,6 +12,7 @@ interface ReferencesProps {
 
 type FlagCode = 'CZ' | 'SE' | 'NO' | 'NL' | 'HR' | 'DE' | 'BE' | 'EU'
 type RefTag = 'own' | 'own-with-sunsurf' | 'partner-sunsurf'
+type GallerySlug = 'lulea' | 'skelleftea'
 
 interface ReferenceItem {
   slug: string
@@ -29,29 +30,13 @@ interface ReferenceItem {
   videoSrc?: string
   /** Poster image for self-hosted video (fallback: falls back to `image`). */
   videoPoster?: string
-  image: string
-  alt: string
-  /** Optional gallery key — currently only "lulea". Swaps the standard tag
-   *  badge for a CTA that opens a modal with sub-installations. */
-  gallery?: 'lulea'
-}
-
-interface LuleaInstallation {
-  slug: string
-  title: string
-  description: string
-  image: string
-  alt: string
+  /** YouTube video ID — renders inline facade + iframe-on-click (youtube-nocookie). */
   youtubeId?: string
-}
-
-interface LuleaGalleryData {
-  ctaLabel: string
-  modalTitle: string
-  modalSubtitle: string
-  modalClose: string
-  videoPlayLabel: string
-  installations: LuleaInstallation[]
+  image: string
+  alt: string
+  /** Optional gallery key. Swaps the tag badge for a CTA that opens the
+   *  matching gallery modal (grid of sub-installations). */
+  gallery?: GallerySlug
 }
 
 export async function References({ locale }: ReferencesProps) {
@@ -65,7 +50,13 @@ export async function References({ locale }: ReferencesProps) {
   const tagPartnerSunsurf = t('tagPartnerSunsurf')
   const videoLabel = locale === 'cs' ? 'Video' : 'Video'
   const items = t.raw('items') as ReferenceItem[]
-  const luleaGallery = t.raw('luleaGallery') as LuleaGalleryData
+  const luleaGallery = t.raw('luleaGallery') as GalleryTexts
+  const skellefteaGallery = t.raw('skellefteaGallery') as GalleryTexts
+
+  const galleryData: Record<GallerySlug, GalleryTexts> = {
+    lulea: luleaGallery,
+    skelleftea: skellefteaGallery,
+  }
 
   const tagLabel = (tag: RefTag): string => {
     if (tag === 'own') return tagOwn
@@ -101,7 +92,7 @@ export async function References({ locale }: ReferencesProps) {
             </p>
           </div>
 
-          {/* Grid 3 karet: 1 / 2 / 3 sloupce, editorial wide format */}
+          {/* Grid cards: 1 / 2 / 3 sloupce, editorial wide format */}
           <ul
             role="list"
             className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
@@ -109,6 +100,9 @@ export async function References({ locale }: ReferencesProps) {
             {items.map((item, idx) => {
               const headingId = `ref-${item.slug}`
               const metadata = [item.year, item.type, item.power].filter(Boolean)
+              const gallery = item.gallery
+                ? galleryData[item.gallery]
+                : undefined
 
               return (
                 <AnimatedSection
@@ -134,6 +128,7 @@ export async function References({ locale }: ReferencesProps) {
                       videoLabel={item.videoUrl ? videoLabel : undefined}
                       videoSrc={item.videoSrc}
                       videoPoster={item.videoPoster}
+                      youtubeId={item.youtubeId}
                     />
 
                     {/* Card body */}
@@ -156,8 +151,11 @@ export async function References({ locale }: ReferencesProps) {
                         <Badge variant={badgeVariant(item.tag)}>
                           {tagLabel(item.tag)}
                         </Badge>
-                        {item.gallery === 'lulea' && (
-                          <LuleaGalleryTrigger texts={luleaGallery} />
+                        {item.gallery && gallery && (
+                          <GalleryTrigger
+                            texts={gallery}
+                            galleryId={`gallery-${item.gallery}`}
+                          />
                         )}
                       </div>
                     </div>

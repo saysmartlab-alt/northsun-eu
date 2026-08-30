@@ -144,6 +144,14 @@
           {
             "label": "Opravy a re-engineering",
             "href": "/sluzby/opravy"
+          },
+          {
+            "label": "Agrofotovoltaika",
+            "href": "/sluzby/agrofotovoltaika"
+          },
+          {
+            "label": "Komerční a průmyslové střechy",
+            "href": "/sluzby/komercni-strechy"
           }
         ]
       },
@@ -198,7 +206,7 @@
   },
   "Services": {
     "label": "Co děláme",
-    "title": "<num>6</num> řešení, jeden\nengineering tým",
+    "title": "<num>8</num> řešení, jeden\nengineering tým",
     "lead": "Od rodinných domů po utility-scale parky.\nVždy s vlastní projektovou dokumentací a statikou.",
     "items": [
       {
@@ -230,6 +238,16 @@
         "slug": "repairs",
         "title": "Opravy a re-engineering",
         "description": "Diagnostika, sanace a přeprojektování stávajících elektráren s nedostatky."
+      },
+      {
+        "slug": "agrophotovoltaics",
+        "title": "Agrofotovoltaika",
+        "description": "Spojení zemědělské půdy a výroby solární energie. Panely nad plodinami nebo pastvinami chrání úrodu a zároveň vyrábějí čistou elektřinu, dvojí využití pozemku."
+      },
+      {
+        "slug": "commercial-industrial-roofs",
+        "title": "Komerční a průmyslové střechy",
+        "description": "Fotovoltaika na střechách firem, hal a průmyslových objektů. Maximální využití ploché i šikmé střechy pro snížení nákladů na energie."
       }
     ]
   },
@@ -289,6 +307,54 @@
         "gallery": "lulea"
       },
       {
+        "slug": "skelleftea-sweden",
+        "flag": "SE",
+        "location": "Skellefteå, Švédsko",
+        "title": "Skellefteå, Švédsko",
+        "type": "Střešní instalace, série",
+        "description": "Realizace v Skellefteå, včetně hotelu Sara Kulturhus a bytových domů. Střešní fotovoltaika v severošvédských klimatických podmínkách.",
+        "tag": "own",
+        "image": "/images/projects/skelleftea/skelleftea.jpg",
+        "alt": "Střešní fotovoltaická instalace v Skellefteå",
+        "gallery": "skelleftea"
+      },
+      {
+        "slug": "installation-winter",
+        "flag": "SE",
+        "location": "Švédsko",
+        "title": "Instalace v zimě",
+        "type": "Střešní instalace",
+        "description": "Zimní realizace střešní fotovoltaiky. Ukázka práce v severských klimatických podmínkách.",
+        "tag": "own",
+        "youtubeId": "VndlLcG-fy8",
+        "image": "/images/projects/installation-winter/cover.jpg",
+        "alt": "Střešní fotovoltaická instalace v zimních podmínkách"
+      },
+      {
+        "slug": "kramfors-sweden",
+        "flag": "SE",
+        "location": "Kramfors, Švédsko",
+        "title": "Kramfors",
+        "type": "Střešní instalace",
+        "description": "Střešní fotovoltaická instalace v Kramforsu ve středním Švédsku.",
+        "tag": "own",
+        "youtubeId": "P67F32WdENg",
+        "image": "/images/projects/kramfors/cover.jpg",
+        "alt": "Solární instalace v Kramforsu, Švédsko"
+      },
+      {
+        "slug": "germany-installation",
+        "flag": "DE",
+        "location": "Německo",
+        "title": "Německo",
+        "type": "Střešní instalace",
+        "description": "Střešní fotovoltaická instalace v Německu.",
+        "tag": "own",
+        "youtubeId": "b_pqoWG5Pa8",
+        "image": "/images/projects/germany/cover.jpg",
+        "alt": "Solární instalace v Německu"
+      },
+      {
         "slug": "solar-roof-norway",
         "flag": "NO",
         "location": "Norsko (Oslo, Hammar)",
@@ -328,6 +394,7 @@
       }
     ],
     "luleaGallery": {
+      "eyebrow": "Luleå",
       "ctaLabel": "Prohlédnout instalace",
       "modalTitle": "Instalace v Luleå",
       "modalSubtitle": "Šest realizací v okolí Luleå (severní Švédsko).",
@@ -380,6 +447,40 @@
           "description": "Střešní instalace v Bodenu z roku 2023.",
           "image": "/images/projects/lulea/boden-2023.jpg",
           "alt": "Solární střecha v Bodenu, 2023"
+        }
+      ]
+    },
+    "skellefteaGallery": {
+      "eyebrow": "Skellefteå",
+      "ctaLabel": "Prohlédnout instalace",
+      "modalTitle": "Instalace v Skellefteå",
+      "modalSubtitle": "Tři realizace v Skellefteå a okolí (severní Švédsko).",
+      "modalClose": "Zavřít galerii",
+      "videoPlayLabel": "Přehrát video",
+      "installations": [
+        {
+          "slug": "skelleftea",
+          "title": "Skellefteå",
+          "description": "Střešní fotovoltaická instalace v Skellefteå.",
+          "image": "/images/projects/skelleftea/skelleftea.jpg",
+          "alt": "Střešní instalace v Skellefteå",
+          "youtubeId": "tJGS92SzuwU"
+        },
+        {
+          "slug": "hotel-sara-kulturhus",
+          "title": "Skellefteå - Hotel Sara Kulturhus",
+          "description": "Realizace na budově hotelu Sara Kulturhus, moderní dřevostavbě ve švédském Skellefteå.",
+          "image": "/images/projects/skelleftea/hotel-sara-kulturhus.jpg",
+          "alt": "Fotovoltaika na budově hotelu Sara Kulturhus",
+          "youtubeId": "9uo6N4sc6Ik"
+        },
+        {
+          "slug": "apartments",
+          "title": "Skellefteå - Apartments",
+          "description": "Fotovoltaická instalace na bytových domech ve Skellefteå.",
+          "image": "/images/projects/skelleftea/apartments.jpg",
+          "alt": "Solární instalace na bytových domech v Skellefteå",
+          "youtubeId": "Ri7N7ziSaiw"
         }
       ]
     },
@@ -472,6 +573,8 @@
         "facades": "Fasády a BIPV",
         "floating-pv": "Plovoucí FPV",
         "repairs": "Opravy a re-engineering",
+        "agrophotovoltaics": "Agrofotovoltaika",
+        "commercial-industrial-roofs": "Komerční a průmyslové střechy",
         "other": "Jiné"
       },
       "message": "Vaše zpráva",

@@ -20,19 +20,24 @@ interface ReferenceCardMediaProps {
   videoLabel?: string
   /** Self-hosted video source (served from /public). When present, the card
    *  renders a <video> element with the poster instead of the image, so the
-   *  visitor can play inline. Mutually exclusive with the videoUrl overlay
-   *  (self-hosted takes precedence). */
+   *  visitor can play inline. Mutually exclusive with the videoUrl overlay. */
   videoSrc?: string
   videoPoster?: string
+  /** YouTube video ID for inline click-to-load facade. Highest precedence.
+   *  Same GDPR-friendly pattern as the gallery: image poster + play button;
+   *  iframe (youtube-nocookie.com) injected only after the user clicks. */
+  youtubeId?: string
 }
 
 /**
- * Reference card media area. Three modes, in priority order:
- * 1. `videoSrc` → self-hosted <video> with poster + native controls (click-to-play).
- * 2. `videoUrl` → static Image + small overlay badge that links to the external video.
- * 3. neither    → static Image, click opens a fullscreen lightbox for closer look.
+ * Reference card media area. Four modes, in priority order:
+ * 1. `youtubeId` → image poster + play overlay, iframe on click (facade).
+ * 2. `videoSrc`  → self-hosted <video> with poster + native controls.
+ * 3. `videoUrl`  → static Image + small overlay badge linking to external video.
+ * 4. neither     → static Image, click opens a fullscreen lightbox for a closer look.
  *
- * Client component because of useState/useEffect for the lightbox modal + ESC handler.
+ * Client component: useState for lightbox + YouTube facade loaded state,
+ * useEffect for ESC handler and body scroll lock.
  */
 export function ReferenceCardMedia({
   image,
@@ -45,9 +50,11 @@ export function ReferenceCardMedia({
   videoLabel,
   videoSrc,
   videoPoster,
+  youtubeId,
 }: ReferenceCardMediaProps) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [ytLoaded, setYtLoaded] = useState(false)
 
   useEffect(() => setMounted(true), [])
 
@@ -74,18 +81,62 @@ export function ReferenceCardMedia({
     locale === 'cs'
       ? `Otevřít video k projektu ${title}`
       : `Open video for project ${title}`
-  const inlineVideoLabel =
-    locale === 'cs' ? `Video: ${title}` : `Video: ${title}`
+  const inlineVideoLabel = `Video: ${title}`
+  const ytPlayAria =
+    locale === 'cs'
+      ? `Přehrát video: ${title}`
+      : `Play video: ${title}`
 
-  const hasInlineVideo = Boolean(videoSrc)
+  const hasYouTube = Boolean(youtubeId)
+  const hasSelfHosted = Boolean(videoSrc)
+  const hasInlineMedia = hasYouTube || hasSelfHosted
 
   return (
     <>
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy/5">
-        {hasInlineVideo ? (
-          /* Self-hosted video: preload="none" so the ~25 MB file only downloads
-             when the visitor actually clicks Play — no page-load hit. Poster
-             shows immediately, controls give the native play button. */
+        {hasYouTube ? (
+          ytLoaded ? (
+            /* iframe injected only after Play click — nothing loads from
+               youtube-nocookie.com until the user opts in by interacting. */
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+              title={inlineVideoLabel}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setYtLoaded(true)}
+              aria-label={ytPlayAria}
+              className="group/facade absolute inset-0 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-yellow"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-300 group-hover/facade:scale-105"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-navy/25 transition-colors duration-200 group-hover/facade:bg-navy/40"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span
+                  aria-hidden="true"
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-yellow shadow-lg transition-transform duration-200 group-hover/facade:scale-110"
+                >
+                  <PlayCircle className="h-9 w-9 text-navy" strokeWidth={1.5} />
+                </span>
+              </div>
+            </button>
+          )
+        ) : hasSelfHosted ? (
+          /* Self-hosted video: preload="none" so the file only downloads when
+             the visitor actually clicks Play. Poster shows immediately, native
+             controls give the play button. */
           <video
             src={videoSrc}
             poster={videoPoster ?? image}
@@ -113,23 +164,28 @@ export function ReferenceCardMedia({
           </button>
         )}
 
-        {/* Bottom gradient — improves badge contrast for both image and video posters.
-            pointer-events-none so it never blocks the video controls or button click. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/50 via-navy/10 to-transparent"
-        />
-        {/* Location badge (non-interactive) */}
-        <div className="pointer-events-none absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-md bg-black/50 px-2.5 py-1 backdrop-blur-sm">
-          <Flag code={flag} title={location} className="h-3.5" />
-          <span className="text-caption font-semibold uppercase tracking-wider text-white">
-            {location}
-          </span>
-        </div>
-        {/* External-video badge — only when no self-hosted video (mutex).
-            Positioned so it doesn't collide with native <video> controls,
-            which native browsers overlay at the bottom of the element. */}
-        {!hasInlineVideo && videoUrl && videoLabel && (
+        {/* Bottom gradient — improves badge contrast for image/poster.
+            pointer-events-none so it never blocks the video controls, iframe,
+            or button click. Hidden entirely once the YouTube iframe is live
+            so YouTube's own controls remain fully readable. */}
+        {!(hasYouTube && ytLoaded) && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/50 via-navy/10 to-transparent"
+          />
+        )}
+        {/* Location badge — hide when YouTube iframe active so it doesn't
+            sit awkwardly on top of the player chrome. */}
+        {!(hasYouTube && ytLoaded) && (
+          <div className="pointer-events-none absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-md bg-black/50 px-2.5 py-1 backdrop-blur-sm">
+            <Flag code={flag} title={location} className="h-3.5" />
+            <span className="text-caption font-semibold uppercase tracking-wider text-white">
+              {location}
+            </span>
+          </div>
+        )}
+        {/* External-video badge — only when no inline video (mutex). */}
+        {!hasInlineMedia && videoUrl && videoLabel && (
           <a
             href={videoUrl}
             target="_blank"
@@ -146,9 +202,10 @@ export function ReferenceCardMedia({
         )}
       </div>
 
-      {/* Lightbox modal (only for image-only cards — self-hosted video already
-          plays inline; opening a modal on top of a video would be redundant). */}
-      {!hasInlineVideo &&
+      {/* Lightbox modal — only for pure image cards. Any inline video (self-
+          hosted or YouTube facade) already plays in place, so a lightbox on
+          top would be redundant. */}
+      {!hasInlineMedia &&
         mounted &&
         open &&
         createPortal(
