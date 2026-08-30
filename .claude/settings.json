@@ -57,7 +57,8 @@
       "Bash(xargs echo \"URLs:\")",
       "Bash(xargs echo \"Skellefteå spellings:\")",
       "Bash(xargs echo \"Services count text:\")",
-      "Bash(git commit -m 'polish\\(GalleryTrigger\\): navy pill button to match badge shape + differentiate from yellow tag *)"
+      "Bash(git commit -m 'polish\\(GalleryTrigger\\): navy pill button to match badge shape + differentiate from yellow tag *)",
+      "Bash(git commit -m 'polish\\(BackToTop\\): shrink button ~50 % *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\spiso\\OneDrive\\Dokumenty\\claude_projects\\pizzafastplzen"
