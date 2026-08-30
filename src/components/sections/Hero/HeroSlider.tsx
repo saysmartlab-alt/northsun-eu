@@ -50,6 +50,7 @@ export function HeroSlider({
           <motion.div
             key={slide.src}
             className="absolute inset-0"
+            style={{ willChange: 'opacity, transform' }}
             initial={{ opacity: i === 0 ? 1 : 0, scale: 1 }}
             animate={{
               opacity: isActive ? 1 : 0,
@@ -71,7 +72,7 @@ export function HeroSlider({
               alt={slide.alt}
               fill
               priority={i === 0}
-              loading={i === 0 ? 'eager' : 'lazy'}
+              loading="eager"
               quality={75}
               sizes="100vw"
               className="object-cover object-center md:object-[60%_center]"
