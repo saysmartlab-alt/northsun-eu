@@ -289,7 +289,7 @@ function LanguageSwitcherInline({
     <div
       role="group"
       aria-label={ariaLabel}
-      className="inline-flex items-center rounded-full border border-white/25 bg-white/5 p-1 font-syne text-small font-semibold tracking-wider backdrop-blur-sm"
+      className="inline-flex items-center rounded-full border border-white/25 bg-white/5 p-[3px] font-syne text-caption font-semibold tracking-wider backdrop-blur-sm"
     >
       {LOCALES.map(({ code, label }) => {
         const active = locale === code
@@ -301,7 +301,7 @@ function LanguageSwitcherInline({
             onClick={onNavigate}
             aria-current={active ? 'true' : undefined}
             className={cn(
-              'inline-flex items-center justify-center min-h-[36px] min-w-[44px] px-3 rounded-full transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
+              'inline-flex items-center justify-center min-h-[28px] min-w-[36px] px-2.5 rounded-full transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
               active
                 ? 'bg-yellow text-navy shadow-sm'
                 : 'text-white/85 hover:text-white'
