@@ -152,7 +152,7 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
               width={140}
               height={64}
               priority
-              className="h-14 lg:h-16 w-auto"
+              className="h-14 lg:h-[72px] w-auto"
               style={{ width: 'auto' }}
             />
           </a>
