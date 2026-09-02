@@ -246,12 +246,14 @@ export function HeaderInner({ locale, texts }: HeaderInnerProps) {
               </nav>
 
               <div className="mt-8 flex flex-col gap-6">
-                <LanguageSwitcherInline
-                  locale={locale}
-                  pathname={pathname}
-                  ariaLabel={texts.aria.langSwitch}
-                  onNavigate={() => setMobileOpen(false)}
-                />
+                <div className="flex justify-end">
+                  <LanguageSwitcherInline
+                    locale={locale}
+                    pathname={pathname}
+                    ariaLabel={texts.aria.langSwitch}
+                    onNavigate={() => setMobileOpen(false)}
+                  />
+                </div>
                 <a
                   href="#kontakt"
                   onClick={onNavClick}
