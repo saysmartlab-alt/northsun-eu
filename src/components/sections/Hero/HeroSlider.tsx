@@ -74,7 +74,7 @@ export function HeroSlider({
               priority={i === 0}
               loading="eager"
               quality={85}
-              sizes="100vw"
+              sizes="(orientation: portrait) 250vw, 100vw"
               className="object-cover object-center md:object-[60%_center]"
             />
           </motion.div>
