@@ -91,7 +91,7 @@ V `/public/images/` jsou připravené fotky a loga (po konverzi z HEIC):
 
 **Vlastní (3 ověřené s Lukášem, 2026-06-21):**
 - **Walraven (NL)** — komerční solární střecha (2023). NE fasáda, jen střecha.
-- **Solar roof Norsko (Oslo + Hammar)** — komerční střecha 1-2 MW (2024). YouTube video: https://www.youtube.com/watch?v=YvpCblroTYY
+- **Solar roof Norsko (Langhus, Oslo)** — komerční střecha 1-2 MW (2024). YouTube video: https://www.youtube.com/watch?v=YvpCblroTYY
 - **Floating solar (SE)** — plovoucí elektrárna se Sunsurf, vlastní realizace ve spolupráci. Badge: "Vlastní realizace ve spolupráci se Sunsurf".
 
 **Co NENÍ vlastní reference (z reference sekce ODSTRANIT):**

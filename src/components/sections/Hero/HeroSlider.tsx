@@ -73,7 +73,7 @@ export function HeroSlider({
               fill
               priority={i === 0}
               loading="eager"
-              quality={75}
+              quality={85}
               sizes="100vw"
               className="object-cover object-center md:object-[60%_center]"
             />

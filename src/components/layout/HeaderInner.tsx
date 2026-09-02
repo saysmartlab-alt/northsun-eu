@@ -289,32 +289,26 @@ function LanguageSwitcherInline({
     <div
       role="group"
       aria-label={ariaLabel}
-      className="flex items-center font-syne text-small font-semibold tracking-wider"
+      className="inline-flex items-center rounded-full border border-white/25 bg-white/5 p-1 font-syne text-small font-semibold tracking-wider backdrop-blur-sm"
     >
-      {LOCALES.map(({ code, label }, i) => {
+      {LOCALES.map(({ code, label }) => {
         const active = locale === code
         return (
-          <span key={code} className="flex items-center">
-            {i > 0 && (
-              <span aria-hidden="true" className="text-white/30 px-1">
-                /
-              </span>
+          <Link
+            key={code}
+            href={pathname}
+            locale={code}
+            onClick={onNavigate}
+            aria-current={active ? 'true' : undefined}
+            className={cn(
+              'inline-flex items-center justify-center min-h-[36px] min-w-[44px] px-3 rounded-full transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
+              active
+                ? 'bg-yellow text-navy shadow-sm'
+                : 'text-white/85 hover:text-white'
             )}
-            <Link
-              href={pathname}
-              locale={code}
-              onClick={onNavigate}
-              aria-current={active ? 'true' : undefined}
-              className={cn(
-                'inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-2 transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
-                active
-                  ? 'text-yellow'
-                  : 'text-white/50 hover:text-white'
-              )}
-            >
-              {label}
-            </Link>
-          </span>
+          >
+            {label}
+          </Link>
         )
       })}
     </div>

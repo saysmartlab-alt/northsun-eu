@@ -307,69 +307,9 @@
         "alt": "1 MW solární instalace v norské Rudshøgdě"
       },
       {
-        "slug": "lulea-sweden",
-        "flag": "SE",
-        "location": "Luleå, Švédsko",
-        "title": "Luleå, Švédsko",
-        "type": "Střešní instalace, série",
-        "description": "Naše největší působení: série střešních fotovoltaických instalací v Luleå a okolí (severní Švédsko). Rodinné domy, komerční střechy i speciální realizace.",
-        "tag": "own",
-        "image": "/images/projects/lulea/black-roof.jpg",
-        "alt": "Dron pohled na střešní fotovoltaickou instalaci v Luleå",
-        "gallery": "lulea"
-      },
-      {
-        "slug": "skelleftea-sweden",
-        "flag": "SE",
-        "location": "Skellefteå, Švédsko",
-        "title": "Skellefteå, Švédsko",
-        "type": "Střešní instalace, série",
-        "description": "Realizace v Skellefteå, včetně hotelu Sara Kulturhus a bytových domů. Střešní fotovoltaika v severošvédských klimatických podmínkách.",
-        "tag": "own",
-        "image": "/images/projects/skelleftea/skelleftea.jpg",
-        "alt": "Střešní fotovoltaická instalace v Skellefteå",
-        "gallery": "skelleftea"
-      },
-      {
-        "slug": "installation-winter",
-        "flag": "SE",
-        "location": "Švédsko",
-        "title": "Instalace v zimě",
-        "type": "Střešní instalace",
-        "description": "Zimní realizace střešní fotovoltaiky. Ukázka práce v severských klimatických podmínkách.",
-        "tag": "own",
-        "youtubeId": "VndlLcG-fy8",
-        "image": "/images/projects/installation-winter/cover.jpg",
-        "alt": "Střešní fotovoltaická instalace v zimních podmínkách"
-      },
-      {
-        "slug": "kramfors-sweden",
-        "flag": "SE",
-        "location": "Kramfors, Švédsko",
-        "title": "Kramfors",
-        "type": "Střešní instalace",
-        "description": "Střešní fotovoltaická instalace v Kramforsu ve středním Švédsku.",
-        "tag": "own",
-        "youtubeId": "P67F32WdENg",
-        "image": "/images/projects/kramfors/cover.jpg",
-        "alt": "Solární instalace v Kramforsu, Švédsko"
-      },
-      {
-        "slug": "germany-installation",
-        "flag": "DE",
-        "location": "Německo",
-        "title": "Německo",
-        "type": "Střešní instalace",
-        "description": "Střešní fotovoltaická instalace v Německu.",
-        "tag": "own",
-        "youtubeId": "b_pqoWG5Pa8",
-        "image": "/images/projects/germany/cover.jpg",
-        "alt": "Solární instalace v Německu"
-      },
-      {
         "slug": "solar-roof-norway",
         "flag": "NO",
-        "location": "Norsko (Oslo, Hammar)",
+        "location": "Langhus (Oslo), Norsko",
         "title": "Komerční solární střecha",
         "year": "2024",
         "power": "1–2 MW",
@@ -378,7 +318,7 @@
         "tag": "own",
         "youtubeId": "YvpCblroTYY",
         "image": "/hero/2.jpg",
-        "alt": "Komerční solární střecha v Norsku"
+        "alt": "Komerční solární střecha v norském Langhusu"
       },
       {
         "slug": "floating-solar-sweden",
@@ -403,6 +343,66 @@
         "videoUrl": "https://www.linkedin.com/posts/lukas-kohout-412a121b6_work-solarpower-projects-activity-7373192896902090752-6Iw7",
         "image": "/images/projects/walraven/cover.jpg",
         "alt": "Solární střecha na průmyslovém objektu Walraven"
+      },
+      {
+        "slug": "kramfors-sweden",
+        "flag": "SE",
+        "location": "Kramfors, Švédsko",
+        "title": "Kramfors",
+        "type": "Střešní instalace",
+        "description": "Střešní fotovoltaická instalace v Kramforsu ve středním Švédsku.",
+        "tag": "own",
+        "youtubeId": "P67F32WdENg",
+        "image": "/images/projects/kramfors/cover.jpg",
+        "alt": "Solární instalace v Kramforsu, Švédsko"
+      },
+      {
+        "slug": "installation-winter",
+        "flag": "SE",
+        "location": "Švédsko",
+        "title": "Instalace v zimě",
+        "type": "Střešní instalace",
+        "description": "Zimní realizace střešní fotovoltaiky. Ukázka práce v severských klimatických podmínkách.",
+        "tag": "own",
+        "youtubeId": "VndlLcG-fy8",
+        "image": "/images/projects/installation-winter/cover.jpg",
+        "alt": "Střešní fotovoltaická instalace v zimních podmínkách"
+      },
+      {
+        "slug": "lulea-sweden",
+        "flag": "SE",
+        "location": "Luleå, Švédsko",
+        "title": "Luleå, Švédsko",
+        "type": "Střešní instalace, série",
+        "description": "Naše největší působení: série střešních fotovoltaických instalací v Luleå a okolí (severní Švédsko). Rodinné domy, komerční střechy i speciální realizace.",
+        "tag": "own",
+        "image": "/images/projects/lulea/black-roof.jpg",
+        "alt": "Dron pohled na střešní fotovoltaickou instalaci v Luleå",
+        "gallery": "lulea"
+      },
+      {
+        "slug": "skelleftea-sweden",
+        "flag": "SE",
+        "location": "Skellefteå, Švédsko",
+        "title": "Skellefteå, Švédsko",
+        "type": "Střešní instalace, série",
+        "description": "Realizace v Skellefteå, včetně hotelu Sara Kulturhus a bytových domů. Střešní fotovoltaika v severošvédských klimatických podmínkách.",
+        "tag": "own",
+        "image": "/images/projects/skelleftea/skelleftea.jpg",
+        "alt": "Střešní fotovoltaická instalace v Skellefteå",
+        "gallery": "skelleftea"
+      },
+      {
+        "slug": "germany-installation",
+        "flag": "DE",
+        "location": "Německo",
+        "title": "Německo",
+        "type": "Střešní instalace",
+        "description": "Střešní fotovoltaická instalace v Německu.",
+        "tag": "own",
+        "youtubeId": "b_pqoWG5Pa8",
+        "image": "/images/projects/germany/cover.jpg",
+        "alt": "Solární instalace v Německu"
       }
     ],
     "luleaGallery": {

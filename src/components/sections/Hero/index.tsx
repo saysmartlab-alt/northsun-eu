@@ -7,14 +7,34 @@ interface HeroProps {
 }
 
 /**
- * Build the hero slide list. Alts are localized inline (short strings that
- * don't warrant messages-file surgery). First slide is the original floating
- * PV plant; the rest are strong drone/poster shots pulled from existing
- * project galleries so no extra assets are shipped.
+ * Hero slide list — restricted to sources whose native resolution is high
+ * enough to stay sharp on 2560+ px displays without Next.js Image upscaling.
+ *
+ * Sizing budget (with Ken Burns scale 1.06):
+ *   4K wide monitor        3840 × ~2100 px hero area  →  needs ≥ 4000 px source
+ *   Notebook / 1440p        2560 × ~1400 px            →  needs ≥ 2700 px source
+ *
+ * The 1400 × 700 project cover shots are fine inside reference cards but
+ * become visibly blurry when the hero stretches them full-width; they were
+ * removed here and stay only in <ReferenceCardMedia>.
+ *
+ * Order picked so the first slide (LCP) is the strongest wide shot.
  */
 function buildSlides(locale: string): HeroSlide[] {
   const cs = locale === 'cs'
   return [
+    {
+      src: '/hero/1.jpg',
+      alt: cs
+        ? 'Střešní solární instalace NorthSun v severní Evropě'
+        : 'NorthSun rooftop solar installation in Northern Europe',
+    },
+    {
+      src: '/hero/2.jpg',
+      alt: cs
+        ? 'Komerční solární střecha v norské Langhusu'
+        : 'Commercial solar rooftop in Langhus, Norway',
+    },
     {
       src: '/hero/3.jpg',
       alt: cs
@@ -22,28 +42,10 @@ function buildSlides(locale: string): HeroSlide[] {
         : 'Floating solar power plant, southern Sweden',
     },
     {
-      src: '/images/projects/rudshogda/cover.jpg',
+      src: '/images/projects/floating-solar/cover.jpg',
       alt: cs
-        ? '1 MW solární instalace v Rudshøgdě, Norsko'
-        : '1 MW solar installation in Rudshøgda, Norway',
-    },
-    {
-      src: '/images/projects/lulea/black-roof.jpg',
-      alt: cs
-        ? 'Dron pohled na střešní instalaci v Luleå, Švédsko'
-        : 'Drone view of a rooftop installation in Luleå, Sweden',
-    },
-    {
-      src: '/images/projects/skelleftea/skelleftea.jpg',
-      alt: cs
-        ? 'Střešní fotovoltaická instalace v Skellefteå, Švédsko'
-        : 'Rooftop solar installation in Skellefteå, Sweden',
-    },
-    {
-      src: '/images/projects/installation-winter/cover.jpg',
-      alt: cs
-        ? 'Instalace ve složitých severských podmínkách'
-        : 'Installation in demanding Nordic conditions',
+        ? 'Plovoucí solární elektrárna se Sunsurf, Švédsko'
+        : 'Floating solar power plant with Sunsurf, Sweden',
     },
   ]
 }

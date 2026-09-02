@@ -307,69 +307,9 @@
         "alt": "1 MW solar installation in Rudshøgda, Norway"
       },
       {
-        "slug": "lulea-sweden",
-        "flag": "SE",
-        "location": "Luleå, Sweden",
-        "title": "Luleå, Sweden",
-        "type": "Rooftop installations, series",
-        "description": "Our largest footprint: a series of rooftop solar installations in and around Luleå, northern Sweden. Family houses, commercial roofs and special projects.",
-        "tag": "own",
-        "image": "/images/projects/lulea/black-roof.jpg",
-        "alt": "Drone view of a rooftop solar installation in Luleå",
-        "gallery": "lulea"
-      },
-      {
-        "slug": "skelleftea-sweden",
-        "flag": "SE",
-        "location": "Skellefteå, Sweden",
-        "title": "Skellefteå, Sweden",
-        "type": "Rooftop installations, series",
-        "description": "Deliveries in Skellefteå, including the Sara Kulturhus hotel and apartment buildings. Rooftop solar in northern Swedish conditions.",
-        "tag": "own",
-        "image": "/images/projects/skelleftea/skelleftea.jpg",
-        "alt": "Rooftop solar installation in Skellefteå",
-        "gallery": "skelleftea"
-      },
-      {
-        "slug": "installation-winter",
-        "flag": "SE",
-        "location": "Sweden",
-        "title": "Winter installation",
-        "type": "Rooftop installation",
-        "description": "A winter rooftop solar installation. Work in demanding Nordic conditions.",
-        "tag": "own",
-        "youtubeId": "VndlLcG-fy8",
-        "image": "/images/projects/installation-winter/cover.jpg",
-        "alt": "Rooftop solar installation in winter conditions"
-      },
-      {
-        "slug": "kramfors-sweden",
-        "flag": "SE",
-        "location": "Kramfors, Sweden",
-        "title": "Kramfors",
-        "type": "Rooftop installation",
-        "description": "Rooftop solar installation in Kramfors, central Sweden.",
-        "tag": "own",
-        "youtubeId": "P67F32WdENg",
-        "image": "/images/projects/kramfors/cover.jpg",
-        "alt": "Solar installation in Kramfors, Sweden"
-      },
-      {
-        "slug": "germany-installation",
-        "flag": "DE",
-        "location": "Germany",
-        "title": "Germany",
-        "type": "Rooftop installation",
-        "description": "Rooftop solar installation in Germany.",
-        "tag": "own",
-        "youtubeId": "b_pqoWG5Pa8",
-        "image": "/images/projects/germany/cover.jpg",
-        "alt": "Solar installation in Germany"
-      },
-      {
         "slug": "solar-roof-norway",
         "flag": "NO",
-        "location": "Norway (Oslo, Hammar)",
+        "location": "Langhus (Oslo), Norway",
         "title": "Commercial solar rooftop",
         "year": "2024",
         "power": "1–2 MW",
@@ -378,7 +318,7 @@
         "tag": "own",
         "youtubeId": "YvpCblroTYY",
         "image": "/hero/2.jpg",
-        "alt": "Commercial solar rooftop in Norway"
+        "alt": "Commercial solar rooftop in Langhus, Norway"
       },
       {
         "slug": "floating-solar-sweden",
@@ -403,6 +343,66 @@
         "videoUrl": "https://www.linkedin.com/posts/lukas-kohout-412a121b6_work-solarpower-projects-activity-7373192896902090752-6Iw7",
         "image": "/images/projects/walraven/cover.jpg",
         "alt": "Solar rooftop on the Walraven industrial building"
+      },
+      {
+        "slug": "kramfors-sweden",
+        "flag": "SE",
+        "location": "Kramfors, Sweden",
+        "title": "Kramfors",
+        "type": "Rooftop installation",
+        "description": "Rooftop solar installation in Kramfors, central Sweden.",
+        "tag": "own",
+        "youtubeId": "P67F32WdENg",
+        "image": "/images/projects/kramfors/cover.jpg",
+        "alt": "Solar installation in Kramfors, Sweden"
+      },
+      {
+        "slug": "installation-winter",
+        "flag": "SE",
+        "location": "Sweden",
+        "title": "Winter installation",
+        "type": "Rooftop installation",
+        "description": "A winter rooftop solar installation. Work in demanding Nordic conditions.",
+        "tag": "own",
+        "youtubeId": "VndlLcG-fy8",
+        "image": "/images/projects/installation-winter/cover.jpg",
+        "alt": "Rooftop solar installation in winter conditions"
+      },
+      {
+        "slug": "lulea-sweden",
+        "flag": "SE",
+        "location": "Luleå, Sweden",
+        "title": "Luleå, Sweden",
+        "type": "Rooftop installations, series",
+        "description": "Our largest footprint: a series of rooftop solar installations in and around Luleå, northern Sweden. Family houses, commercial roofs and special projects.",
+        "tag": "own",
+        "image": "/images/projects/lulea/black-roof.jpg",
+        "alt": "Drone view of a rooftop solar installation in Luleå",
+        "gallery": "lulea"
+      },
+      {
+        "slug": "skelleftea-sweden",
+        "flag": "SE",
+        "location": "Skellefteå, Sweden",
+        "title": "Skellefteå, Sweden",
+        "type": "Rooftop installations, series",
+        "description": "Deliveries in Skellefteå, including the Sara Kulturhus hotel and apartment buildings. Rooftop solar in northern Swedish conditions.",
+        "tag": "own",
+        "image": "/images/projects/skelleftea/skelleftea.jpg",
+        "alt": "Rooftop solar installation in Skellefteå",
+        "gallery": "skelleftea"
+      },
+      {
+        "slug": "germany-installation",
+        "flag": "DE",
+        "location": "Germany",
+        "title": "Germany",
+        "type": "Rooftop installation",
+        "description": "Rooftop solar installation in Germany.",
+        "tag": "own",
+        "youtubeId": "b_pqoWG5Pa8",
+        "image": "/images/projects/germany/cover.jpg",
+        "alt": "Solar installation in Germany"
       }
     ],
     "luleaGallery": {
